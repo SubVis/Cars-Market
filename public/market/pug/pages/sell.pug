@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+html(lang="ar", dir="rtl")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="./css/lib/tailwind.css")
+        link(rel="stylesheet", href="./css/main.css")
+        link(rel="stylesheet", href="./css/sell.css")
+        link(href="https://fonts.googleapis.com/css?family=Almarai:300,400,700,800&display=swap&subset=arabic", rel="stylesheet")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css")
+
+        title عاملة كام؟
+    body
+        include ../components/navbar
+        +nav(['','','active','',''])
+        .container.mx-auto.overflow-x-hidden.pb-32
+            h2.text-xl.text-black.font-semibold.text-center.my-4 بكل سهولة هتقدر تعلن عن عربيتك ببلاش 
+            .flex.flex-wrap.px-5.-mx-2
+                p.header المعلومات الأساسية
+                form(action="#" ,method="post")
+                    .flex.flex-wrap.w-full.px-2.inputs
+                        .input.px-2.my-2(class="w-full md:w-1/2 lg:w-1/3")
+                            p.my-2.font-bold.title عنوان الإعلان:
+                            input(type="text", placeholder='مثال: فيات 98 بحالة ممتازة')
+                            p.help-block.help هذا الحقل مطلوب.                            
+                        .input.px-2.my-2(class="w-full md:w-1/2 lg:w-1/3")
+                            p.my-2.font-bold.title الماركة:
+                            select#slim-select.js-choice(dir="rtl" name="model")
+                                optgroup
+                                    option(value="1") -- اختر -- 
+                                    option(value="1") opel 2
+                                    option(value="1") opel 3
+                                    option(value="1") opel 4
+                                    option(value="1") opel 5
+                                    option(value="1") opel 6
+                            p.help-block.help هذا الحقل مطلوب.                            
+                        .input.px-2.my-2(class="w-full md:w-1/2 lg:w-1/3")
+                            p.my-2.font-bold.title موديل:
+                            select#slim-select.js-choice(dir="rtl" name="model")
+                                optgroup
+                                    option(value="1") سنة
+                                    option(value="1") opel 1
+                                    option(value="1") opel 2
+                                    option(value="1") opel 3
+                                    option(value="1") opel 4
+                                    option(value="1") opel 5
+                                    option(value="1") opel 6
+                            p.help-block.help هذا الحقل مطلوب.                            
+                        .input.px-2.my-2(class="w-full md:w-1/2 lg:w-1/3")
+                            p.my-2.font-bold.title سعة المحرك:
+                            input(type="text", placeholder='مثال: 1400 ')
+                            p.help-block.help هذا الحقل مطلوب.                            
+                        .input.px-2.my-2(class="w-full md:w-1/2 lg:w-1/3")
+                            p.my-2.font-bold.title المدينة:
+                            select#slim-select.js-choice(dir="rtl" name="model")
+                                optgroup
+                                    option(value="1") اختار مدينتك
+                                    option(value="1") opel 1
+                                    option(value="1") opel 2
+                                    option(value="1") opel 3
+                                    option(value="1") opel 4
+                                    option(value="1") opel 5
+                                    option(value="1") opel 6
+                            p.help-block.help هذا الحقل مطلوب.                            
+                        .input.px-2.my-2(class="w-full md:w-1/2 lg:w-1/3")
+                            p.my-2.font-bold.title المسافة(كم):
+                            input(type="text", placeholder='مثال: 1400 ')
+                            p.help-block.help هذا الحقل مطلوب.                            
+                        .input.px-2.my-2(class="w-full md:w-1/2 lg:w-1/3")
+                            p.my-2.font-bold.title ناقل الحركة:
+                            select#slim-select.js-choice(dir="rtl" name="model")
+                                optgroup
+                                    option(value="1") اختار نوع الناقل
+                                    option(value="1") opel 1
+                                    option(value="1") opel 2
+
+                            p.help-block.help هذا الحقل مطلوب.                            
+                        .input.px-2.my-2(class="w-full md:w-1/2 lg:w-1/3")
+                            p.my-2.font-bold.title الوقود:
+                            select#slim-select.js-choice(dir="rtl" name="model")
+                                optgroup
+                                    option(value="1") اختار نوع الوقود
+                                    option(value="1") opel 1
+                                    option(value="1") opel 2
+                                    option(value="1") opel 3
+                                    option(value="1") opel 4
+                                    option(value="1") opel 5
+                                    option(value="1") opel 6
+                            p.help-block.help هذا الحقل مطلوب.                            
+                        .input.px-2.my-2(class="w-full md:w-1/2 lg:w-1/3")
+                            p.my-2.font-bold.title اللون:
+                            select#slim-select.js-choice(dir="rtl" name="model")
+                                optgroup
+                                    option(value="1") اختار لون العربية
+                                    option(value="1") opel 1
+                                    option(value="1") opel 2
+                                    option(value="1") opel 3
+                                    option(value="1") opel 4
+                                    option(value="1") opel 5
+                                    option(value="1") opel 6
+                            p.help-block.help هذا الحقل مطلوب.                            
+                        .input.px-2.my-2(class="w-full md:w-1/2 lg:w-1/3")
+                            p.my-2.font-bold.title السعر:
+                            input(type="text", placeholder='هتبيع بكام؟')
+                            p.help-block.help هذا الحقل مطلوب.                            
+                        .input.px-2.my-2(class="w-full md:w-1/2 lg:w-2/3")
+                            p.my-2.font-bold.title تفاصيل أكتر:
+                            textarea#details(name="details", width="100%",cols="30", rows="3", placeholder='حاجات الزبون هيكون عايز يعرفها مثال: حالة الكوتشات, المساعدين, عاملة عمرة,الخ...')
+                            p.help-block.help هذا الحقل مطلوب.                            
+                        a.btn.mx-auto.my-5(href="sell2.html") التالي
+            
+        include ../components/footer
+    script(src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js")
+
+    script(src="./js/libs/move.js")
+    script(src="./js/main.js")

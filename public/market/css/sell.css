@@ -1,0 +1,232 @@
+@charset "UTF-8";
+.color {
+  color: #7420A3;
+}
+
+* {
+  font-family: "Almarai", sans-serif;
+}
+
+input, select, textarea {
+  resize: vertical;
+  outline: none;
+  transition: all 0.4s ease;
+  color: black;
+  border-radius: 10px;
+  padding: 10px 10px;
+  margin: 0px 0px !important;
+  width: 100%;
+  border: 1px solid #eee;
+}
+input:focus, select:focus, textarea:focus {
+  background: #eee;
+}
+input::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder {
+  color: #a9a9a9;
+  opacity: 1;
+}
+input:-ms-input-placeholder, select:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #a9a9a9;
+}
+input::-webkit-input-placeholder, select::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #a9a9a9;
+}
+
+select {
+  z-index: 50 !important;
+}
+
+.help-block {
+  user-select: none;
+}
+.help-block.help {
+  color: #7420A3;
+}
+.help-block.danger {
+  color: #df2721;
+}
+
+.choices {
+  margin: 0px !important;
+}
+
+.choices__inner {
+  background: white !important;
+  border-radius: 10px !important;
+  padding: 10px 10px !important;
+}
+
+.choices__list.choices__list--single {
+  color: #a9a9a9 !important;
+}
+
+.choices__item--choice.choices__item--selectable {
+  padding: 50px;
+}
+
+.choices__list--dropdown.choices__list {
+  max-height: 200px !important;
+}
+
+.main_bg {
+  background-color: #7420A3;
+}
+
+nav, nav .wrapper {
+  min-height: 4rem;
+}
+nav ul li {
+  color: white;
+  padding: 0 10px;
+}
+nav ul li.active a {
+  border-bottom: 2px solid white;
+}
+nav ul li a {
+  border-bottom: 2px solid transparent;
+  padding-bottom: 5px;
+  transition: all 0.2s ease-in;
+}
+nav ul li:hover a {
+  border-bottom: 2px solid white;
+}
+nav a.btn {
+  color: white;
+  background-image: linear-gradient(to left, #a38b20, #a38b20, rgba(163, 139, 32, 0.75));
+  border-radius: 40px;
+  padding: 5px 15px;
+  transition: all ease 0.4s;
+  font-size: 18px;
+  outline: none;
+}
+nav a.btn:focus {
+  outline: none;
+}
+nav a.btn:hover {
+  transform: translateY(-5px);
+}
+
+.header {
+  border-bottom: 2px solid #7420A3;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+button.indigo {
+  color: white;
+  background-image: linear-gradient(to left, #7420a3, #7420a3, rgba(116, 32, 163, 0.75));
+  border-radius: 40px;
+  padding: 5px 15px;
+  transition: all ease 0.4s;
+  font-size: 18px;
+  outline: none;
+}
+button.indigo:focus {
+  outline: none;
+}
+button.indigo:hover {
+  transform: translateY(-5px);
+}
+
+button.yellow {
+  color: white;
+  background-image: linear-gradient(to left, #a38b20, #a38b20, rgba(163, 139, 32, 0.75));
+  border-radius: 40px;
+  padding: 5px 15px;
+  transition: all ease 0.4s;
+  font-size: 18px;
+  outline: none;
+}
+button.yellow:focus {
+  outline: none;
+}
+button.yellow:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+footer a.btn {
+  color: white;
+  background-image: linear-gradient(to left, #a38b20, #a38b20, rgba(163, 139, 32, 0.75));
+  border-radius: 40px;
+  padding: 5px 15px;
+  transition: all ease 0.4s;
+  font-size: 18px;
+  outline: none;
+}
+footer a.btn:focus {
+  outline: none;
+}
+footer a.btn:hover {
+  transform: translateY(-5px);
+}
+footer ul li {
+  margin: 10px 0;
+}
+footer ul li:first-child {
+  margin-bottom: 40px;
+}
+
+[data-scroll] {
+  transition: all 1s;
+}
+
+[data-scroll=in] {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+[data-scroll=out] {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.inputs .btn {
+  color: white;
+  background-image: linear-gradient(to left, #7420a3, #7420a3, rgba(116, 32, 163, 0.75));
+  border-radius: 40px;
+  padding: 5px 15px;
+  transition: all ease 0.4s;
+  font-size: 18px;
+  outline: none;
+  padding: 5px 30px;
+}
+.inputs .btn:focus {
+  outline: none;
+}
+.inputs .btn:hover {
+  transform: translateY(-5px);
+}
+
+input.images {
+  width: 16rem;
+  height: 16rem;
+  position: relative;
+}
+input.images:hover::after {
+  background-color: #ddd;
+  cursor: pointer;
+}
+input.images::after {
+  transition: all 0.4s ease;
+  background-color: #eee;
+  content: "اضغط لإضافة صورة";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=sell.css.map */
