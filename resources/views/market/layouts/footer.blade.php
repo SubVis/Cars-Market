@@ -48,6 +48,15 @@
      </body>
    @stack('js')
  
+
+
+  <script src="{{url('market/js/libs/jquery.slim.js')}}"></script>
+  <script src="{{url('market/js/libs/select/jquery.prettydropdowns.js')}}"></script>
+  <script src="{{url('market/js/modules/chooseModule.js')}}"></script>
+  <script src="{{url('market/js/modules/ImagePreview.js')}}"></script>
+ 
+    <script src="{{url('market/js/modules//selectbox/multi.js')}}"></script>
+
   <script src="{{url('market/js/libs/move.js')}}"></script>
  
   <script src=" {{url('market/js/main.js')}}"></script>

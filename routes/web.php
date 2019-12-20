@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('market/market/home');
 });
 
+
+
+
+
 Route::name('home')->get('/', function () {
     return view('market/market/home');
 });
@@ -22,14 +26,20 @@ Route::name('home')->get('/', function () {
 Route::name('buy')->get('buy', function () {
     return view('market/market/buy');
 });
- Route::name('sell')->get('sell', function () {
-    return view('market/market/sell');
-});
 
+
+// cars 
+ Route::name('sell')->get('sell', 'Market\CarController@create');
+ Route::name('storeCars')->post('storeCars', 'Market\CarController@store');
+
+ Route::name('sell2')->get('sell2', function(){return view('market/market/sell2');});
+ Route::name('store_photo_Cars')->post('store_photo_Cars', 'Market\CarController@store2');
+
+/*
  Route::name('sell2')->get('sell2', function () {
     return view('market/market/sell2');
 });
-
+*/
  Route::name('how-use')->get('how-use', function () {
     return view('market/market/how-use');
 });
@@ -41,6 +51,7 @@ Route::name('buy')->get('buy', function () {
     Route::name('blogs')->get('blogs', function () {
     return view('market/market/blog');
 });
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

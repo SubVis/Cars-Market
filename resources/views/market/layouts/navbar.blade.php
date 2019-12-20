@@ -2,7 +2,7 @@
           <div class="container mx-auto">
             <div class="flex flex-wrap wrapper">
               <div class="logo flex flex-grow items-center justify-center my-2 px-2 md:my-0 md:flex-grow-0">
-                <h1 class="text-white font-bold text-2xl">عاملة كام؟</h1>
+                <h1 class="text-white font-bold text-2xl">سوق السيارات</h1>
               </div>
               <div class="links flex-grow flex items-center flex-wrap justify-center md:justify-end">
                 <ul class="inline-block">
