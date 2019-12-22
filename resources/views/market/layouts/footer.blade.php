@@ -1,12 +1,11 @@
- 
- <footer class="main_bg py-8 overflow-x-hidden">
+<footer class="main_bg py-8 overflow-x-hidden">
       <div class="container mx-auto">
-        <div class="text-center text-white">
+        <div class="text-center text-white mb-5">
           <h2 class="font-normal text-2xl">مستني ايه؟</h2><a class="btn my-2 inline-block" href="sell.html">أعلن عن عربيتك</a>
         </div>
         <div class="-mx-2">
-          <div class="flex flex-wrap px-2"><!-- sections --> 
-            <ul class="text-white px-2 w-1/2 sm:w-1/3 md:w-1/4">
+          <div class="flex flex-wrap px-2">
+            <ul class="text-white px-2 text-center w-full md:text-right md:w-1/2 lg:w-1/3">
               <li>
                 <p class="text-xl font-semibold">أقسام الموقع</p>
               </li>
@@ -18,47 +17,38 @@
               <li><a href="#">كيفية استخدام الموقع.</a></li>
               <li><a href="#">المدونة.</a></li>
             </ul>
-            <ul class="text-white px-2 w-1/2 sm:w-1/3 md:w-1/4">
+            <ul class="text-white px-2 text-center w-full md:text-right md:w-1/2 lg:w-1/3">
               <li>
-                <p class="text-xl font-semibold">أقسام الموقع</p>
+                <p class="text-xl font-semibold mt-5">أحدث الإعلانات</p>
               </li>
-              <li><a class="flex flex-wrap" href="#">
+              <li><a class="flex flex-wrap justify-center items-center md:justify-start md:items-start" href="product.html">
                   <div class="img h-16 w-16 bg-gray-800"></div>
                   <div class="text mr-3 my-auto">
                     <p class="w-full text-sm">فيات حالة ممتازة</p>
                     <p class="text-gray-400 text-xs">12/5/2019</p>
                   </div></a></li>
-              <li><a class="flex flex-wrap" href="#">
+              <li><a class="flex flex-wrap justify-center items-center md:justify-start md:items-start" href="product.html">
                   <div class="img h-16 w-16 bg-gray-800"></div>
                   <div class="text mr-3 my-auto">
                     <p class="w-full text-sm">فيات حالة ممتازة</p>
                     <p class="text-gray-400 text-xs">12/5/2019</p>
                   </div></a></li>
-              <li><a class="flex flex-wrap" href="#">
+              <li><a class="flex flex-wrap justify-center items-center md:justify-start md:items-start" href="product.html">
                   <div class="img h-16 w-16 bg-gray-800"></div>
                   <div class="text mr-3 my-auto">
                     <p class="w-full text-sm">فيات حالة ممتازة</p>
                     <p class="text-gray-400 text-xs">12/5/2019</p>
                   </div></a></li>
             </ul>
+            <ul class="text-white px-2 text-center w-full md:w-1/3 md:text-right">
+              <li>
+                <p class="text-xl font-semibold">تواصل معنا</p>
+              </li>
+              <li class="inline-block mx-2"><a class="flex flex-wrap" href="#"><i class="fab fa-facebook-square text-5xl"></i></a></li>
+              <li class="inline-block mx-2"><a class="flex flex-wrap" href="#"><i class="fab fa-instagram text-5xl"></i></a></li>
+            </ul>
           </div>
         </div>
       </div>
     </footer>
-     </body>
-   @stack('js')
- 
 
-
-  <script src="{{url('market/js/libs/jquery.slim.js')}}"></script>
-  <script src="{{url('market/js/libs/select/jquery.prettydropdowns.js')}}"></script>
-  <script src="{{url('market/js/modules/chooseModule.js')}}"></script>
-  <script src="{{url('market/js/modules/ImagePreview.js')}}"></script>
- 
-    <script src="{{url('market/js/modules//selectbox/multi.js')}}"></script>
-
-  <script src="{{url('market/js/libs/move.js')}}"></script>
- 
-  <script src=" {{url('market/js/main.js')}}"></script>
-
-   </htm>

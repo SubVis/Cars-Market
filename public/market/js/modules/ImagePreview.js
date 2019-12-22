@@ -14,11 +14,19 @@ file.forEach(input => {
   };
 });
 
-
+// Change Image
 preview.forEach(img => {
   img.onclick = () => {
-    let exactInput = file.filter(inpt => inpt.getAttribute('data-get') == img.getAttribute('data-preview') );
+    let exactInput = file.filter(inpt => inpt.getAttribute('data-get') == img.getAttribute('data-preview') )[0];
 
-    exactInput[0].click();
+    exactInput.click();
   };
 });
+
+// Delete Image
+let delbtn = document.getElementById("deletImage");
+
+// // Change Image
+// delbtn.onclick = () => {
+//   let delImg = delbtn.
+// }

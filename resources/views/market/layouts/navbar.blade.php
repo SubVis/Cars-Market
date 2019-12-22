@@ -1,18 +1,27 @@
- <nav class="main_bg">
-          <div class="container mx-auto">
-            <div class="flex flex-wrap wrapper">
-              <div class="logo flex flex-grow items-center justify-center my-2 px-2 md:my-0 md:flex-grow-0">
-                <h1 class="text-white font-bold text-2xl">سوق السيارات</h1>
-              </div>
-              <div class="links flex-grow flex items-center flex-wrap justify-center md:justify-end">
-                <ul class="inline-block">
-                  <li class="inline-block"><a href="{{route('home')}}">الرئيسية</a></li>
-                  <li class="inline-block"><a href="{{route('buy')}}">اشتري</a></li>
-                  <li class="inline-block"><a href="{{route('sell')}}">بيع</a></li>
-                  <li class="inline-block"><a href="{{route('how-use')}}">كيفية الاستخدام </a></li>
-                  <li class="inline-block"><a href="{{route('blog')}}">المدونة</a></li>
-                </ul><a class="btn mr-5 mt-4 mb-2 md:my-0" href="{{route('sell')}}">اعلن عن عربيتك</a>
-              </div>
-            </div>
-          </div>
-        </nav>
+<nav class="flex items-center justify-between flex-wrap p-6 indigo">
+    <div class="flex items-center flex-no-shrink flex-grow text-white mr-6"><a
+            class="font-semibold text-xl tracking-tight" href="/">عاملة كام؟</a></div>
+    <div class="block md:hidden">
+        <button class="flex items-center px-3 py-2 border rounded text-white hover:border-white" id="closeNavbtn">
+            <svg class="h-3 w-3" viewbox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+        </button>
+    </div>
+    <div class="w-full hidden flex-grow text-center md:flex md:items-center md:w-auto" id="collapse">
+        <div class="text-sm md:flex-grow"><a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white"
+                href="userProfile"> <i class="fa fa-user mx-2"> </i>أبوحميد</a><a
+                class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white"
+                href="/">الرئيسية</a><a
+                class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white" href="buy">اشتري</a><a
+                class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white active"
+                href="sell">بيع</a><a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white"
+                href="#">كيفية الاستخدام </a><a
+                class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white" href="blog">المدونة</a>
+        </div>
+        <div class="mt-5 md:mt-0"><a class="btn yellow mr-5 mt-4 mb-2 md:my-0" href="login">سجل دخولك</a></div>
+    </div>
+</nav>
+
+<script src="{{url('market/js/main.js')}}"></script>

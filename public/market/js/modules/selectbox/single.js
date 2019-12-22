@@ -101,6 +101,7 @@ function allOne(selecty, holder) {
                     
                     // Set the placeholder
                     input.setAttribute("placeholder", text)
+                    parent.querySelector('div.replacement').scrollTop = 0;
                     parent.querySelector('div.replacement').classList.remove("replacement-opened");
                 }
 
@@ -130,7 +131,8 @@ window.onclick = function (e) {
     let m = e.target.classList.contains("replacement-input") || e.target.classList.contains("replacement-ul") || e.target.classList.contains("replacement-ul--li");
     if(!m){
         [...document.querySelectorAll('.replacement')].forEach( function (s) {
-            s.classList.remove("replacement-opened")
+            s.scrollTop = 0;
+            s.classList.remove("replacement-opened");
         });
     }
 };

@@ -1,4 +1,3 @@
-/* ======================== For All Multiple selections ======================== */
 
 function allMulti(selecty, holder) {
     selecty.forEach(function (exactSelect) {
@@ -86,6 +85,8 @@ function allMulti(selecty, holder) {
                     
                     // Set the placeholder
                     input.setAttribute("placeholder", optText.join(" - "))
+                    console.log('da');
+                    
                 } else {
                     exactOpt.selected='';
                     el.lastElementChild.classList.remove("checked");
@@ -104,6 +105,15 @@ function allMulti(selecty, holder) {
     }); // End of the function
 };
 
+window.onclick = function (e) {
+    let m = e.target.classList.contains("replacement-input") || e.target.classList.contains("replacement-ul") || e.target.classList.contains("replacement-ul--li") || e.target.classList.contains("span") || e.target.classList.contains("checker");
+    if(!m){
+        [...document.querySelectorAll('.replacement')].forEach( function (s) {
+            s.scrollTop = 0;
+            s.classList.remove("replacement-opened");
+        });
+    }
+};
 /* ========================= code ========================= */
 let select = [...document.querySelectorAll('select')]; // All select tags in the dom
 
@@ -117,9 +127,4 @@ togglers.forEach(function (div) {
         else
             div.parentElement.classList.add("replacement-opened");
     }
-});
-
-$("#dsa").click(function (e) { 
-    e.preventDefault();
-    console.log($('form').serializeArray());
 });

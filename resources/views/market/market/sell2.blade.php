@@ -4,7 +4,7 @@
     <div class="container mx-auto pb-32">
       <form enctype="multipart/form-data" method="post" action="
       {{route('store_photo_Cars')}}">
-                {{csrf_field()}}>
+                {{csrf_field()}}
         <div class="px-4">
                     <h2 class="text-xl text-black font-semibold text-center my-4"> بكل سهولة هتقدر تعلن عن عربيتك ببلاش</h2>
           <p class="header">الصور</p>
@@ -12,7 +12,7 @@
             <div class="px-2">
               <div class="flex flex-wrap text-center px-2">
                 <div class="inputs my-2 px-2 relative overflow-hidden h-64 w-full md:w-1/2 lg:w-1/3">
-                  <input class="w-full h-full" data-get="0" type="file"  name="image1"/>
+                  <input class="w-full h-full" data-get="0" type="file" name="1"/>
                   <div class="img relative w-full h-full"><img class="img" data-preview="0"/>
                     <div class="tools">
                       <button class="delBtn delete px-2 py-1" type="button" data-del="0"><i class="far fa-times-circle"></i></button>
@@ -20,7 +20,7 @@
                   </div>
                 </div>
                 <div class="inputs my-2 px-2 relative overflow-hidden h-64 w-full md:w-1/2 lg:w-1/3">
-                  <input class="w-full h-full" data-get="1" type="file"  name="image2"/>
+                  <input class="w-full h-full" data-get="1" type="file" name="1"/>
                   <div class="img relative w-full h-full"><img class="img" data-preview="1"/>
                     <div class="tools">
                       <button class="delBtn delete px-2 py-1" type="button" data-del="1"><i class="far fa-times-circle"></i></button>
@@ -28,7 +28,7 @@
                   </div>
                 </div>
                 <div class="inputs my-2 px-2 relative overflow-hidden h-64 w-full md:w-1/2 lg:w-1/3">
-                  <input class="w-full h-full" data-get="2" type="file" name="image3"/>
+                  <input class="w-full h-full" data-get="2" type="file" name="1"/>
                   <div class="img relative w-full h-full"><img class="img" data-preview="2"/>
                     <div class="tools">
                       <button class="delBtn delete px-2 py-1" type="button" data-del="2"><i class="far fa-times-circle"></i></button>
@@ -36,7 +36,7 @@
                   </div>
                 </div>
                 <div class="inputs my-2 px-2 relative overflow-hidden h-64 w-full md:w-1/2 lg:w-1/3">
-                  <input class="w-full h-full" data-get="3" type="file"  name="image4"/>
+                  <input class="w-full h-full" data-get="3" type="file" name="1"/>
                   <div class="img relative w-full h-full"><img class="img" data-preview="3"/>
                     <div class="tools">
                       <button class="delBtn delete px-2 py-1" type="button" data-del="3"><i class="far fa-times-circle"></i></button>
@@ -44,7 +44,7 @@
                   </div>
                 </div>
                 <div class="inputs my-2 px-2 relative overflow-hidden h-64 w-full md:w-1/2 lg:w-1/3">
-                  <input class="w-full h-full" data-get="4" type="file"  name="image5"/>
+                  <input class="w-full h-full" data-get="4" type="file" name="1"/>
                   <div class="img relative w-full h-full"><img class="img" data-preview="4"/>
                     <div class="tools">
                       <button class="delBtn delete px-2 py-1" type="button" data-del="4"><i class="far fa-times-circle"></i></button>
@@ -52,7 +52,7 @@
                   </div>
                 </div>
                 <div class="inputs my-2 px-2 relative overflow-hidden h-64 w-full md:w-1/2 lg:w-1/3">
-                  <input class="w-full h-full" data-get="5" type="file"  name="image6"/>
+                  <input class="w-full h-full" data-get="5" type="file" name="1"/>
                   <div class="img relative w-full h-full"><img class="img" data-preview="5"/>
                     <div class="tools">
                       <button class="delBtn delete px-2 py-1" type="button" data-del="5"><i class="far fa-times-circle"></i></button>
@@ -159,12 +159,14 @@
                               <p class="help-block help"> </p>
                             </div>
               </div>
-              <button class="indigo mx-auto my-8 px-16 mx-auto" type="submit">خلاص</button>
+              <button class="indigo mx-auto my-8 px-16 mx-auto" type="button" id="dsa">خلاص</button>
             </div>
           </div>
         </div>
       </form>
+    </div>
     
+    <script src="{{url('market/js/modules/selectbox/multi.js')}}"></script>
 
 
  @endsection
