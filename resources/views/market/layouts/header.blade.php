@@ -4,9 +4,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <!-- <link rel="stylesheet" href="{{url('market/css/lib/tailwind.css')}}"/> -->
-    <!-- <link rel="stylesheet" href="{{url('market/css/main.css')}}"/> -->
-   <!-- <link rel="stylesheet" href="{{url('market/css/sell.css')}}"/> -->
    <link rel="stylesheet" href="{{url('market/css/app.css')}}"/>
    <link rel="stylesheet" href="{{url('market/css/selection.css')}}"/>
    <script src="https://kit.fontawesome.com/7ccf14bcd9.js"></script>

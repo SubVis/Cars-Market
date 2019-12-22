@@ -34,7 +34,12 @@ Route::name('buy')->get('buy', function () {
 
  Route::name('sell2')->get('sell2', function(){return view('market/market/sell2');});
  Route::name('store_photo_Cars')->post('store_photo_Cars', 'Market\CarController@store2');
+ 
 
+
+
+ Route::name('login')->get('login', function(){return view('market/market/login');});
+ Route::name('sign-up')->get('sign-up', function(){return view('market/market/signup');});
 /*
  Route::name('sell2')->get('sell2', function () {
     return view('market/market/sell2');

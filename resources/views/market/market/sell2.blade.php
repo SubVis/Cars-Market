@@ -166,7 +166,8 @@
       </form>
     </div>
     
-    <script src="{{url('market/js/modules/selectbox/multi.js')}}"></script>
-
+    @push('js')
+      <script src="{{url('market/js/modules/selectbox/multi.js')}}"></script>
+    @endpush
 
  @endsection

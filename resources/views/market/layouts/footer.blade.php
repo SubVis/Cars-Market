@@ -54,6 +54,7 @@
 
     @stack('js')
     <script src="{{url('market/js/main.js')}}"></script>
+    <script src="{{url('market/js/libs/axios.js')}}"></script>
 
 </body>
 </html>
