@@ -52,3 +52,8 @@
       </div>
     </footer>
 
+    @stack('js')
+    <script src="{{url('market/js/main.js')}}"></script>
+
+</body>
+</html>

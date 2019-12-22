@@ -24,4 +24,3 @@
     </div>
 </nav>
 
-<script src="{{url('market/js/main.js')}}"></script>

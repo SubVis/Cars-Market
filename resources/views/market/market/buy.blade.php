@@ -7,8 +7,7 @@
 
     @endpush
 @section('content')
-
-  <div class="container px-2 mx-auto">
+<div class="container px-2 mx-auto">
       <div class="quick-search">
         <p class="header">البحث السريع</p>
         <div class="-mx-2">
@@ -126,15 +125,15 @@
           <p class="header">الماركات المتواجدة</p>
           <div class="-mx-2">
             <div class="flex px-2 flex-wrap">
-              <div class="img px-2 w-1/3"><img src="./images/brands/1.png" width="100" alt="brand"/></div>
-              <div class="img px-2 w-1/3"><img src="./images/brands/2.png" width="100" alt="brand"/></div>
-              <div class="img px-2 w-1/3"><img src="./images/brands/3.png" width="100" alt="brand"/></div>
-              <div class="img px-2 w-1/3"><img src="./images/brands/4.png" width="100" alt="brand"/></div>
-              <div class="img px-2 w-1/3"><img src="./images/brands/5.png" width="100" alt="brand"/></div>
-              <div class="img px-2 w-1/3"><img src="./images/brands/6.png" width="100" alt="brand"/></div>
-              <div class="img px-2 w-1/3"><img src="./images/brands/7.png" width="100" alt="brand"/></div>
-              <div class="img px-2 w-1/3"><img src="./images/brands/8.png" width="100" alt="brand"/></div>
-              <div class="img px-2 w-1/3"><img src="./images/brands/9.png" width="100" alt="brand"/></div>
+              <div class="img px-2 w-1/3"><img src="{{url('market/images/brands/1.png')}}" width="100" alt="brand"/></div>
+              <div class="img px-2 w-1/3"><img src="{{url('market/images/brands/2.png')}}" width="100" alt="brand"/></div>
+              <div class="img px-2 w-1/3"><img src="{{url('market/images/brands/3.png')}}" width="100" alt="brand"/></div>
+              <div class="img px-2 w-1/3"><img src="{{url('market/images/brands/4.png')}}" width="100" alt="brand"/></div>
+              <div class="img px-2 w-1/3"><img src="{{url('market/images/brands/5.png')}}" width="100" alt="brand"/></div>
+              <div class="img px-2 w-1/3"><img src="{{url('market/images/brands/6.png')}}" width="100" alt="brand"/></div>
+              <div class="img px-2 w-1/3"><img src="{{url('market/images/brands/7.png')}}" width="100" alt="brand"/></div>
+              <div class="img px-2 w-1/3"><img src="{{url('market/images/brands/8.png')}}" width="100" alt="brand"/></div>
+              <div class="img px-2 w-1/3"><img src="{{url('market/images/brands/9.png')}}" width="100" alt="brand"/></div>
             </div>
             <div class="px-2 mt-4 flex justify-center items-end">
               <button class="indigo">المزيد  </button>
@@ -156,7 +155,7 @@
                       <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span class="text-left inline-block">شيء ما</span></li>
                       <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block">شيء ما</span></li>
                     </ul>
-                    <div class="w-full flex justify-center items-center py-2"><a class="btn indigo" href="product.html">شاهد المزيد</a></div>
+                    <div class="w-full flex justify-center items-center py-2"><a class="btn indigo" href="product">شاهد المزيد</a></div>
                   </section>
                 </div>
                 <div class="minicard my-2"><img style="height: 300px;width: 100%" src="https://via.placeholder.com/600" alt="image"/>
@@ -169,7 +168,7 @@
                       <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span class="text-left inline-block">شيء ما</span></li>
                       <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block">شيء ما</span></li>
                     </ul>
-                    <div class="w-full flex justify-center items-center py-2"><a class="btn indigo" href="product.html">شاهد المزيد</a></div>
+                    <div class="w-full flex justify-center items-center py-2"><a class="btn indigo" href="product">شاهد المزيد</a></div>
                   </section>
                 </div>
                 <div class="minicard my-2"><img style="height: 300px;width: 100%" src="https://via.placeholder.com/600" alt="image"/>
@@ -182,7 +181,7 @@
                       <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span class="text-left inline-block">شيء ما</span></li>
                       <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block">شيء ما</span></li>
                     </ul>
-                    <div class="w-full flex justify-center items-center py-2"><a class="btn indigo" href="product.html">شاهد المزيد</a></div>
+                    <div class="w-full flex justify-center items-center py-2"><a class="btn indigo" href="product">شاهد المزيد</a></div>
                   </section>
                 </div>
               </div>
@@ -312,7 +311,7 @@
               <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
             </ul>
             <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product.html">شاهد المزيد</a>
+              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
             </div>
           </section>
         </div>
@@ -333,7 +332,7 @@
               <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
             </ul>
             <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product.html">شاهد المزيد</a>
+              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
             </div>
           </section>
         </div>
@@ -354,7 +353,7 @@
               <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
             </ul>
             <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product.html">شاهد المزيد</a>
+              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
             </div>
           </section>
         </div>
@@ -375,7 +374,7 @@
               <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
             </ul>
             <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product.html">شاهد المزيد</a>
+              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
             </div>
           </section>
         </div>
@@ -396,7 +395,7 @@
               <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
             </ul>
             <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product.html">شاهد المزيد</a>
+              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
             </div>
           </section>
         </div>
@@ -417,7 +416,7 @@
               <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
             </ul>
             <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product.html">شاهد المزيد</a>
+              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
             </div>
           </section>
         </div>
@@ -438,7 +437,7 @@
               <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
             </ul>
             <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product.html">شاهد المزيد</a>
+              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
             </div>
           </section>
         </div>
@@ -459,7 +458,7 @@
               <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
             </ul>
             <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product.html">شاهد المزيد</a>
+              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
             </div>
           </section>
         </div>
@@ -480,7 +479,7 @@
               <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
             </ul>
             <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product.html">شاهد المزيد</a>
+              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
             </div>
           </section>
         </div>
@@ -497,7 +496,7 @@
     </div>
         <div class="shape flex justify-center w-full overflow-x-hidden">
           <div class="all" style="transform: rotate(-6deg)">
-            <p class="text-center mb-4">عايز تبيع</p><a class="btn yellow" href="sell.html">اعلن عن عربيتك</a>
+            <p class="text-center mb-4">عايز تبيع</p><a class="btn yellow" href="sell">اعلن عن عربيتك</a>
           </div>
         </div>
     <div class="news flex flex-wrap flex-col justify-center items-center" style="margin: 90px 0">
@@ -511,7 +510,21 @@
       </form>
     </div>
 
-
+    @push('js')
+        <script src="{{url('market/js/libs/siema.min.js')}}"></script>
+        <script src="{{url('market/js/modules/selectbox/single.js')}}"></script>
+        <script>
+          const mySiema = new Siema({
+              selector: '.siema',
+              easing: 'ease-out',
+              perPage: 1,
+              startIndex: -1,
+              loop: true,
+              rtl: true,
+          });
+          setInterval(() => mySiema.next(), 2000);
+        </script>
+      @endpush
 
  @endsection
     
