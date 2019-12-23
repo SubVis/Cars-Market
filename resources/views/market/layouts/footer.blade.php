@@ -1,7 +1,7 @@
 <footer class="main_bg py-8 overflow-x-hidden">
       <div class="container mx-auto">
         <div class="text-center text-white mb-5">
-          <h2 class="font-normal text-2xl">مستني ايه؟</h2><a class="btn my-2 inline-block" href="sell.html">أعلن عن عربيتك</a>
+          <h2 class="font-normal text-2xl">مستني ايه؟</h2><a class="btn my-2 inline-block" href="{{route('sell')}}">أعلن عن عربيتك</a>
         </div>
         <div class="-mx-2">
           <div class="flex flex-wrap px-2">
@@ -55,6 +55,7 @@
     @stack('js')
     <script src="{{url('market/js/main.js')}}"></script>
     <script src="{{url('market/js/libs/axios.js')}}"></script>
+    <script src="{{url('market/js/axios.js')}}"></script>
 
 </body>
 </html>

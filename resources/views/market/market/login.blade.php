@@ -17,7 +17,7 @@
           <p class="my-2 font-bold title">كلمة السر:</p>
           <input type="password" placeholder="أدخل كلمة السر" auto-complete="off" required="required"/>
           <p class="help-block help">هذا الحقل مطلوب.</p>
-        </div><a class="text-gray-600 self-start my-2" href="signUp.html">ليس لديك حساب؟</a>
+        </div><a class="text-gray-600 self-start my-2" href="{{route('sign-up')}}">ليس لديك حساب؟</a>
         <button class="btn indigo my-2" type="submit">تسجيل دخول</button>
       </form>
     </div>

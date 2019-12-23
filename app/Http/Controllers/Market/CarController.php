@@ -12,7 +12,6 @@ use Illuminate\Routing\Redirector;
 class CarController extends Controller
 {
   
-    private $lastCarId;
     /**
      * Display a listing of the resource.
      *
@@ -55,7 +54,7 @@ class CarController extends Controller
                'color' =>     $request->color, 
                'price' =>     $request->price, 
                'description' =>   $request->details, 
-               'slug' =>   'first-car'. random_int(100, 200),
+               'slug' =>   'first-car'. random_int(100, 2000),
              ]);   
          $lastCar = $car->id;
          $this->lastCarId = $lastCar;
@@ -136,7 +135,7 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        //
+       
     }
 
     /**

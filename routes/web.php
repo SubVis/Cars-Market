@@ -23,9 +23,7 @@ Route::name('home')->get('/', function () {
     return view('market/market/home');
 });
 
-Route::name('buy')->get('buy', function () {
-    return view('market/market/buy');
-});
+Route::name('buy')->get('buy', 'Market\BuyController@index');
 
 
 // cars 

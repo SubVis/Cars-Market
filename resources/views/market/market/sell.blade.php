@@ -8,7 +8,7 @@
 
       <p class="header">المعلومات الأساسية</p>
       <div class="flex flex-wrap px-2">
-        <form class="w-full -mx-2" action="#" method="post">
+        <form class="w-full -mx-2" action="{{route('storeCars')}}" method="post">
            {{csrf_field()}}
           <div class="flex flex-wrap w-full px-2 inputs">
                 <div class="input px-2 my-2 w-full md:w-1/2 lg:w-1/3 ">
@@ -23,11 +23,11 @@
                   <div data-wrapper="brand">
                     <select class="w-full " name="brand" id="brand">
                       <option>-- اختر -- </option>
-                      <option>1سنة</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>سنة</option>
+                      <option value="1">1</option>
+                      <option value="5">2</option>
+                      <option value="6">3</option>
+                      <option value="7">4</option>
+                      <option value="8">سنة</option>
                     </select>
                   </div>
                   <p class="help-block help"> </p>
@@ -37,11 +37,11 @@
                   <div data-wrapper="model">
                     <select class="w-full " name="model" id="model">
                       <option>اختر الموديل </option>
-                      <option></option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>سنة</option>
+                      <option value="4">1</option>
+                      <option value="6">2</option>
+                      <option value="7">3</option>
+                      <option value="8">4</option>
+                      <option value="9">سنة</option>
                     </select>
                   </div>
                   <p class="help-block help"> </p>
@@ -58,7 +58,7 @@
                   <div data-wrapper="town">
                     <select class="w-full " name="town" id="town">
                       <option>اختار مدينتك</option>
-                      <option>1سنة</option>
+                      <option value="1">1</option>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
@@ -86,7 +86,7 @@
                   <div data-wrapper="transmission">
                     <select class="w-full " name="transmission" id="transmission">
                       <option>اختار نوع الناقل</option>
-                      <option>1سنة</option>
+                      <option value="1">1</option>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
@@ -100,7 +100,7 @@
                   <div data-wrapper="fuel">
                     <select class="w-full " name="fuel" id="fuel">
                       <option>اختار نوع الوقود</option>
-                      <option>1سنة</option>
+                      <option value="1">1</option>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
@@ -114,7 +114,7 @@
                   <div data-wrapper="color">
                     <select class="w-full " name="color" id="color">
                       <option>اختار لون العربية</option>
-                      <option>1سنة</option>
+                      <option value="1">1</option>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
@@ -133,7 +133,7 @@
             <div class="input px-2 my-2 w-full md:w-1/2 lg:w-2/3">
               <p class="my-2 font-bold title">تفاصيل أكتر:</p>
               <textarea id="details" name="details" width="100%" cols="30" rows="3" placeholder="حاجات الزبون هيكون عايز يعرفها مثال: حالة الكوتشات, المساعدين, عاملة عمرة,الخ..."></textarea>
-            </div><a class="btn mx-auto my-5 self-center indigo" href="sell2.html">التالي</a>
+            </div><button onclick="myFunction()"type='submit' id='car-store' class="btn mx-auto my-5 self-center indigo">التالي</button>
           </div>
         </form>
       </div>

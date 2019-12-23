@@ -2,10 +2,8 @@
     @section('title', 'املة كام؟<')
 
     @push('css')
+ @endpush
 
-    @push('js')
-
-    @endpush
 @section('content')
 <div class="container px-2 mx-auto">
       <div class="quick-search">
@@ -119,6 +117,7 @@
         </div>
       </div>
     </div>
+
     <div class="container mx-auto px-2 mt-8">
       <div class="flex flex-wrap">
         <div class="brand w-full sm:w-full lg:w-1/2">
@@ -294,198 +293,38 @@
         </div>
       </form>
     </div>
+
+
     <div class="flex flex-wrap px-2">
+      @foreach($cars as $car)
+     
       <div class="px-2 w-full md:w-1/2 lg:w-1/3">
         <div class="card my-2"><img style="height: 300px;width: 100%" src="https://via.placeholder.com/600" alt="image"/>
           <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
+          <h2 class="color font-bold inline-block text-right my-4 mb-2 w-full text-xl">{{$car->title}} </h2>
             <ul class="w-full lg:w-1/2">
               <li class="my-2"><span class="color font-bold inline-block text-right ml-2">الماركة:</span><span class="text-left inline-block">شيء ما</span></li>
               <li class="my-2"><span class="color font-bold inline-block text-right ml-2">موديل:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">سعة الموتور:</span><span class="text-left inline-block">شيء ما</span></li>
+              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span><span class="text-left inline-block">{{$car->driver}}</span></li>
+              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">سعة الموتور:</span><span class="text-left inline-block">{{$car->cc}}</span></li>
             </ul>
             <ul class="w-full lg:w-1/2">
               <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">نوع الوقود:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
+              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block"> {{$car->color}}</span></li>
+              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">نوع الوقود:</span><span class="text-left inline-block">{{$car->fuel}}</span></li>
+              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">{{$car->kilometers}}</span></li>
             </ul>
             <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
+              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">{{$car->price}}</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
             </div>
           </section>
         </div>
       </div>
-      <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-        <div class="card my-2"><img style="height: 300px;width: 100%" src="https://via.placeholder.com/600" alt="image"/>
-          <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">الماركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">موديل:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">سعة الموتور:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">نوع الوقود:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-        <div class="card my-2"><img style="height: 300px;width: 100%" src="https://via.placeholder.com/600" alt="image"/>
-          <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">الماركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">موديل:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">سعة الموتور:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">نوع الوقود:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-        <div class="card my-2"><img style="height: 300px;width: 100%" src="https://via.placeholder.com/600" alt="image"/>
-          <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">الماركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">موديل:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">سعة الموتور:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">نوع الوقود:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-        <div class="card my-2"><img style="height: 300px;width: 100%" src="https://via.placeholder.com/600" alt="image"/>
-          <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">الماركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">موديل:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">سعة الموتور:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">نوع الوقود:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-        <div class="card my-2"><img style="height: 300px;width: 100%" src="https://via.placeholder.com/600" alt="image"/>
-          <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">الماركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">موديل:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">سعة الموتور:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">نوع الوقود:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-        <div class="card my-2"><img style="height: 300px;width: 100%" src="https://via.placeholder.com/600" alt="image"/>
-          <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">الماركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">موديل:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">سعة الموتور:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">نوع الوقود:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-        <div class="card my-2"><img style="height: 300px;width: 100%" src="https://via.placeholder.com/600" alt="image"/>
-          <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">الماركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">موديل:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">سعة الموتور:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">نوع الوقود:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-        <div class="card my-2"><img style="height: 300px;width: 100%" src="https://via.placeholder.com/600" alt="image"/>
-          <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">الماركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">موديل:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">سعة الموتور:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <ul class="w-full lg:w-1/2">
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">نوع الوقود:</span><span class="text-left inline-block">شيء ما</span></li>
-              <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المسافة:</span><span class="text-left inline-block">شيء ما</span></li>
-            </ul>
-            <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
-              <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span class="text-lg">125.8481</span></div><a class="btn indigo" href="product">شاهد المزيد</a>
-            </div>
-          </section>
-        </div>
-      </div>
+      @endforeach
     </div>
+
     <div class="flex justify-center my-6 pagenation">
+      {{$cars->links()}}
       <ul class="flex border border-grey">
         <li><a class="block px-3 py-2 color hover:text-black " href="#">السابق</a></li>
         <li><a class="block border-r border-grey-light px-3 py-2 color  active hover:text-black" href="#">1</a></li>
@@ -496,7 +335,7 @@
     </div>
         <div class="shape flex justify-center w-full overflow-x-hidden">
           <div class="all" style="transform: rotate(-6deg)">
-            <p class="text-center mb-4">عايز تبيع</p><a class="btn yellow" href="sell">اعلن عن عربيتك</a>
+            <p class="text-center mb-4">عايز تبيع</p><a class="btn yellow" href="{{route('sell')}}">اعلن عن عربيتك</a>
           </div>
         </div>
     <div class="news flex flex-wrap flex-col justify-center items-center" style="margin: 90px 0">
@@ -510,7 +349,11 @@
       </form>
     </div>
 
-    @push('js')
+
+ @endsection
+
+
+        @push('js')
         <script src="{{url('market/js/libs/siema.min.js')}}"></script>
         <script src="{{url('market/js/modules/selectbox/single.js')}}"></script>
         <script>
@@ -524,7 +367,8 @@
           });
           setInterval(() => mySiema.next(), 2000);
         </script>
-      @endpush
 
- @endsection
+    @endpush
+
+
     
