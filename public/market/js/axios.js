@@ -3,6 +3,32 @@ function myFunction(e) {
   preventDefault();
 }
 
+var paragraph= [...document.querySelectorAll("[data-validation]")];
+
+document.getElementById("car-store").addEventListener("click", function(event){
+    event.preventDefault();
+  
+    axios.post('storeCars').then(function (response) {
+        // handle success
+        for (const key in response.data) {
+            if (response.data.hasOwnProperty(key)) {
+                const d = response.data[key];
+                console.log(key);
+
+                paragraph.forEach(p => {
+                    if(p.getAttribute('data-validation') == key){
+                        p.innerHTML = d;
+                    }
+                });
+
+            }
+        }
+    })  
+    .catch(function(error){
+        console.log(error);
+   });
+   
+});
 
 /*$('#car-store').on('click', function(e){
         e.preventDefault();
