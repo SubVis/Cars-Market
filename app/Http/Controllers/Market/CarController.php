@@ -135,7 +135,9 @@ class CarController extends Controller
      */
     public function show($id)
     {
-       
+        $car = where('id', $id)->first();
+
+        return view('market/market/buy', ['car'=>$car]);
     }
 
     /**

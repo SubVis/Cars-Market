@@ -7,6 +7,16 @@
   @section('content')
 
       <p class="header">المعلومات الأساسية</p>
+
+              @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
       <div class="flex flex-wrap px-2">
         <form class="w-full -mx-2" action="{{route('storeCars')}}" method="post">
            {{csrf_field()}}
@@ -14,8 +24,8 @@
                 <div class="input px-2 my-2 w-full md:w-1/2 lg:w-1/3 ">
                   <p class="my-2 font-bold title m-2">عنوان الإعلان:</p>
                   <div class="x flex-grow">
-                    <input type="text" placeholder="مثال: فيات 98 بحالة ممتازة"/>
-                    <p class="help-block help"> </p>
+                    <input id='title-input' type="text"  placeholder="مثال: فيات 98 بحالة ممتازة"/>
+                    <p id='title-class' class="help-block help"></p>
                   </div>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3  my-2 px-2">
@@ -133,7 +143,7 @@
             <div class="input px-2 my-2 w-full md:w-1/2 lg:w-2/3">
               <p class="my-2 font-bold title">تفاصيل أكتر:</p>
               <textarea id="details" name="details" width="100%" cols="30" rows="3" placeholder="حاجات الزبون هيكون عايز يعرفها مثال: حالة الكوتشات, المساعدين, عاملة عمرة,الخ..."></textarea>
-            </div><button onclick="myFunction()"type='submit' id='car-store' class="btn mx-auto my-5 self-center indigo">التالي</button>
+            </div><button type='submit' id='car-store' class="btn mx-auto my-5 self-center indigo">التالي</button>
           </div>
         </form>
       </div>
