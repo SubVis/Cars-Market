@@ -15,13 +15,14 @@ function allOne(selecty, holder) {
 
         our_div.classList.add(l);
         })
-        console.log();
-        our_div.setAttribute('data-select-name', exactSelect.getAttribute("name"));
+        // console.log();
+        // our_div.setAttribute('data-select-name', exactSelect.getAttribute("name"));
 
         // The input for filtering and showing the selected options
         let placeholder = document.createElement('input');
         placeholder.classList.add('replacement-input'); // Add classes 
         placeholder.setAttribute('placeholder', ds); // add initial value 
+        placeholder.setAttribute('name', exactSelect.getAttribute("name")); // add initial value 
 
         /* Delete the first item which is the placeholder */
         if (!holder) optAll.remove(0);

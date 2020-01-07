@@ -8,13 +8,13 @@
 
       <p class="header">المعلومات الأساسية</p>
       <div class="flex flex-wrap px-2">
-        <form class="w-full -mx-2" action="{{route('storeCars')}}" method="post">
+        <form class="w-full -mx-2" id="momo" action="{{route('storeCars')}}" method="post">
            {{csrf_field()}}
           <div class="flex flex-wrap w-full px-2 inputs">
                 <div class="input px-2 my-2 w-full md:w-1/2 lg:w-1/3 ">
                   <p class="my-2 font-bold title m-2">عنوان الإعلان:</p>
                   <div class="x flex-grow">
-                    <input type="text" placeholder="مثال: فيات 98 بحالة ممتازة"/>
+                    <input type="text" name="title" placeholder="مثال: فيات 98 بحالة ممتازة"/>
                     <p class="help-block help" data-validation="title"></p>
                   </div>
                 </div>
