@@ -3,29 +3,23 @@
     @push('css')
 
     @push('js')
+     <script src="{{url('market/js/modules/selectbox/single.js')}}"></script>
     @endpush
   @section('content')
-
+    <div id='sell-content'>
       <p class="header">المعلومات الأساسية</p>
 
-              @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
       <div class="flex flex-wrap px-2">
         <form class="w-full -mx-2" action="{{route('storeCars')}}" method="post">
            {{csrf_field()}}
           <div class="flex flex-wrap w-full px-2 inputs">
                 <div class="input px-2 my-2 w-full md:w-1/2 lg:w-1/3 ">
                   <p class="my-2 font-bold title m-2">عنوان الإعلان:</p>
-                  <div class="x flex-grow">
-                    <input id='title-input' type="text"  placeholder="مثال: فيات 98 بحالة ممتازة"/>
-                    <p id='title-class' class="help-block help"></p>
+                  <div class="x flex-grow">             
+
+                    <input type="text" id='title' placeholder="مثال: فيات 98 بحالة ممتازة"/>
+                    <p class="help-block help" data-validation="title"></p>
+
                   </div>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3  my-2 px-2">
@@ -40,7 +34,7 @@
                       <option value="8">سنة</option>
                     </select>
                   </div>
-                  <p class="help-block help"> </p>
+                  <p class="help-block help" data-validation="brand"> </p>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3  my-2 px-2">
                   <label class="my-2 inline-block font-bold title pl-2" for="model">موديل:</label>
@@ -54,19 +48,12 @@
                       <option value="9">سنة</option>
                     </select>
                   </div>
-                  <p class="help-block help"> </p>
-                </div>
-                <div class="input px-2 my-2 w-full md:w-1/2 lg:w-1/3 ">
-                  <p class="my-2 font-bold title m-2">سعة المحرك:</p>
-                  <div class="x flex-grow">
-                    <input type="text" placeholder="مثال: 1400 "/>
-                    <p class="help-block help"> </p>
-                  </div>
+                  <p class="help-block help" data-validation="model"> </p>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3  my-2 px-2">
                   <label class="my-2 inline-block font-bold title pl-2" for="town">المدينة:</label>
                   <div data-wrapper="town">
-                    <select class="w-full " name="town" id="town">
+                    <select class="w-full " name="town" id="city">
                       <option>اختار مدينتك</option>
                       <option value="1">1</option>
                       <option>2</option>
@@ -75,26 +62,26 @@
                       <option>سنة</option>
                     </select>
                   </div>
-                  <p class="help-block help"> </p>
+                  <p class="help-block help" data-validation="city"> </p>
                 </div>
                 <div class="input px-2 my-2 w-full md:w-1/2 lg:w-1/3 ">
                   <p class="my-2 font-bold title m-2">سعة المحرك:</p>
                   <div class="x flex-grow">
-                    <input type="text" placeholder="مثال: 1400 "/>
-                    <p class="help-block help"> </p>
+                    <input type="text" id='cc' placeholder="مثال: 1400 "/>
+                    <p class="help-block help" data-validation="cc"> </p>
                   </div>
                 </div>
                 <div class="input px-2 my-2 w-full md:w-1/2 lg:w-1/3 ">
                   <p class="my-2 font-bold title m-2">المسافة (كم):</p>
                   <div class="x flex-grow">
-                    <input type="text" placeholder="مثال: 1400 "/>
-                    <p class="help-block help"> </p>
+                    <input type="text" id='kilometers' placeholder="مثال: 1400 "/>
+                    <p class="help-block help" data-validation="kilometers"> </p>
                   </div>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3  my-2 px-2">
                   <label class="my-2 inline-block font-bold title pl-2" for="transmission">ناقل الحركة:</label>
                   <div data-wrapper="transmission">
-                    <select class="w-full " name="transmission" id="transmission">
+                    <select class="w-full " name="transmission" id="driver">
                       <option>اختار نوع الناقل</option>
                       <option value="1">1</option>
                       <option>2</option>
@@ -103,7 +90,7 @@
                       <option>سنة</option>
                     </select>
                   </div>
-                  <p class="help-block help"> </p>
+                  <p class="help-block help" data-validation="driver"> </p>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3  my-2 px-2">
                   <label class="my-2 inline-block font-bold title pl-2" for="fuel">الوقود:</label>
@@ -117,7 +104,7 @@
                       <option>سنة</option>
                     </select>
                   </div>
-                  <p class="help-block help"> </p>
+                  <p class="help-block help" data-validation="fuel"> </p>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3  my-2 px-2">
                   <label class="my-2 inline-block font-bold title pl-2" for="color">اللون:</label>
@@ -131,24 +118,30 @@
                       <option>سنة</option>
                     </select>
                   </div>
-                  <p class="help-block help"> </p>
+                  <p class="help-block help" data-validation="color"> </p>
                 </div>
                 <div class="input px-2 my-2 w-full md:w-1/2 lg:w-1/3 ">
                   <p class="my-2 font-bold title m-2">السعر:</p>
                   <div class="x flex-grow">
-                    <input type="text" placeholder="هتبيع بكام؟"/>
-                    <p class="help-block help"> </p>
+                    <input type="text" id='price'placeholder="هتبيع بكام؟"/>
+                    <p class="help-block help" data-validation="price"> </p>
                   </div>
                 </div>
             <div class="input px-2 my-2 w-full md:w-1/2 lg:w-2/3">
               <p class="my-2 font-bold title">تفاصيل أكتر:</p>
               <textarea id="details" name="details" width="100%" cols="30" rows="3" placeholder="حاجات الزبون هيكون عايز يعرفها مثال: حالة الكوتشات, المساعدين, عاملة عمرة,الخ..."></textarea>
+
             </div><button type='submit' id='car-store' class="btn mx-auto my-5 self-center indigo">التالي</button>
+
+            </div>
+           
+
           </div>
         </form>
       </div>
     </div>
 
-    <script src="{{url('market/js/modules/selectbox/single.js')}}"></script>
+    </div>
+   
 
   @endsection

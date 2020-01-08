@@ -3,7 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
 
+use Illuminate\Http\Exceptions\HttpResponseException;
 class Car2Request extends FormRequest
 {
     /**
@@ -30,20 +32,20 @@ class Car2Request extends FormRequest
                  'image4' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                  'image5' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                  'image6' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ], 
+        ]; 
        
     }
 
       public function messages(){
         return [
           'image1.required'=> 'please put iamge', 
-          'image1.required'=> 'please put iamge'
+          'image2.required'=> 'please put iamge'
         ];
     }
 
 
      public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(response($validator->errors()->first()));
+        throw new HttpResponseException(response($validator->errors()));
     }
 }

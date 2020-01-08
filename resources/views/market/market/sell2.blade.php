@@ -1,6 +1,4 @@
-    @extends('market.index')
-  @section('content')
- 
+
     <div class="container mx-auto pb-32">
       <form enctype="multipart/form-data" method="post" action="
       {{route('store_photo_Cars')}}">
@@ -159,7 +157,7 @@
                               <p class="help-block help"> </p>
                             </div>
               </div>
-              <button class="indigo mx-auto my-8 px-16 mx-auto" type="button" id="dsa">خلاص</button>
+              <button class="indigo mx-auto my-8 px-16 mx-auto" type="submit" id="car-store2">خلاص</button>
             </div>
           </div>
         </div>
@@ -170,4 +168,3 @@
       <script src="{{url('market/js/modules/selectbox/multi.js')}}"></script>
     @endpush
 
- @endsection

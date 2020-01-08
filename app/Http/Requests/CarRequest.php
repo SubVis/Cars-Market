@@ -56,8 +56,10 @@ class CarRequest extends FormRequest
         ];
     }
 
-     public function failedValidation(Validator $validator)
+
+    public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(response($validator->errors()));
+        throw new HttpResponseException(response()->json($validator));
     }
+
 }

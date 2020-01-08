@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Cars;
 use App\Cars2;
 use App\Http\Requests\CarRequest;
+use App\Http\Requests\Car2Request;
 use Illuminate\Routing\Redirector;
 
 class CarController extends Controller
@@ -41,32 +42,33 @@ class CarController extends Controller
      */
     public function store(CarRequest $request)
     {     
-          $car =   Cars::create([
-               'user_id' =>   1, 
-               'title' =>   $request->title, 
-               'brand_id' =>   1, 
-               'model_id' =>   1, 
-                'cc' =>  $request->cc, 
-                'city_id' =>   1, 
-                'kilometers' =>    $request->kilometers, 
-                'driver' =>    $request->driver, 
-                'fuel' =>    $request->fuel, 
-               'color' =>     $request->color, 
-               'price' =>     $request->price, 
-               'description' =>   $request->details, 
-               'slug' =>   'first-car'. random_int(100, 2000),
-             ]);   
-         $lastCar = $car->id;
-         $this->lastCarId = $lastCar;
-      return view('market/market/sell2');
+         //  $car =   Cars::create([
+         //       'user_id' =>   1, 
+         //       'title' =>   $request->title, 
+         //       'brand_id' =>   1, 
+         //       'model_id' =>   1, 
+         //        'cc' =>  $request->cc, 
+         //        'city_id' =>   1, 
+         //        'kilometers' =>    $request->kilometers, 
+         //        'driver' =>    $request->driver, 
+         //        'fuel' =>    $request->fuel, 
+         //       'color' =>     $request->color, 
+         //       'price' =>     $request->price, 
+         //       'description' =>   $request->details, 
+         //       'slug' =>   'first-car'. random_int(100, 2000),
+         //     ]);   
+         // $lastCar = $car->id;
+         // $this->lastCarId = $lastCar;
+      return view('market/market/sell2', ['code' => 'yes']);
+
 
        
 
     }
 
-    public function store2(Request $request)
+    public function store2(Car2Request $request)
     {   
-       dd($request);
+       return 'dd';
         foreach ($request->file() as $files) {
              $i = 1;
 
