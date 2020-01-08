@@ -1,7 +1,7 @@
 
     <div class="container mx-auto pb-32">
       <form enctype="multipart/form-data" method="post" action="
-      {{route('store_photo_Cars')}}">
+      {{route('store_photo_Cars')}}" id='storeForm2'>
                 {{csrf_field()}}
         <div class="px-4">
                     <h2 class="text-xl text-black font-semibold text-center my-4"> بكل سهولة هتقدر تعلن عن عربيتك ببلاش</h2>

@@ -72,9 +72,9 @@
   }
   .replacement-opened {
     max-height: 200px;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
   }
-  .replacement input.replacement-input {
+  .replacement p.replacement-input {
     resize: vertical;
     outline: none;
     color: black;
@@ -85,20 +85,11 @@
     border-bottom: 1px solid #eee !important;
     border-radius: 0;
   }
-  .replacement input.replacement-input::-moz-placeholder {
-    color: #a9a9a9;
-    opacity: 1;
-  }
-  .replacement input.replacement-input:-ms-input-placeholder {
-    color: #a9a9a9;
-  }
-  .replacement input.replacement-input::-webkit-input-placeholder {
-    color: #a9a9a9;
-  }
   .replacement-ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    overflow-y: scroll;
     background-color: #eeeeee;
   }
   .replacement-ul--li {

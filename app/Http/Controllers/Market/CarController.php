@@ -59,7 +59,7 @@ class CarController extends Controller
          //     ]);   
          // $lastCar = $car->id;
          // $this->lastCarId = $lastCar;
-      return view('market/market/sell2', ['code' => 'yes']);
+      return view('market/market/sell2');
 
 
        
@@ -68,7 +68,7 @@ class CarController extends Controller
 
     public function store2(Car2Request $request)
     {   
-       return 'dd';
+       return 'seccess insert';
         foreach ($request->file() as $files) {
              $i = 1;
 

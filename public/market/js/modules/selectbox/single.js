@@ -1,32 +1,39 @@
+/**
+ * 
+ * @param {Array} selecty All select inputs in the dom
+ * @param {String} holder input's placeholder
+ */
+
 function allOne(selecty, holder) {
+    /** Loop throw the selections array */
     selecty.forEach(function (exactSelect) {
-        let value = "", // Selection value
-            optText = "",
-            optAll = exactSelect.options, // All options
+        let value = "", /** Selection value */
+            optText = "", /** Selection placeholder */
+            optAll = exactSelect.options, /** All options */
+            ds = holder || optAll[0].text || optText, /** Selection placeholder */
+            parent = exactSelect.parentElement || document.querySelector('[data-wrapper=' + exactSelect.getAttribute("name") + "]"); /** Selection parent */
 
-            ds = holder || optAll[0].text || optText, // The placeholder
-            parent = exactSelect.parentElement || document.querySelector('[data-wrapper=' + exactSelect.getAttribute("name") + "]");
-
-        // our replacement 
-        let our_div = document.createElement("div");
-        our_div.classList.add("replacement");
-        let classes = exactSelect.classList;
-        classes.forEach(l => {
-
-        our_div.classList.add(l);
-        })
-        console.log();
-        our_div.setAttribute('data-select-name', exactSelect.getAttribute("name"));
+        
+        let our_div = document.createElement("div"); /** Create the div. */
+            our_div.classList.add("replacement"); /** Add Class to this parent to categorize them. */
+        let classes = exactSelect.classList; /** Get selection classes. */
+            classes.forEach(selectionClass => { /** Loop throgh the classes. */
+                our_div.classList.add(selectionClass); /** Add each class to the parent. */
+            })
+        
+            our_div.setAttribute('data-select-name', exactSelect.getAttribute("name")); /** Add selection name to the parent to the parent. */
 
         // The input for filtering and showing the selected options
-        let placeholder = document.createElement('input');
+        let placeholder = document.createElement('p');
         placeholder.classList.add('replacement-input'); // Add classes 
-        placeholder.setAttribute('placeholder', ds); // add initial value 
+        placeholder.innerText = ds ; // add initial value 
+        placeholder.setAttribute('name', exactSelect.getAttribute("name")); // add initial value 
 
         /* Delete the first item which is the placeholder */
         if (!holder) optAll.remove(0);
 
         // The whole list
+        
         let our_list = document.createElement('ul');
         our_list.classList.add('replacement-ul');
 
@@ -100,7 +107,7 @@ function allOne(selecty, holder) {
                     optText = text;
                     
                     // Set the placeholder
-                    input.setAttribute("placeholder", text)
+                    input.innerText= text;
                     parent.querySelector('div.replacement').scrollTop = 0;
                     parent.querySelector('div.replacement').classList.remove("replacement-opened");
                 }

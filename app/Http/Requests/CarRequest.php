@@ -52,14 +52,14 @@ class CarRequest extends FormRequest
            'fuel.required' => "حقل الوقود مطلوب",
            'color.required' =>"حقل اللوان مطلوب",
            'price.required' =>"حقل السعر مطلوب",
-           'price.details' =>"حقل التفاصيل مطلوب",
+           'details.required' =>"حقل التفاصيل مطلوب",
         ];
     }
 
 
     public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(response()->json($validator));
+        throw new HttpResponseException(response()->json($validator->errors(), 500)); 
     }
 
 }

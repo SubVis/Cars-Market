@@ -46,6 +46,6 @@ class Car2Request extends FormRequest
 
      public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(response($validator->errors()));
+        throw new HttpResponseException(response()->json($validator->errors(), 500)); 
     }
 }
