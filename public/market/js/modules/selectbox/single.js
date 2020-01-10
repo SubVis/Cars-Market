@@ -12,23 +12,32 @@ function allOne(selecty, holder) {
             optAll = exactSelect.options, /** All options */
             ds = holder || optAll[0].text || optText, /** Selection placeholder */
             parent = exactSelect.parentElement || document.querySelector('[data-wrapper=' + exactSelect.getAttribute("name") + "]"); /** Selection parent */
-
+            
+            // Look for a default selected option
+            for (var i=0, iLen=optAll.length; i<iLen; i++) {
         
+                if (optAll[i].defaultSelected) {
+                    exactSelect.selectedIndex = i;
+                    return;
+                }
+            }
+        
+
         let our_div = document.createElement("div"); /** Create the div. */
             our_div.classList.add("replacement"); /** Add Class to this parent to categorize them. */
         let classes = exactSelect.classList; /** Get selection classes. */
-            classes.forEach(selectionClass => { /** Loop throgh the classes. */
-                our_div.classList.add(selectionClass); /** Add each class to the parent. */
-            })
-        
+            classes.forEach(selectionClass => {  /** Add selection classes to the parent. */
+                our_div.classList.add(selectionClass);
+            });
             our_div.setAttribute('data-select-name', exactSelect.getAttribute("name")); /** Add selection name to the parent to the parent. */
 
         // The input for filtering and showing the selected options
-        let placeholder = document.createElement('p');
+        let placeholder = document.createElement('div');
         placeholder.classList.add('replacement-input'); // Add classes 
         placeholder.innerText = ds ; // add initial value 
         placeholder.setAttribute('name', exactSelect.getAttribute("name")); // add initial value 
-
+        
+ 
         /* Delete the first item which is the placeholder */
         if (!holder) optAll.remove(0);
 
@@ -63,11 +72,19 @@ function allOne(selecty, holder) {
             our_item.append(our_span, checker)
             our_list.append(our_item);
         }
-        our_div.append(placeholder, our_list)
+
+        let dd = document.createElement('div');
+        dd.classList.add('dd');
+        dd.append(our_list)
+        our_div.append(placeholder, dd)
         parent.append(our_div);
 
         exactSelect.style.display = "none"; // Hide the element
 
+
+        // If no option is the default, select first or none as appropriate
+        exactSelect.selectedIndex = -1; // or -1 for no option selected 
+                   
         // handle the selection
         let clickable = parent.querySelectorAll('.replacement-ul--li');
 
@@ -81,7 +98,7 @@ function allOne(selecty, holder) {
                     return option.value == val;
                 });
 
-                let input = el.parentElement.previousSibling;
+                let input = el.parentElement.parentElement.previousSibling;
 
                 let checker_checked = parent.querySelectorAll('.replacement-ul--li .checker.checked');
                 if (checker_checked) {
@@ -107,6 +124,7 @@ function allOne(selecty, holder) {
                     optText = text;
                     
                     // Set the placeholder
+                    console.log(input);
                     input.innerText= text;
                     parent.querySelector('div.replacement').scrollTop = 0;
                     parent.querySelector('div.replacement').classList.remove("replacement-opened");

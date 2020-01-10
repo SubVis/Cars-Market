@@ -44,7 +44,7 @@
                     <label class="my-2 inline-block font-bold title pl-2" for="model">موديل:</label>
                     <div data-wrapper="model">
                         <select class="w-full " name="model" id="model">
-                            <option>اختر الموديل </option>
+                            <option disabled>اختر الموديل </option>
                             <option value="4">1</option>
                             <option value="6">2</option>
                             <option value="7">3</option>
@@ -171,5 +171,6 @@
 </div>
 
 <script src="{{url('market/js/modules/selectbox/single.js')}}"></script>
+
 
 @endsection

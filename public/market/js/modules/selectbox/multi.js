@@ -116,12 +116,12 @@ window.onclick = function (e) {
     }
 };
 /* ========================= code ========================= */
-let select = [...document.querySelectorAll('select')]; // All select tags in the dom
+let selecte = [...document.querySelectorAll('select')]; // All select tags in the dom
 
-allMulti(select);
+allMulti(selecte);
 
-let togglers = document.querySelectorAll('.replacement-input');
-togglers.forEach(function (div) {
+let togglerse = document.querySelectorAll('.replacement-input');
+togglerse.forEach(function (div) {
     div.onclick = function () {
         if (div.parentElement.classList.contains("replacement-opened"))
             div.parentElement.classList.remove("replacement-opened");
@@ -129,3 +129,4 @@ togglers.forEach(function (div) {
             div.parentElement.classList.add("replacement-opened");
     }
 });
+

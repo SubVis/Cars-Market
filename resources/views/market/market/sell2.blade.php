@@ -213,6 +213,6 @@
 
 </div>
 
-@push('js')
 <script src="{{url('market/js/modules/selectbox/multi.js')}}"></script>
+@push('js')
 @endpush
