@@ -23,6 +23,13 @@ Route::name('home')->get('/', function () {
     return view('market/market/home');
 });
 
+Route::name('userProfile')->get('/userProfile', function () {
+    return view('market/market/userProfile');
+});
+Route::name('product')->get('/product', function () {
+    return view('market/market/product');
+});
+
 
 Route::name('buy')->get('buy', 'Market\BuyController@index');
 

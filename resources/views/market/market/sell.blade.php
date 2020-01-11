@@ -205,8 +205,8 @@
                             <input class="w-full h-full" data-get="1" type="file" name="image2" />
                             <div class="img relative w-full h-full"><img class="img" data-preview="1" />
                                 <div class="tools">
-                                    <button class="delBtn delete px-2 py-1" type="button" data-del="1"><i
-                                            class="far fa-times-circle"></i></button>
+                                    <button class="delBtn delete px-2 py-1" type="button" data-del="1">
+                                    <i class="far fa-times-circle"></i></button>
                                 </div>
                             </div>
                         </div>
