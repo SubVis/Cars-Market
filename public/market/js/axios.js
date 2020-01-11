@@ -1,7 +1,10 @@
-/* ================================ Start validation ================================ */
+
+/* ================================ Form 1 ================================ */
 var paragraph = [...document.querySelectorAll("[data-validation]")],/** Get all validation paragragraphs */
     sell1form = document.getElementById('storeForm'),
-    allFields = [...sell1form.querySelectorAll('input, .replacement')];
+    allFields = [...sell1form.querySelectorAll('input, .replacement')],
+    form1 = document.getElementById('form1'),
+    form2 = document.getElementById('form2');
 
 
 document.getElementById("car-store").addEventListener("click", function (event) {
@@ -24,42 +27,10 @@ document.getElementById("car-store").addEventListener("click", function (event) 
     let fv = new FormData(sell1form); /** Get the form */
     axios.post('storeCars', fv).then(function (response) {
         /** Replace the content of the page */
-        document.getElementsByClassName('container')[0].innerHTML = response.data;
-
-        /** Get all validation paragragraphs from ht new form */
-        paragraph = [...document.querySelectorAll("[data-validation]")];
-
-        let select = [...document.querySelectorAll('select')]; // All select tags in the dom
-
-        /** Add event listner to the new button */
-        document.getElementById("car-store2").addEventListener("click", function (event) {
-            event.preventDefault();
-            let fv = new FormData(document.getElementById('storeForm2'));
-            axios.post('storeCars2', fv).then(function (response) {
-                /** handle success */
-                console.log(response)
-            }) /**End then */
-            .catch(function (error) {
-                console.log(error.response)
-               /** looping through all keys in the response */
-                for (const key in error.response.data) {
-                    if (error.response.data.hasOwnProperty(key)) {
-                        const d = error.response.data[key];
-
-                        /**  looping through all paragraph keys in the dom */
-                        paragraph.forEach(p => {
-                            if (p.getAttribute('data-validation') == key) {
-                                /** adding */
-                                p.innerHTML = d;
-                            }
-                        });
-                    } /** End if */
-                } /** End for */ 
-            });
-        });
+        form1.style.display = 'none';
+        form2.style.display = 'block';
     }) /**End then */
     .catch(function (error) {
-        console.log('error');
         /** looping through all keys in the response */
         for (const key in error.response.data) {
             if (error.response.data.hasOwnProperty(key)) {
@@ -71,9 +42,8 @@ document.getElementById("car-store").addEventListener("click", function (event) 
                         p.innerHTML = d;
                     }
                 });
-                // unvalid
                 
-                allFields.forEach(p => {
+                allFields.forEach(p => { /** Add unvalid class to the feilds */
                     if ( p.getAttribute('name') == key || p.getAttribute('data-select-name') == key) {
                         /** adding error message to the paragraph*/
                         p.classList.add('unvalid');
@@ -82,5 +52,33 @@ document.getElementById("car-store").addEventListener("click", function (event) 
                 });
             } /** End if */
         } /** End for */
+    });
+});
+
+/* ========================== Form 2 ============================== */
+ /** Add event listner to the new button */
+ document.getElementById("car-store2").addEventListener("click", function (event) {
+    event.preventDefault();
+    let fv = new FormData(document.getElementById('storeForm2'));
+    axios.post('storeCars2', fv).then(function (response) {
+        /** handle success */
+        console.log(response)
+    }) /**End then */
+    .catch(function (error) {
+        console.log(error.response)
+       /** looping through all keys in the response */
+        for (const key in error.response.data) {
+            if (error.response.data.hasOwnProperty(key)) {
+                const d = error.response.data[key];
+
+                /**  looping through all paragraph keys in the dom */
+                paragraph.forEach(p => {
+                    if (p.getAttribute('data-validation') == key) {
+                        /** adding */
+                        p.innerHTML = d;
+                    }
+                });
+            } /** End if */
+        } /** End for */ 
     });
 });

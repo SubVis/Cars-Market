@@ -138,7 +138,7 @@ function allOne(selecty, holder) {
 };
 
 /* ========================= code ========================= */
-let select = [...document.querySelectorAll('select')]; // All select tags in the dom
+let select = [...document.querySelectorAll('.singleSelect')]; // All select tags in the dom
 
 allOne(select);
 

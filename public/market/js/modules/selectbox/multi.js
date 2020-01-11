@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @param {Array} selecty The selection you wanna apply the function on
+ * @param {String} holder Placeholder
+ */
 function allMulti(selecty, holder) {
     selecty.forEach(function (exactSelect) {
         let value = [], // Selection value
@@ -14,9 +18,9 @@ function allMulti(selecty, holder) {
         // our_div.setAttribute('data-select-name', exactSelect.getAttribute("name"));
 
         // The input for filtering and showing the selected options
-        let placeholder = document.createElement('input');
+        let placeholder = document.createElement('p');
         placeholder.classList.add('replacement-input'); // Add classes 
-        placeholder.setAttribute('placeholder', ds); // add initial value 
+        placeholder.innerText =  ds; // add initial value 
         placeholder.setAttribute('name', exactSelect.getAttribute("name")); // add initial value 
 
         /* Delete the first item which is the placeholder */
@@ -51,8 +55,12 @@ function allMulti(selecty, holder) {
             our_span.append(TheText)
             our_item.append(our_span, checker)
             our_list.append(our_item);
-        }
-        our_div.append(placeholder, our_list)
+        };
+
+        let dd = document.createElement('div');
+        dd.classList.add('dd');
+        dd.append(our_list)
+        our_div.append(placeholder, dd)
         parent.append(our_div);
 
         exactSelect.style.display = "none"; // Hide the element
@@ -63,16 +71,14 @@ function allMulti(selecty, holder) {
         clickable.forEach(function (li) {
             li.onclick = function () {
                 let el = this;
-                let text = this.firstChild.innerText;
+                let text = this.firstChild.innerText; 
                 let val = this.getAttribute('data-val');
                 let allOptions = [...optAll];
                 let exactOpt = allOptions.find( option =>{
                     return option.value == val;
                 });
     
-                let input = el.parentElement.previousSibling;
-
-                
+                let input = el.parentElement.parentElement.previousSibling; /** Get the paragraph */                
                 
                 /* Add Checked class to checker to inform the user he has checked the button and take the value of it or remove it from the value array */
                 
@@ -85,8 +91,7 @@ function allMulti(selecty, holder) {
                     optText.push(text);
                     
                     // Set the placeholder
-                    input.setAttribute("placeholder", optText.join(" - "))
-                    console.log('da');
+                    input.innerText = optText.join(" - ");
                     
                 } else {
                     exactOpt.selected='';
@@ -97,9 +102,9 @@ function allMulti(selecty, holder) {
     
                     // Set the placeholder
                     if (optText.length > 0)
-                        input.setAttribute("placeholder", optText.join(" - "));
+                        input.innerText = optText.join(" - ");
                     else
-                        input.setAttribute("placeholder", ds);
+                        input.innerText = ds ;
                 };                
             }
         });
@@ -116,7 +121,7 @@ window.onclick = function (e) {
     }
 };
 /* ========================= code ========================= */
-let selecte = [...document.querySelectorAll('select')]; // All select tags in the dom
+let selecte = [...document.querySelectorAll('.multiSelect')]; // All select tags in the dom
 
 allMulti(selecte);
 
