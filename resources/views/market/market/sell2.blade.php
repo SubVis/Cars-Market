@@ -160,7 +160,7 @@
                         <div class="w-full my-2 px-2">
                             <label class="font-bold text-xl color inline-block mb-2" for="security">وسائل الأمان</label>
                             <div data-wrapper="security">
-                                <select class="w-full " name="security" id="security" multiple="multiple">
+                                <select class="w-full " name="security[]" id="security" multiple="multiple">
                                     <option>وسائل الأمان</option>
                                     <option>نظام الفرامل المانع للإنزلاق-ABS</option>
                                     <option>وسادة هوائية للسائق</option>
@@ -184,7 +184,7 @@
                         <div class="w-full my-2 px-2">
                             <label class="font-bold text-xl color inline-block mb-2" for="others">مميزات أخرى</label>
                             <div data-wrapper="others">
-                                <select class="w-full " name="others" id="others" multiple="multiple">
+                                <select class="w-full " name="others[]" id="others" multiple="multiple">
                                     <option>مميزات أخرى</option>
                                     <option>جنوط</option>
                                     <option>مقاعد كهربائية</option>
@@ -198,6 +198,14 @@
                                 </select>
                             </div>
                             <p class="help-block help"> </p>
+                            <select class="w-full" name="dsds[]" id="dsds" multiple>
+                    <option>-- اختر -- </option>
+                    <option value="1">1</option>
+                    <option value="5">2</option>
+                    <option value="6">3</option>
+                    <option value="7">4</option>
+                    <option value="8">سنة</option>
+                </select>
                         </div>
                     </div>
 					<!-- End others input -->

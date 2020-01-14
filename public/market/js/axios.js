@@ -4,7 +4,7 @@ var paragraph = [...document.querySelectorAll("[data-validation]")],/** Get all 
     sell1form = document.getElementById('storeForm'),
     allFields = [...sell1form.querySelectorAll('input, .replacement')],
     form1 = document.getElementById('form1'),
-    form2 = document.getElementById('form2');
+    form2 = document.getElementById('form2'), all;
 
 
 document.getElementById("car-store").addEventListener("click", function (event) {
@@ -25,6 +25,7 @@ document.getElementById("car-store").addEventListener("click", function (event) 
     });
 
     let fv = new FormData(sell1form); /** Get the form */
+    all = fv;
     console.log(fv);
     axios.post('storeCars', fv).then(function (response) {
         console.log(response)
@@ -62,8 +63,11 @@ document.getElementById("car-store").addEventListener("click", function (event) 
  document.getElementById("car-store2").addEventListener("click", function (event) {
     event.preventDefault();
     let fv = new FormData(document.getElementById('storeForm2'));
+    for(var pair of all.entries()) {
+        fv.append(pair[0], pair[1])
+     }
     console.log(fv);
-    axios.post('storeCars2', fv).then(function (response) {
+    axios.post('storeCars2',  fv).then(function (response) {
         /** handle success */
         console.log(response)
     }) /**End then */

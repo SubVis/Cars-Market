@@ -274,7 +274,7 @@
                             <label class="font-bold text-xl color inline-block mb-2" for="comfort">وسائل
                                 الراحة</label>
                             <div data-wrapper="comfort">
-                                <select class="w-full  multiSelect" name="comfort" id="comfort" multiple="multiple">
+                                <select class="w-full  multiSelect" name="comfort[]" id="comfort" multiple="multiple">
                                     <option>وسائل الراحة</option>
                                     <option>المكيف</option>
                                     <option> ريموت كنترول</option>
@@ -297,7 +297,7 @@
                         <div class="w-full my-2 px-2">
                             <label class="font-bold text-xl color inline-block mb-2" for="windows">نوافذ</label>
                             <div data-wrapper="windows">
-                                <select class="w-full  multiSelect" name="windows" id="windows" multiple="multiple">
+                                <select class="w-full  multiSelect" name="windows[]" id="windows" multiple="multiple">
                                     <option>نوافذ</option>
                                     <option>نوافذ كهربائية أمامية</option>
                                     <option>ريموت نوافذ كهربائية خلفية</option>
@@ -315,7 +315,7 @@
                             <label class="font-bold text-xl color inline-block mb-2" for="soundSys">نظام
                                 الصوت</label>
                             <div data-wrapper="soundSys">
-                                <select class="w-full  multiSelect" name="soundSys" id="soundSys" multiple="multiple">
+                                <select class="w-full  multiSelect" name="soundSys[]" id="soundSys" multiple="multiple">
                                     <option>نظام الصوت</option>
                                     <option>راديو كاسيت</option>
                                     <option>مبدل أقراص</option>
@@ -338,7 +338,7 @@
                             <label class="font-bold text-xl color inline-block mb-2" for="security">وسائل
                                 الأمان</label>
                             <div data-wrapper="security">
-                                <select class="w-full  multiSelect" name="security" id="security" multiple="multiple">
+                                <select class="w-full  multiSelect" name="security[]" id="security" multiple="multiple">
                                     <option>وسائل الأمان</option>
                                     <option>نظام الفرامل المانع للإنزلاق-ABS</option>
                                     <option>وسادة هوائية للسائق</option>
@@ -363,7 +363,7 @@
                             <label class="font-bold text-xl color inline-block mb-2" for="others">مميزات
                                 أخرى</label>
                             <div data-wrapper="others">
-                                <select class="w-full  multiSelect" name="others" id="others" multiple="multiple">
+                                <select class="w-full  multiSelect" name="others[]" id="others" multiple="multiple">
                                     <option>مميزات أخرى</option>
                                     <option>جنوط</option>
                                     <option>مقاعد كهربائية</option>

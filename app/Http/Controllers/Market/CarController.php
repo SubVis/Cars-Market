@@ -12,7 +12,7 @@ use Illuminate\Routing\Redirector;
 
 class CarController extends Controller
 {
-  
+   
     /**
      * Display a listing of the resource.
      *
@@ -40,8 +40,9 @@ class CarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CarRequest $request)
     {     
+        
         return dd($request);
          //  $car =   Cars::create([
          //       'user_id' =>   1, 
@@ -67,9 +68,22 @@ class CarController extends Controller
 
     }
 
-    public function store2(Request $request)
+    public function store2(Car2Request $request)
     {   
-       return dd($request->comfort);
+           $car =   Cars::create([
+               'user_id' =>   1, 
+               'title' =>   $request->title, 
+                'brand_id' =>   1, 
+                'model_id' =>   1, 
+                 'cc' =>  $request->cc, 
+                 'city_id' =>   1, 
+                 'kilometers' =>    $request->kilometers, 
+                 'driver' =>    $request->driver, 
+                 'fuel' =>    $request->fuel, 
+                'color' =>     $request->color, 
+                'price' =>     $request->price, 
+               'description' =>   $request->details, ]);
+
         foreach ($request->file() as $files) {
              $i = 1;
 
@@ -82,8 +96,8 @@ class CarController extends Controller
         }
         $images_string = implode(',', $image);
         
-        Cars2::insert([
-            'car_id' => $request->carId,
+       $car2 =  Cars2::insert([
+            'car_id' => $car->id,
             'image' => $images_string,
             'comfort' => 'ay 7aga',
             'windows' => 'ay 7aga',
@@ -91,7 +105,7 @@ class CarController extends Controller
             'safe' => 'ay 7aga',
             'other_future' => 'ay 7aga',
         ]);
-        //return back();
+        return dd($car2);
 
      /*
       Equipment::create([

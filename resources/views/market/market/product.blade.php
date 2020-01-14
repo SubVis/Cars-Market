@@ -7,6 +7,10 @@
 @section('content')
 <div class="container mx-auto mb-5 px-2">
 <!-- Start product header -->
+<?php
+ $images = explode(',' , $car2->image);
+?>
+
     <p class="header">{{$car->title}}</p>
     <div class="container mx-auto">
         <div class="flex flex-wrap justify-center">
@@ -14,11 +18,9 @@
             <div class="relative carousel w-full sm:w-3/5">
                 <div class="siema">
                     <!-- Put car image here -->
-                    <img class="w-full" data-index="0" src="https://via.placeholder.com/600" />
-                    <img class="w-full" data-index="1" src="https://via.placeholder.com/600" />
-                    <img class="w-full" data-index="2" src="https://via.placeholder.com/600" />
-                    <img class="w-full" data-index="3" src="https://via.placeholder.com/600" />
-                    <img class="w-full" data-index="4" src="https://via.placeholder.com/600" />
+                    @foreach($images as $i => $image)
+                    <img class="w-full" data-index="{{$i++}}" src="{{url($image)}}" />
+                  @endforeach
                 </div>
                 <div class="navigation flex flex-wrap justify-center"></div>
                 <div class="carousel-btns">
@@ -125,6 +127,7 @@
         <div class="-mx-2 mt-3">
             <div class="flex px-2 flex-wrap justify-start">
                 <!-- Start Card -->
+                @foreach($relate_cars as $car)
                 <div class="px-2 w-full md:w-1/2 lg:w-1/3">
                     <div class="minicard my-2">
                         <!-- Start card Image -->
@@ -149,8 +152,8 @@
                                     <span class="text-left inline-block">شيء ما</span>
                                 </li>
                                 <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">اللون:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
+                                    <span class="color font-bold inline-block text-right ml-2">السعر:</span>
+                                    <span class="text-left inline-block">{{$car->price}}</span>
                                 </li>
                             </ul>
                             <!-- End Specifictions -->
@@ -163,8 +166,8 @@
                         </section>
                     </div>
                 </div>
-                <!-- End Card -->
-              
+                <!-- End Card -->   
+              @endforeach
             </div>
         </div>
     </div>
