@@ -40,8 +40,9 @@ class CarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CarRequest $request)
+    public function store(Request $request)
     {     
+        return dd($request);
          //  $car =   Cars::create([
          //       'user_id' =>   1, 
          //       'title' =>   $request->title, 
@@ -66,9 +67,9 @@ class CarController extends Controller
 
     }
 
-    public function store2(Car2Request $request)
+    public function store2(Request $request)
     {   
-       return 'seccess insert';
+       return dd($request->comfort);
         foreach ($request->file() as $files) {
              $i = 1;
 
@@ -90,7 +91,7 @@ class CarController extends Controller
             'safe' => 'ay 7aga',
             'other_future' => 'ay 7aga',
         ]);
-        return back();
+        //return back();
 
      /*
       Equipment::create([

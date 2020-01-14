@@ -478,7 +478,8 @@
                 </ul>
                 <div class="cost my-2 flex flex-wrap w-full px-2 sm:px-0">
                     <div class="money ml-4 w-1/2"><span class="text-green-500 text-xl font-bold ml-2">السعر:</span><span
-                            class="text-lg">{{$car->price}}</span></div><a class="btn indigo" href="product">شاهد
+                            class="text-lg">{{$car->price}}</span></div>
+                            <a class="btn indigo" href="{{route('car/show', ['id' =>$car->id])}}">شاهد
                         المزيد</a>
                 </div>
             </section>

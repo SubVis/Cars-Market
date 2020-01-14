@@ -7,7 +7,7 @@
 @section('content')
 <div class="container mx-auto mb-5 px-2">
 <!-- Start product header -->
-    <p class="header">مرسيدس بيضا 2018</p>
+    <p class="header">{{$car->title}}</p>
     <div class="container mx-auto">
         <div class="flex flex-wrap justify-center">
             <!-- Start Carousel -->
@@ -37,28 +37,28 @@
                 <!-- Start Brand -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id="brand">الماركة:</span>
-                    <span class="text-left inline-block">شيء ما</span>
+                    <span class="text-left inline-block">{{$car->brand}}</span>
                 </li>
                 <!-- End brand -->
 
                 <!-- Start model -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id="model">موديل:</span>
-                    <span class="text-left inline-block">شيء ما</span>
+                    <span class="text-left inline-block">{{$car->model}}</span>
                 </li>
                 <!-- End model -->
 
                 <!-- Start transmition -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id='transmission'>ناقل الحركة:</span>
-                    <span class="text-left inline-block">شيء ما</span>
+                    <span class="text-left inline-block">{{$car->driver}}</span>
                 </li>
                 <!-- End transmition -->
 
                 <!-- Start cc -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id='cc'>سعة الموتور:</span>
-                    <span class="text-left inline-block">شيء ما </span>
+                    <span class="text-left inline-block">{{$car->cc}} </span>
                 </li>
                 <!-- End cc -->
 
@@ -70,28 +70,28 @@
                 <!-- Start town -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id="town">المدينة:</span>
-                    <span class="text-left inline-block">شيء ما</span>
+                    <span class="text-left inline-block">{{$car->city}}</span>
                 </li>
                 <!-- End town -->
 
                 <!-- Start fuel -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id="fuel">اللون:</span>
-                    <span class="text-left inline-block">شيء ما</span>
+                    <span class="text-left inline-block">{{$car->color}}</span>
                 </li>
                 <!-- End fuel -->
 
                 <!-- Start color -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id="color">نوع الوقود:</span>
-                    <span class="text-left inline-block">شيء ما</span>
+                    <span class="text-left inline-block">{{$car->fuel}}</span>
                 </li>
                 <!-- End color -->
 
                 <!-- Start kilometers -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id="kilometers">المسافة:</span>
-                    <span class="text-left inline-block">شيء ما</span>
+                    <span class="text-left inline-block">{{$car->kilometers}}</span>
                 </li>
                 <!-- End kilometers -->
             </ul>
@@ -99,7 +99,7 @@
 
             <div class="cost my-2 w-full px-2 sm:px-0 my-5">
                 <span class="text-green-500 w-32 text-2xl font-bold inline-block text-right">السعر:</span>
-                <span class="text-left inline-block text-2xl">125.8481</span>
+                <span class="text-left inline-block text-2xl">{{$car->price}}</span>
                 <div class="product--btns ">
                     <span>أَضف إلى المفضلة</span>
                     <button class="fav mx-4"><i class="fas fa-heart"></i></button>
@@ -164,129 +164,7 @@
                     </div>
                 </div>
                 <!-- End Card -->
-
-                <!-- Start Card -->
-                <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-                    <div class="minicard my-2">
-                        <!-- Start card Image -->
-                        <img style="height: 300px;width: 100%"  src="https://via.placeholder.com/600" alt="image" />
-                        <!-- End card Image -->
-
-                        <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-                            <!-- Start Specifictions -->
-                            <ul class="w-1/2">
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">الماركة:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
-                                </li>
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
-                                </li>
-                            </ul>
-                            <ul class="w-1/2">
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">المدينة:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
-                                </li>
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">اللون:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
-                                </li>
-                            </ul>
-                            <!-- End Specifictions -->
-
-                            <!-- Start Button -->
-                            <div class="w-full flex justify-center items-center py-2">
-                                <a class="btn indigo" href="product.html">شاهد المزيد</a>
-                            </div>
-                            <!-- End Button -->
-                        </section>
-                    </div>
-                </div>
-                <!-- End Card -->
-
-                <!-- Start Card -->
-                <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-                    <div class="minicard my-2">
-                        <!-- Start card Image -->
-                        <img style="height: 300px;width: 100%"  src="https://via.placeholder.com/600" alt="image" />
-                        <!-- End card Image -->
-
-                        <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-                            <!-- Start Specifictions -->
-                            <ul class="w-1/2">
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">الماركة:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
-                                </li>
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
-                                </li>
-                            </ul>
-                            <ul class="w-1/2">
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">المدينة:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
-                                </li>
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">اللون:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
-                                </li>
-                            </ul>
-                            <!-- End Specifictions -->
-
-                            <!-- Start Button -->
-                            <div class="w-full flex justify-center items-center py-2">
-                                <a class="btn indigo" href="product.html">شاهد المزيد</a>
-                            </div>
-                            <!-- End Button -->
-                        </section>
-                    </div>
-                </div>
-                <!-- End Card -->
-
-                <!-- Start Card -->
-                <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-                    <div class="minicard my-2">
-                        <!-- Start card Image -->
-                        <img style="height: 300px;width: 100%"  src="https://via.placeholder.com/600" alt="image" />
-                        <!-- End card Image -->
-
-                        <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-                            <!-- Start Specifictions -->
-                            <ul class="w-1/2">
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">الماركة:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
-                                </li>
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
-                                </li>
-                            </ul>
-                            <ul class="w-1/2">
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">المدينة:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
-                                </li>
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">اللون:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
-                                </li>
-                            </ul>
-                            <!-- End Specifictions -->
-
-                            <!-- Start Button -->
-                            <div class="w-full flex justify-center items-center py-2">
-                                <a class="btn indigo" href="product.html">شاهد المزيد</a>
-                            </div>
-                            <!-- End Button -->
-                        </section>
-                    </div>
-                </div>
-                <!-- End Card -->
+              
             </div>
         </div>
     </div>

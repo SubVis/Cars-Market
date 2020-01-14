@@ -32,15 +32,14 @@ Route::name('product')->get('/product', function () {
 
 
 Route::name('buy')->get('buy', 'Market\BuyController@index');
-
+Route::name('car/show')->get('car/show/{id}', 'Market\BuyController@show');
 
 // cars 
  Route::name('sell')->get('sell', 'Market\CarController@create');
  Route::name('storeCars')->post('storeCars', 'Market\CarController@store');
-
  //Route::name('sell2')->get('sell2', function(){return view('market/market/sell2');});
  Route::name('storeCars2')->post('storeCars2', 'Market\CarController@store2');
- 
+
 
 
 

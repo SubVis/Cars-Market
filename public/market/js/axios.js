@@ -25,7 +25,9 @@ document.getElementById("car-store").addEventListener("click", function (event) 
     });
 
     let fv = new FormData(sell1form); /** Get the form */
+    console.log(fv);
     axios.post('storeCars', fv).then(function (response) {
+        console.log(response)
         /** Replace the content of the page */
         form1.style.display = 'none';
         form2.style.display = 'block';
@@ -60,6 +62,7 @@ document.getElementById("car-store").addEventListener("click", function (event) 
  document.getElementById("car-store2").addEventListener("click", function (event) {
     event.preventDefault();
     let fv = new FormData(document.getElementById('storeForm2'));
+    console.log(fv);
     axios.post('storeCars2', fv).then(function (response) {
         /** handle success */
         console.log(response)

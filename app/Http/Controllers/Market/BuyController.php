@@ -48,7 +48,9 @@ class BuyController extends Controller
      */
     public function show($id)
     {
-        //
+        $car = Cars::where('id', $id)->first();
+       
+        return view('market/market/product', ['car'=>$car]);
     }
 
     /**

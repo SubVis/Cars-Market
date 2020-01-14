@@ -29,14 +29,13 @@ class CarRequest extends FormRequest
                'title'          =>   'required', 
                'brand'          =>   'required', 
                'model'          =>    'required',
-                'cc'            =>       'required',
+                'cc'            =>    'required',
                 'city'          =>    'required',
                 'kilometers'    =>     'required',
                 'driver'        =>     'required',
                 'fuel'          =>      'required', 
                'color'          =>       'required', 
                'price'          =>       'required',
-               'details'          =>       'required',
               
         ];
     }
