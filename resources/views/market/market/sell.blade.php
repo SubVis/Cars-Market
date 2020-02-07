@@ -5,6 +5,8 @@
 @push('js')
 @endpush
 @section('content')
+
+
 <div class="container mx-auto">
     <p class="header">المعلومات الأساسية</p>
     <!-- Start Form 1 -->
@@ -28,12 +30,10 @@
                     <label class="my-2 inline-block font-bold title pl-2" for="brand">الماركة:</label>
                     <div data-wrapper="brand">
                         <select class="w-full  singleSelect" name="brand" id="brand">
-                            <option>-- اختر -- </option>
-                            <option value="1">1</option>
-                            <option value="5">2</option>
-                            <option value="6">3</option>
-                            <option value="7">4</option>
-                            <option value="8">سنة</option>
+                        <option>-- اختر -- </option>
+                            @foreach($brands as $brand)
+                            <option value="{{$brand->id}}">{{$brand->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <p class="help-block help" data-validation="brand"> </p>
@@ -46,11 +46,9 @@
                     <div data-wrapper="model">
                         <select class="w-full  singleSelect" name="model" id="model">
                             <option disabled>اختر الموديل </option>
-                            <option value="4">1</option>
-                            <option value="6">2</option>
-                            <option value="7">3</option>
-                            <option value="8">4</option>
-                            <option value="9">سنة</option>
+                         @foreach($models as $model)
+                            <option value="{{$model->id}}">{{$model->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <p class="help-block help" data-validation="model"> </p>
@@ -64,11 +62,9 @@
                     <div data-wrapper="town">
                         <select class="w-full  singleSelect" name="city" id="town">
                             <option>اختار مدينتك</option>
-                            <option value="1">1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>سنة</option>
+                            @foreach($cities as $city)
+                            <option value="{{$city->id}}">{{$city->list_city}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <p class="help-block help" data-validation="city"> </p>

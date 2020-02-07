@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Cars;
 use App\Cars2;
+use App\Brand;
+use App\CarsModel;
+use App\City;
 use App\Http\Requests\CarRequest;
 use App\Http\Requests\Car2Request;
 use Illuminate\Routing\Redirector;
@@ -31,7 +34,10 @@ class CarController extends Controller
     public function create()
     {
         //dd(public_path('market/images/cars'));
-       return view('market/market/sell');
+        $brands = Brand::get();
+        $models = CarsModel::get();
+        $cities = City::get();
+       return view('market/market/sell', compact(['brands', 'models', 'cities']));
     }
     
     /**
@@ -70,6 +76,7 @@ class CarController extends Controller
 
     public function store2(Car2Request $request)
     {   
+         
            $car =   Cars::create([
                'user_id' =>   1, 
                'title' =>   $request->title, 
@@ -95,18 +102,22 @@ class CarController extends Controller
             $i++;
         }
         $images_string = implode(',', $image);
-        
-       $car2 =  Cars2::insert([
+        $windows = implode(',',$request->windows);
+        $comfort = implode(',',$request->comfort);
+        $soundSys = implode(',',$request->soundSys);
+        $security= implode(',',$request->security);
+        $others= implode(',',$request->others);
+        $car2 =  Cars2::insert([
             'car_id' => $car->id,
             'image' => $images_string,
-            'comfort' => 'ay 7aga',
-            'windows' => 'ay 7aga',
-            'sounds' => 'ay 7aga',
-            'safe' => 'ay 7aga',
-            'other_future' => 'ay 7aga',
+            'comfort' => $comfort,
+            'windows' => $windows,
+            'sounds' => $soundSys,
+            'safe' => $security,
+            'other_future' => $others,
         ]);
-        return dd($car2);
-
+       
+        return redirect(route('car/show', ['id' =>$car->id]));
      /*
       Equipment::create([
         'car_id' =>$request->carId,

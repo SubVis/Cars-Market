@@ -11,6 +11,7 @@
  $images = explode(',' , $car2->image);
 ?>
 
+   
     <p class="header">{{$car->title}}</p>
     <div class="container mx-auto">
         <div class="flex flex-wrap justify-center">
@@ -39,14 +40,14 @@
                 <!-- Start Brand -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id="brand">الماركة:</span>
-                    <span class="text-left inline-block">{{$car->brand}}</span>
+                    <span class="text-left inline-block">{{$car->brand->name}}</span>
                 </li>
                 <!-- End brand -->
 
                 <!-- Start model -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id="model">موديل:</span>
-                    <span class="text-left inline-block">{{$car->model}}</span>
+                    <span class="text-left inline-block">{{$car->model->name}}</span>
                 </li>
                 <!-- End model -->
 
@@ -72,7 +73,7 @@
                 <!-- Start town -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id="town">المدينة:</span>
-                    <span class="text-left inline-block">{{$car->city}}</span>
+                    <span class="text-left inline-block">{{$car->city->list_city}}</span>
                 </li>
                 <!-- End town -->
 
@@ -131,7 +132,13 @@
                 <div class="px-2 w-full md:w-1/2 lg:w-1/3">
                     <div class="minicard my-2">
                         <!-- Start card Image -->
-                        <img style="height: 300px;width: 100%"  src="https://via.placeholder.com/600" alt="image" />
+                        <div class="carousel w-full sm:w-full lg">
+        <?php  $images = explode(',' , $car->car2->image); ?>
+        @foreach($images as $image)
+        <img style="height: 300px;width: 100%" src="{{url($image)}}"
+                alt="image" />
+       @endforeach
+        </div> 
                         <!-- End card Image -->
 
                         <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
@@ -139,7 +146,7 @@
                             <ul class="w-1/2">
                                 <li class="my-2">
                                     <span class="color font-bold inline-block text-right ml-2">الماركة:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
+                                    <span class="text-left inline-block">{{$car->brand->name}}</span>
                                 </li>
                                 <li class="my-2">
                                     <span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span>
@@ -149,7 +156,7 @@
                             <ul class="w-1/2">
                                 <li class="my-2">
                                     <span class="color font-bold inline-block text-right ml-2">المدينة:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
+                                    <span class="text-left inline-block">{{$car->city->list_city}}</span>
                                 </li>
                                 <li class="my-2">
                                     <span class="color font-bold inline-block text-right ml-2">السعر:</span>
@@ -160,7 +167,7 @@
 
                             <!-- Start Button -->
                             <div class="w-full flex justify-center items-center py-2">
-                                <a class="btn indigo" href="product.html">شاهد المزيد</a>
+                                <a class="btn indigo" href="{{route('car/show', ['id' =>$car->id])}}">شاهد المزيد</a>
                             </div>
                             <!-- End Button -->
                         </section>

@@ -17,11 +17,9 @@
                     <div data-wrapper="brand">
                         <select class="w-full " name="brand" id="brand">
                             <option>--اختر--</option>
-                            <option>لون</option>
-                            <option>لون</option>
-                            <option>لون</option>
-                            <option>لون</option>
-                            <option>لون</option>
+                            @foreach($brands as $brand)
+                            <option value="{{$brand->id}}">{{$brand->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <p class="help-block help"> </p>
@@ -34,11 +32,9 @@
                     <div data-wrapper="model">
                         <select class="w-full " name="model" id="model">
                             <option>--اختر--</option>
-                            <option>لون</option>
-                            <option>لون</option>
-                            <option>لون</option>
-                            <option>لون</option>
-                            <option>لون</option>
+                            @foreach($models as $model)
+                            <option value="{{$model->id}}">{{$model->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <p class="help-block help"> </p>
@@ -51,11 +47,9 @@
                     <div data-wrapper="governorate">
                         <select class="w-full " name="governorate" id="governorate">
                             <option>--اختر--</option>
-                            <option>لون</option>
-                            <option>لون</option>
-                            <option>لون</option>
-                            <option>لون</option>
-                            <option>لون</option>
+                            @foreach($cities as $city)
+                            <option value="{{$city->id}}">{{$city->list_city}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <p class="help-block help"> </p>
@@ -344,6 +338,7 @@
 
 <div class="container mx-auto px-2 mt-8">
     <p class="header">أحدث الإعلانات</p>
+    <!--!>
     <form class="flex flex-wrap px-2" action="#" method="post">
         <div class="px-2 my-2 flex-grow">
             <div>
@@ -444,23 +439,32 @@
         <div class="px-2 my-2">
             <button class="indigo flex-grow" type="submit">بحث</button>
         </div>
-    </form>
+    </form><!-->
 </div>
 
 
 <div class="flex flex-wrap px-2">
     @foreach($cars as $car)
-
+    
+ 
     <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-        <div class="card my-2"><img style="height: 300px;width: 100%" src="https://via.placeholder.com/600"
+      
+       
+        <div class="card my-2">
+        <div class="carousel w-full sm:w-full lg">
+        <?php  $images = explode(',' , $car->car2->image); ?>
+        @foreach($images as $image)
+        <img style="height: 300px;width: 100%" src="{{url($image)}}"
                 alt="image" />
+       @endforeach
+        </div> 
             <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
                 <h2 class="color font-bold inline-block text-right my-4 mb-2 w-full text-xl">{{$car->title}} </h2>
                 <ul class="w-full lg:w-1/2">
                     <li class="my-2"><span class="color font-bold inline-block text-right ml-2">الماركة:</span><span
-                            class="text-left inline-block">شيء ما</span></li>
+                            class="text-left inline-block">{{$car->brand->name}}</span></li>
                     <li class="my-2"><span class="color font-bold inline-block text-right ml-2">موديل:</span><span
-                            class="text-left inline-block">شيء ما</span></li>
+                            class="text-left inline-block">{{$car->model->name}}</span></li>
                     <li class="my-2"><span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span><span
                             class="text-left inline-block">{{$car->driver}}</span></li>
                     <li class="my-2"><span class="color font-bold inline-block text-right ml-2">سعة الموتور:</span><span
@@ -468,7 +472,7 @@
                 </ul>
                 <ul class="w-full lg:w-1/2">
                     <li class="my-2"><span class="color font-bold inline-block text-right ml-2">المدينة:</span><span
-                            class="text-left inline-block">شيء ما</span></li>
+                            class="text-left inline-block">{{$car->city->list_city}}</span></li>
                     <li class="my-2"><span class="color font-bold inline-block text-right ml-2">اللون:</span><span
                             class="text-left inline-block"> {{$car->color}}</span></li>
                     <li class="my-2"><span class="color font-bold inline-block text-right ml-2">نوع الوقود:</span><span

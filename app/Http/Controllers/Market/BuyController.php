@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Cars;
 use App\Cars2;
+use App\Brand;
+use App\CarsModel;
+use App\City;
 
 class BuyController extends Controller
 {
@@ -16,10 +19,14 @@ class BuyController extends Controller
      */
     public function index()
     {
-       $cars =  cars::paginate(3);
+       $cars =  cars::paginate(4);
+       $brands = Brand::get();
+       $models = CarsModel::get();
+       $cities = City::get();
      
-       return view('market/market/buy', ['cars'=>$cars]);
+       return view('market/market/buy', compact(['brands', 'models', 'cities', 'cars']));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -50,6 +57,7 @@ class BuyController extends Controller
      */
     public function show($id)
     {
+       
         $car = Cars::where('id', $id)->first();
         $car2 = Cars2::where('car_id', $car->id)->first();
         $relate_cars =  Cars::whereBetween('price', [$car->price - 1000, $car->price + 1000])->get();
