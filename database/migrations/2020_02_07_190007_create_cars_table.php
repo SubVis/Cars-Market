@@ -14,16 +14,16 @@ class CreateCarsTable extends Migration
     public function up()
     {
         Schema::create('cars', function (Blueprint $table) {
-            $table->increments('id');
+                  $table->increments('id');
             $table->integer('user_id')->unsigned();
-             // $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+           $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->text('title');
             $table->integer('brand_id')->unsigned();
-             // $table->foreign('brand_id')->references('id')->on('brand')->onUpdate('cascade')->onDelete('cascade');
+             $table->foreign('brand_id')->references('id')->on('brands')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('model_id')->unsigned();
-             // $table->foreign('model_id')->references('id')->on('model')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('model_id')->references('id')->on('cars_models')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('city_id')->unsigned();
-             // $table->foreign('city_id')->references('id')->on('city')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('cc');
             $table->integer('kilometers');
             $table->string('driver');

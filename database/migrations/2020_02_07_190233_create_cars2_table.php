@@ -16,7 +16,7 @@ class CreateCars2Table extends Migration
         Schema::create('cars2', function (Blueprint $table) {
             $table->increments('id');
              $table->integer('car_id')->unsigned();
-            //  $table->foreign('car_id')->references('id')->on('cars')->onUpdate('cascade')->onDelete('cascade');
+             $table->foreign('car_id')->references('id')->on('cars')->onUpdate('cascade')->onDelete('cascade');
              $table->string('image');
              $table->string('comfort');
              $table->string('windows');
