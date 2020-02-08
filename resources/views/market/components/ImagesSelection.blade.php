@@ -10,7 +10,7 @@
                     <img class="img" data-preview="0" />
                     <div class="tools">
                         <button class="delBtn delete px-2 py-1" type="button" data-del="0">
-                            <i class="far fa-times-circle">dd</i>
+                            <i class="far fa-times-circle"></i>
                         </button>
                     </div>
                 </div>

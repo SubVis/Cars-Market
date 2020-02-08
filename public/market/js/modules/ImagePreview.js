@@ -32,10 +32,8 @@ delbtn.forEach(btn => {
 		const img = btn.parentElement.previousElementSibling,
 		input = img.parentElement.previousElementSibling;
 
-		/**
-		 * Empty input file list
-		 */
-		
+		input.value = "";
+
 		img.removeAttribute('src');
 		img.classList.remove('z-50');
 		input.style.display = "block";	
