@@ -45,6 +45,8 @@ Route::name('car/show')->get('car/show/{id}', 'Market\BuyController@show');
 
  Route::name('login')->get('login', function(){return view('market/market/login');});
  Route::name('sign-up')->get('sign-up', function(){return view('market/market/signup');});
+
+ Route::name('search')->get('search', function(){return view('market/market/Search');});
 /*
  Route::name('sell2')->get('sell2', function () {
     return view('market/market/sell2');
