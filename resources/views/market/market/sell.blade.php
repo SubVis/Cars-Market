@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <div class="container mx-auto pb-32" style="display: block" id="form2">
+    <div class="container mx-auto pb-32" style="display: none" id="form2">
         <!-- Start Form 2 -->
         @include('market.components.ImageForm')
         <!-- End Form 2 -->
