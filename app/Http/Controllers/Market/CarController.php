@@ -37,7 +37,7 @@ class CarController extends Controller
         $brands = Brand::get();
         $models = CarsModel::get();
         $cities = City::get();
-       return view('market/market/sell', compact(['brands', 'models', 'cities']));
+       return view('market/sell', compact(['brands', 'models', 'cities']));
     }
     
     /**
@@ -67,7 +67,7 @@ class CarController extends Controller
          //     ]);   
          // $lastCar = $car->id;
          // $this->lastCarId = $lastCar;
-      return view('market/market/sell2');
+      return view('market/sell2');
 
 
        
@@ -165,7 +165,7 @@ class CarController extends Controller
     {
         $car = where('id', $id)->first();
 
-        return view('market/market/buy', ['car'=>$car]);
+        return view('market/buy', ['car'=>$car]);
     }
 
     /**

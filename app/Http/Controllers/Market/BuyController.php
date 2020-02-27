@@ -24,7 +24,7 @@ class BuyController extends Controller
        $models = CarsModel::get();
        $cities = City::get();
      
-       return view('market/market/buy', compact(['brands', 'models', 'cities', 'cars']));
+       return view('market/buy', compact(['brands', 'models', 'cities', 'cars']));
     }
 
 
@@ -61,7 +61,7 @@ class BuyController extends Controller
         $car = Cars::where('id', $id)->first();
         $car2 = Cars2::where('car_id', $car->id)->first();
         $relate_cars =  Cars::whereBetween('price', [$car->price - 1000, $car->price + 1000])->get();
-        return view('market/market/product', ['car'=>$car, 'car2'=>$car2, 'relate_cars'=>$relate_cars ]);
+        return view('market/product', ['car'=>$car, 'car2'=>$car2, 'relate_cars'=>$relate_cars ]);
     }
 
     /**
