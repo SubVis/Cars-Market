@@ -37,7 +37,7 @@ class CarController extends Controller
         $brands = Brand::get();
         $models = CarsModel::get();
         $cities = City::get();
-       return view('market/market/sell', compact(['brands', 'models', 'cities']));
+       return view('market/sell', compact(['brands', 'models', 'cities']));
     }
     
     /**
@@ -49,7 +49,7 @@ class CarController extends Controller
     public function store(CarRequest $request)
     {     
         
-        return dd($request);
+   
          //  $car =   Cars::create([
          //       'user_id' =>   1, 
          //       'title' =>   $request->title, 
@@ -67,7 +67,7 @@ class CarController extends Controller
          //     ]);   
          // $lastCar = $car->id;
          // $this->lastCarId = $lastCar;
-      return view('market/market/sell2');
+      return ;
 
 
        
@@ -117,7 +117,7 @@ class CarController extends Controller
             'other_future' => $others,
         ]);
        
-        return redirect(route('car/show', ['id' =>$car->id]));
+        return route('car/show', ['id' =>$car->id]);
      /*
       Equipment::create([
         'car_id' =>$request->carId,
@@ -165,7 +165,7 @@ class CarController extends Controller
     {
         $car = where('id', $id)->first();
 
-        return view('market/market/buy', ['car'=>$car]);
+        return view('market/buy', ['car'=>$car]);
     }
 
     /**

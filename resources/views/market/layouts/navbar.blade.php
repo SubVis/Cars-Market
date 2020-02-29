@@ -11,7 +11,7 @@
     </div>
     <div class="w-full hidden flex-grow text-center md:flex md:items-center md:w-auto" id="collapse">
         <div class="text-sm md:flex-grow"><a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white"
-                href="userProfile"> <i class="fa fa-user mx-2"> </i>أبوحميد</a><a
+                href="userProfile"> <i class="fa fa-user mx-2"> </i></a><a
                 class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white"
                 href="{{route('home')}}">الرئيسية</a><a
                 class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white" href="{{route('buy')}}">اشتري</a><a
