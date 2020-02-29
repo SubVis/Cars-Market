@@ -67,7 +67,11 @@ class CarController extends Controller
          //     ]);   
          // $lastCar = $car->id;
          // $this->lastCarId = $lastCar;
+<<<<<<< HEAD
       return ;
+=======
+      return view('market/sell2');
+>>>>>>> refs/remotes/origin/master
 
 
        

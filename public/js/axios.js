@@ -69,7 +69,11 @@ document.getElementById("car-store").addEventListener("click", function (event) 
     console.log(fv);
     axios.post('storeCars2',  fv).then(function (response) {
         /** handle success */
+<<<<<<< HEAD
         window.location.replace(response.data)
+=======
+        console.log(response)
+>>>>>>> refs/remotes/origin/master
     }) /**End then */
     .catch(function (error) {
         console.log(error.response)

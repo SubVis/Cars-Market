@@ -10,6 +10,7 @@
     </div>
     <div class="w-full hidden flex-grow text-center md:flex md:items-center md:w-auto" id="collapse">
         <div class="text-sm md:flex-grow">
+<<<<<<< HEAD
             
         @auth()
             <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('user-active')" href="userProfile">
@@ -33,5 +34,17 @@
         </form>
         </div>
     @endauth
+=======
+            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white" href="userProfile">
+                <i class="fa fa-user mx-2"> </i> أبوحميد
+            </a>
+            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white" href="{{route('home')}}">الرئيسية</a>
+            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white" href="{{route('buy')}}">اشتري</a>
+            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white active" href="{{route('sell')}}">بيع</a>
+            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white" href="#">كيفية الاستخدام </a>
+            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white" href="{{route('blog')}}">المدونة</a>
+        </div>
+        <div class="mt-5 md:mt-0"><a class="btn yellow mr-5 mt-4 mb-2 md:my-0" href="{{route('login')}}">سجل دخولك</a></div>
+>>>>>>> refs/remotes/origin/master
     </div>
 </nav>

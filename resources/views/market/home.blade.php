@@ -1,6 +1,9 @@
   @extends('index')
   @section('title', 'سوق السيارات')
+<<<<<<< HEAD
   @section('home-active', 'active')
+=======
+>>>>>>> refs/remotes/origin/master
   <?php $status = 'active' ?>
   @section('content')
   <div class="container mx-auto px-2">

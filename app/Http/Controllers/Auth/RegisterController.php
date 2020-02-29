@@ -53,8 +53,11 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],            
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+<<<<<<< HEAD
             'city' => ['required', 'string'],
             'phone' => ['required', 'numeric', 'min:14'],
+=======
+>>>>>>> refs/remotes/origin/master
         ]);
     }
 
