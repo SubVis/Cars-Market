@@ -24,14 +24,20 @@ class CreateCarsTable extends Migration
             $table->foreign('model_id')->references('id')->on('cars_models')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('city_id')->unsigned();
             $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('cascade');
+           
+            $table->integer('driver_id')->unsigned();
+            $table->foreign('driver_id')->references('id')->on('drivers')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('fuel_id')->unsigned();
+            $table->foreign('fuel_id')->references('id')->on('fuels')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('color_id')->unsigned();
+             $table->foreign('color_id')->references('id')->on('colors')->onUpdate('cascade')->onDelete('cascade');
+              $table->integer('modelyear_id')->unsigned();
+             $table->foreign('modelyear_id')->references('id')->on('ModelYears')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('price');
             $table->integer('cc');
             $table->integer('kilometers');
-            $table->string('driver');
-            $table->string('fuel');
-            $table->string('color');
-            $table->integer('price');
             $table->text('description');
-            $table->string('slug')->unique();
+            $table->string('slug')->unique()->nullable();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
             $table->timestamps();

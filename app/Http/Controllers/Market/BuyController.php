@@ -9,7 +9,7 @@ use App\Cars2;
 use App\Brand;
 use App\CarsModel;
 use App\City;
-
+use DB;
 class BuyController extends Controller
 {
     /**
@@ -23,8 +23,10 @@ class BuyController extends Controller
        $brands = Brand::get();
        $models = CarsModel::get();
        $cities = City::get();
+       $drivers = DB::table('drivers')->get();
+       $modelyear = DB::table('ModelYears')->orderBy('year', 'desc')->get();
      
-       return view('market/buy', compact(['brands', 'models', 'cities', 'cars']));
+       return view('market/buy', compact(['brands', 'models', 'cities', 'cars', 'drivers', 'modelyear']));
     }
 
 

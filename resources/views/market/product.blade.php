@@ -54,7 +54,7 @@
                 <!-- Start transmition -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id='transmission'>ناقل الحركة:</span>
-                    <span class="text-left inline-block">{{$car->driver}}</span>
+                    <span class="text-left inline-block">{{$car->driver->driver}}</span>
                 </li>
                 <!-- End transmition -->
 
@@ -73,21 +73,21 @@
                 <!-- Start town -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id="town">المدينة:</span>
-                    <span class="text-left inline-block">{{$car->city->list_city}}</span>
+                    <span class="text-left inline-block">{{$car->city->city}}</span>
                 </li>
                 <!-- End town -->
 
                 <!-- Start fuel -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id="fuel">اللون:</span>
-                    <span class="text-left inline-block">{{$car->color}}</span>
+                    <span class="text-left inline-block">{{$car->color->color}}</span>
                 </li>
                 <!-- End fuel -->
 
                 <!-- Start color -->
                 <li class="my-2">
                     <span class="color font-bold w-32 inline-block text-right" id="color">نوع الوقود:</span>
-                    <span class="text-left inline-block">{{$car->fuel}}</span>
+                    <span class="text-left inline-block">{{$car->fuel->fuel}}</span>
                 </li>
                 <!-- End color -->
 
@@ -155,13 +155,13 @@
                                 </li>
                                 <li class="my-2">
                                     <span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span>
-                                    <span class="text-left inline-block">شيء ما</span>
+                                    <span class="text-left inline-block">{{$car->driver->driver}}</span>
                                 </li>
                             </ul>
                             <ul class="w-1/2">
                                 <li class="my-2">
                                     <span class="color font-bold inline-block text-right ml-2">المدينة:</span>
-                                    <span class="text-left inline-block">{{$car->city->list_city}}</span>
+                                    <span class="text-left inline-block">{{$car->city->city}}</span>
                                 </li>
                                 <li class="my-2">
                                     <span class="color font-bold inline-block text-right ml-2">السعر:</span>

@@ -1,11 +1,7 @@
 @extends('index')
-<<<<<<< HEAD
 @section('title', 'سوق السيارات ׀ اشتري')
 @section('buy-active', 'active')
 
-=======
-@section('title', 'عاملة كام؟ ׀ اشتري')
->>>>>>> refs/remotes/origin/master
 
 @push('css')
 <link rel="stylesheet" href="{{url('css/selection.css')}}" />

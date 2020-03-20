@@ -12,6 +12,8 @@ use App\City;
 use App\Http\Requests\CarRequest;
 use App\Http\Requests\Car2Request;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\DB;
+
 
 class CarController extends Controller
 {
@@ -37,7 +39,11 @@ class CarController extends Controller
         $brands = Brand::get();
         $models = CarsModel::get();
         $cities = City::get();
-       return view('market/sell', compact(['brands', 'models', 'cities']));
+        $colors = DB::table('colors')->get();
+        $fuels = DB::table('fuels')->get();
+        $drivers = DB::table('drivers')->get();
+        $modelyear = DB::table('ModelYears')->orderBy('year', 'desc')->get();
+       return view('market/sell', compact(['brands', 'models', 'cities', 'colors', 'fuels', 'drivers', 'modelyear']));
     }
     
     /**
@@ -67,11 +73,7 @@ class CarController extends Controller
          //     ]);   
          // $lastCar = $car->id;
          // $this->lastCarId = $lastCar;
-<<<<<<< HEAD
       return ;
-=======
-      return view('market/sell2');
->>>>>>> refs/remotes/origin/master
 
 
        
@@ -80,18 +82,21 @@ class CarController extends Controller
 
     public function store2(Car2Request $request)
     {   
-         
+        // return dd($request);
            $car =   Cars::create([
                'user_id' =>   1, 
                'title' =>   $request->title, 
-                'brand_id' =>   1, 
-                'model_id' =>   1, 
+                'brand_id' =>    $request->brand, 
+                'model_id' =>   $request->model, 
+                'modelyear_id' =>    $request->modelyear,
+                'city_id' =>   $request->city, 
                  'cc' =>  $request->cc, 
-                 'city_id' =>   1, 
+               
                  'kilometers' =>    $request->kilometers, 
-                 'driver' =>    $request->driver, 
-                 'fuel' =>    $request->fuel, 
-                'color' =>     $request->color, 
+                 'driver_id' =>    $request->driver, 
+                 'fuel_id' =>    $request->fuel, 
+                  
+                'color_id' =>     $request->color, 
                 'price' =>     $request->price, 
                'description' =>   $request->details, ]);
 

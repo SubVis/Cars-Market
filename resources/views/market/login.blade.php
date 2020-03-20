@@ -1,20 +1,12 @@
 @extends('index')
-<<<<<<< HEAD
 		@section('title', ' سوق السيارات | تسجيل الدخول')
 		@section('login-active', 'active')
-=======
-		@section('title', 'عاملة كام؟')
->>>>>>> refs/remotes/origin/master
 		@push('css')
 
 		@push('js')
 		@endpush
  @section('content')
-<<<<<<< HEAD
  <div class="flex justify-center items-center my-8"><img class="z-10 bgi" style="height: 600px" src="{{url('market/images/undraw_authentication_fsn5.svg ')}}" alt="background"/>
-=======
-	<div class="flex justify-center items-center my-8"><img class="z-10 bgi" style="height: 600px" src="{{url('market/images/undraw_authentication_fsn5.svg ')}}" alt="background"/>
->>>>>>> refs/remotes/origin/master
 		{{$errors->all}}
 		<form class="z-20 center bg-white border border-gray-300 flex items-center flex-col p-6 w-full sm:w-3/4 md:w-2/4" action="{{route('login')}}" method="post">
 			<p class="header">تسجيل الدخول</p>

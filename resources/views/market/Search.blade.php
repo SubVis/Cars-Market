@@ -8,7 +8,7 @@
 
 @include('components.quickSearch')
 
-
+ @include('components.carsCardsGrid')
 @endsection
 
 

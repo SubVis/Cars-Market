@@ -29,7 +29,7 @@
                         </li>
                         <li class="my-2">
                             <span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span>
-                            <span class="text-left inline-block">{{$car->driver}}</span>
+                            <span class="text-left inline-block">{{$car->driver->driver}}</span>
                         </li>
                         <li class="my-2">
                             <span class="color font-bold inline-block text-right ml-2">سعة الموتور:</span>
@@ -40,15 +40,15 @@
                     <ul class="w-full lg:w-1/2">
                         <li class="my-2">
                             <span class="color font-bold inline-block text-right ml-2">المدينة:</span>
-                            <span class="text-left inline-block">{{$car->city->list_city}}</span>
+                            <span class="text-left inline-block">{{$car->city->city}}</span>
                         </li>
                         <li class="my-2">
                             <span class="color font-bold inline-block text-right ml-2">اللون:</span>
-                            <span class="text-left inline-block"> {{$car->color}}</span>
+                            <span class="text-left inline-block"> {{$car->color->color}}</span>
                         </li>
                         <li class="my-2">
                             <span class="color font-bold inline-block text-right ml-2">نوع الوقود:</span>
-                            <span class="text-left inline-block">{{$car->fuel}}</span>
+                            <span class="text-left inline-block">{{$car->fuel->fuel}}</span>
                         </li>
                         <li class="my-2">
                             <span class="color font-bold inline-block text-right ml-2">المسافة:</span>

@@ -42,7 +42,21 @@
                 <p class="help-block help" data-validation="model"> </p>
             </div>
             <!-- End model input -->
-
+            
+            <!-- Start modelyear input -->
+            <div class="w-full md:w-1/2 lg:w-1/3  my-2 px-2">
+                <label class="my-2 inline-block font-bold title pl-2" for="model">عام الموديل:</label>
+                <div data-wrapper="model">
+                    <select class="w-full  singleSelect" name="modelyear" id="modelyear">
+                        <option disabled>اختر عام الموديل  </option>
+                        @foreach($modelyear as $year)
+                        <option value="{{$year->id}}">{{$year->year}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <p class="help-block help" data-validation="model"> </p>
+            </div>
+            <!-- End model input -->
             <!-- Start town input -->
 
             <div class="w-full md:w-1/2 lg:w-1/3  my-2 px-2">
@@ -51,7 +65,7 @@
                     <select class="w-full  singleSelect" name="city" id="town">
                         <option>اختار مدينتك</option>
                         @foreach($cities as $city)
-                        <option value="{{$city->id}}">{{$city->list_city}}</option>
+                        <option value="{{$city->id}}">{{$city->city}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -83,13 +97,11 @@
             <div class="w-full md:w-1/2 lg:w-1/3  my-2 px-2">
                 <label class="my-2 inline-block font-bold title pl-2" for="transmission">ناقل الحركة:</label>
                 <div data-wrapper="transmission">
-                    <select class="w-full  singleSelect" name="driver" id="transmission">
+                    <select class="w-full  singleSelect" name="driver" id="driver">
                         <option>اختار نوع الناقل</option>
-                        <option value="1">1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>سنة</option>
+                        @foreach($drivers as $driver)
+                        <option value="{{$driver->id}}">{{$driver->driver}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <p class="help-block help" data-validation="driver"> </p>
@@ -102,11 +114,9 @@
                 <div data-wrapper="fuel">
                     <select class="w-full  singleSelect" name="fuel" id="fuel">
                         <option>اختار نوع الوقود</option>
-                        <option value="1">1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>سنة</option>
+                        @foreach($fuels as $fuel)
+                        <option value="{{$fuel->id}}">{{$fuel->fuel}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <p class="help-block help" data-validation="fuel"> </p>
@@ -119,11 +129,9 @@
                 <div data-wrapper="color">
                     <select class="w-full  singleSelect" name="color" id="color">
                         <option>اختار لون العربية</option>
-                        <option value="1">1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>سنة</option>
+                        @foreach($colors as $color)
+                        <option value="{{$color->id}}">{{$color->color}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <p class="help-block help" data-validation="color"> </p>
