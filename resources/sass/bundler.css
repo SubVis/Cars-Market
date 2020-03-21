@@ -281,10 +281,6 @@ button.next:hover {
 }
 
 @media (max-width: 640px) {
-  .product--details ul li {
-    text-align: center;
-  }
-
   .carousel {
     padding: 0 20px;
   }

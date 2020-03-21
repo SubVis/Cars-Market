@@ -5,12 +5,12 @@
 @push('js')
 @endpush
 @section('content')
-<div class="container mx-auto mb-5 px-2">
+<div class="container mx-auto mb-5 px-2 ">
     <!-- Start product header -->
     <?php
     $images = explode(',', $car2->image);
     ?>
-    <p class="header">{{$car->title}}</p>
+    <p class="header" style="margin-top: 2rem;margin-bottom: 2rem;">{{$car->title}}</p>
     <div class="container mx-auto">
         <div class="flex flex-wrap justify-center">
             <!-- Start Carousel -->
@@ -31,6 +31,8 @@
     </div>
     <!-- End product header -->
 
+    <h2 class="header text-center mx-auto">التفاصيل</h2>
+    
     <div class="product--details my-12">
         <div class="flex flex-wrap justify-center sm:justify-start">
             <!-- Start right column -->
@@ -100,11 +102,10 @@
                     <!-- End kilometers -->
                 </ul>
             </div>
-
             <!-- End left column -->
 
             <!-- Start sellerNumber -->
-            <div class="sellerNumber rounded-lg flex justify-center items-center mx-auto sm:w-1/3" id="sellerNumber">
+            <div class="sellerNumber my-5 sm:my-auto rounded-lg flex justify-center items-center mx-auto sm:w-1/3" id="sellerNumber">
                 <div class="overlay py-5 px-2">
                     <p class="text-center text-white md:text-xl">اضغط هنا لأرقام التواصل</p>
                     <p class="text-center text-white mt-3 md:text-lg">متنساش تقول للبايع انك جاي من موقعنا </p>
@@ -116,7 +117,7 @@
             </div>
             <!-- End sellerNumber -->
 
-            <!-- Start sellerNumber -->
+            <!-- Start price -->
             <div class="cost my-2 flex justify-between items-center w-full px-2 sm:px-0 my-5">
                 <div>
                     <span class="text-green-500 text-2xl font-bold inline-block text-right">السعر:</span>
@@ -125,13 +126,72 @@
                 <div class="product--btns ">
                     <span>أَضف إلى المفضلة</span>
                     <button class="fav mx-4">
-                        <i class="fas fa-heart fa-4x"></i>
+                        <i class="fas fa-heart fa-2x"></i>
                     </button>
                 </div>
             </div>
-            <!-- End sellerNumber -->
+            <!-- End price -->
+        </div>
+
+        <!-- Start more feats -->
+        <div class="feats flex flex-wrap">
+            <!-- Start single feat -->
+            <div class="w-1/2 sm:w-1/3">
+                <h3 class="header">وسائل الراحة</h3>
+                <ul class="justify-between">
+                    <li class="lnline-block">ميزه إضافية</li>
+                    <li class="lnline-block">ميزه إضافية</li>
+                    <li class="lnline-block">ميزه إضافية</li>
+                </ul>
+            </div>
+            <!-- End single feat -->
+
+            <!-- Start single feat -->
+            <div class="w-1/2 sm:w-1/3">
+                <h3 class="header">نوافذ</h3>
+                <ul class="justify-between">
+                    <li class="lnline-block">ميزه إضافية</li>
+                    <li class="lnline-block">ميزه إضافية</li>
+                    <li class="lnline-block">ميزه إضافية</li>
+                </ul>
+            </div>
+            <!-- End single feat -->
+
+            <!-- Start single feat -->
+            <div class="w-1/2  sm:w-1/3">
+                <h3 class="header">نظام الصوت</h3>
+                <ul class="justify-between">
+                    <li class="lnline-block">ميزه إضافية</li>
+                    <li class="lnline-block">ميزه إضافية</li>
+                    <li class="lnline-block">ميزه إضافية</li>
+                </ul>
+            </div>
+            <!-- End single feat -->
+
+            <!-- Start single feat -->
+            <div class="w-1/2 sm:w-1/3">
+                <h3 class="header">وسائل الأمان</h3>
+                <ul class="justify-between">
+                    <li class="lnline-block">ميزه إضافية</li>
+                    <li class="lnline-block">ميزه إضافية</li>
+                    <li class="lnline-block">ميزه إضافية</li>
+                </ul>
+            </div>
+            <!-- End single feat -->
+
+            <!-- Start single feat -->
+            <div class="w-1/2 sm:w-1/3">
+                <h3 class="header">مميزات أخرى</h3>
+                <ul class="justify-between">
+                    <li class="lnline-block">ميزه إضافية</li>
+                    <li class="lnline-block">ميزه إضافية</li>
+                    <li class="lnline-block">ميزه إضافية</li>
+                </ul>
+            </div>
+            <!-- End single feat -->
 
         </div>
+        <!-- End more feats -->
     </div>
 
     <!-- Start suggestion -->
@@ -197,9 +257,9 @@
     </div>
     <!-- End suggestion -->
 </div>
+
 @push('js')
 <script src="{{url('js/libs/siema.min.js')}}"></script>
-<script src="{{url('js/modules/carousel.js')}}"></script>
 <script src="{{url('js/modules/selectbox/single.js')}}"></script>
 <script>
     window.addEventListener('load', function() {
