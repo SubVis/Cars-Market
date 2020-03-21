@@ -5,6 +5,9 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
+*{
+    font-family: 'Almarai', sans-serif;
+}
 .page-item a,
 .page-item span,
 .page-item.active span {

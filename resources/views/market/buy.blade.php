@@ -14,7 +14,7 @@
 
 <!-- Start Brnads -->
 <div class="container mx-auto px-2 mt-8">
-    < <div class="flex flex-wrap">
+    <div class="flex flex-wrap">
         @include('components.brands')
     </div> 
     <!-- Start Carousel -->
@@ -41,7 +41,6 @@
         @include('components.filter')
     -->
 </div>
-
 @include('components.carsCardsGrid')
 
 <!-- Start Pagenation -->

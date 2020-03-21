@@ -16,9 +16,9 @@
 
                 <!-- Start Car Details -->
                 <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-                    <h2 class="color font-bold inline-block text-right my-4 mb-2 w-full text-xl">{{$car->title}} </h2>
+                    <h2 class="color font-bold inline-block text-right my-4 mb-2 w-full text-xl header">{{$car->title}} </h2>
 
-                    <ul class="w-full lg:w-1/2">
+                    <ul class="w-full sm:w-1/2">
                         <li class="my-2">
                             <span class="color font-bold inline-block text-right ml-2">الماركة:</span>
                             <span class="text-left inline-block">{{$car->brand->name}}</span>
@@ -37,7 +37,7 @@
                         </li>
                     </ul>
 
-                    <ul class="w-full lg:w-1/2">
+                    <ul class="w-full sm:w-1/2">
                         <li class="my-2">
                             <span class="color font-bold inline-block text-right ml-2">المدينة:</span>
                             <span class="text-left inline-block">{{$car->city->city}}</span>
