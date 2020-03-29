@@ -7,9 +7,20 @@
 @section('content')
 <div class="container mx-auto mb-5 px-2 ">
     <!-- Start product header -->
+   
     <?php
+   
     $images = explode(',', $car2->image);
+    $comforts = explode(',', $car2->comfort);
+
+    $windows = explode(',', $car2->windows);
+    $sounds = explode(',', $car2->sounds);
+    $safes = explode(',', $car2->safe);
+    $other_futures = explode(',', $car2->other_future);
+    
     ?>
+    
+ 
     <p class="header" style="margin-top: 2rem;margin-bottom: 2rem;">{{$car->title}}</p>
     <div class="container mx-auto">
         <div class="flex flex-wrap justify-center">
@@ -139,9 +150,11 @@
             <div class="w-1/2 sm:w-1/3">
                 <h3 class="header">وسائل الراحة</h3>
                 <ul class="justify-between">
-                    <li class="lnline-block">ميزه إضافية</li>
-                    <li class="lnline-block">ميزه إضافية</li>
-                    <li class="lnline-block">ميزه إضافية</li>
+                @foreach($comforts as $comfort)
+                    <li class="lnline-block">{{$comfort}}</li>
+                @endforeach
+
+                   
                 </ul>
             </div>
             <!-- End single feat -->
@@ -150,9 +163,9 @@
             <div class="w-1/2 sm:w-1/3">
                 <h3 class="header">نوافذ</h3>
                 <ul class="justify-between">
-                    <li class="lnline-block">ميزه إضافية</li>
-                    <li class="lnline-block">ميزه إضافية</li>
-                    <li class="lnline-block">ميزه إضافية</li>
+                @foreach($windows as $window)
+                    <li class="lnline-block"> {{$window}}</li>
+                 @endforeach
                 </ul>
             </div>
             <!-- End single feat -->
@@ -161,9 +174,10 @@
             <div class="w-1/2  sm:w-1/3">
                 <h3 class="header">نظام الصوت</h3>
                 <ul class="justify-between">
-                    <li class="lnline-block">ميزه إضافية</li>
-                    <li class="lnline-block">ميزه إضافية</li>
-                    <li class="lnline-block">ميزه إضافية</li>
+                @foreach($sounds as $sound)
+                 <li class="lnline-block"> {{$sound}}</li>
+                @endforeach
+        
                 </ul>
             </div>
             <!-- End single feat -->
@@ -172,9 +186,10 @@
             <div class="w-1/2 sm:w-1/3">
                 <h3 class="header">وسائل الأمان</h3>
                 <ul class="justify-between">
-                    <li class="lnline-block">ميزه إضافية</li>
-                    <li class="lnline-block">ميزه إضافية</li>
-                    <li class="lnline-block">ميزه إضافية</li>
+                @foreach($safes as $safe)
+                    <li class="lnline-block">{{$safe}}</li>
+                @endforeach
+                 
                 </ul>
             </div>
             <!-- End single feat -->
@@ -183,9 +198,10 @@
             <div class="w-1/2 sm:w-1/3">
                 <h3 class="header">مميزات أخرى</h3>
                 <ul class="justify-between">
-                    <li class="lnline-block">ميزه إضافية</li>
-                    <li class="lnline-block">ميزه إضافية</li>
-                    <li class="lnline-block">ميزه إضافية</li>
+                @foreach($other_futures as $other_future)
+                    <li class="lnline-block"> {{$other_future}}</li>
+                 @endforeach
+                   
                 </ul>
             </div>
             <!-- End single feat -->

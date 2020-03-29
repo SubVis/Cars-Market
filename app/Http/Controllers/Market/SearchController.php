@@ -19,6 +19,8 @@ class SearchController extends Controller
      */
     public function index(Request $request)
     {  
+
+    dd($request);
       $brands = Brand::get();
        $models = CarsModel::get();
        $cities = City::get();
