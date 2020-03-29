@@ -36,6 +36,10 @@ Route::name('search')->post('search', 'Market\SearchController@index');
 
 
 
+Route::name('brand')->get('brand', function () {
+    return view('market/brand');
+});
+
 Route::name('login')->get('login', function () {
     return view('market/login');
 });

@@ -4,7 +4,7 @@
         <div class="flex px-2 flex-wrap">
             <!-- Start Brand Image -->
             <div class="img px-2 w-1/2 md:w-2/12  mb-8">
-                <a href="#" class="text-center inline-block">
+                <a href="{{route('brand')}}" class="text-center inline-block">
                     <img src="{{url('images/brands/1.png')}}" width="100" alt="brand" />
                     ههههههه
                 </a>
@@ -12,7 +12,7 @@
             <!-- End Brand Image -->
             <!-- Start Brand Image -->
             <div class="img px-2 w-1/2 md:w-2/12  mb-8">
-                <a href="#" class="text-center inline-block">
+                <a href="{{route('brand')}}" class="text-center inline-block">
                     <img src="{{url('images/brands/2.png')}}" width="100" alt="brand" />
                     ههههههه
                 </a>
@@ -20,7 +20,7 @@
             <!-- End Brand Image -->
             <!-- Start Brand Image -->
             <div class="img px-2 w-1/2 md:w-2/12  mb-8">
-                <a href="#" class="text-center inline-block">
+                <a href="{{route('brand')}}" class="text-center inline-block">
                     <img src="{{url('images/brands/3.png')}}" width="100" alt="brand" />
                     ههههههه
                 </a>
@@ -28,7 +28,7 @@
             <!-- End Brand Image -->
             <!-- Start Brand Image -->
             <div class="img px-2 w-1/2 md:w-2/12  mb-8">
-                <a href="#" class="text-center inline-block">
+                <a href="{{route('brand')}}" class="text-center inline-block">
                     <img src="{{url('images/brands/4.png')}}" width="100" alt="brand" />
                     ههههههه
                 </a>
@@ -36,7 +36,7 @@
             <!-- End Brand Image -->
             <!-- Start Brand Image -->
             <div class="img px-2 w-1/2 md:w-2/12  mb-8">
-                <a href="#" class="text-center inline-block">
+                <a href="{{route('brand')}}" class="text-center inline-block">
                     <img src="{{url('images/brands/5.png')}}" width="100" alt="brand" />
                     ههههههه
                 </a>
@@ -44,7 +44,7 @@
             <!-- End Brand Image -->
             <!-- Start Brand Image -->
             <div class="img px-2 w-1/2 md:w-2/12  mb-8">
-                <a href="#" class="text-center inline-block">
+                <a href="{{route('brand')}}" class="text-center inline-block">
                     <img src="{{url('images/brands/6.png')}}" width="100" alt="brand" />
                     ههههههه
                 </a>
@@ -52,7 +52,7 @@
             <!-- End Brand Image -->
             <!-- Start Brand Image -->
             <div class="img px-2 w-1/2 md:w-2/12  mb-8">
-                <a href="#" class="text-center inline-block">
+                <a href="{{route('brand')}}" class="text-center inline-block">
                     <img src="{{url('images/brands/7.png')}}" width="100" alt="brand" />
                     ههههههه
                 </a>
@@ -60,7 +60,7 @@
             <!-- End Brand Image -->
             <!-- Start Brand Image -->
             <div class="img px-2 w-1/2 md:w-2/12  mb-8">
-                <a href="#" class="text-center inline-block">
+                <a href="{{route('brand')}}" class="text-center inline-block">
                     <img src="{{url('images/brands/8.png')}}" width="100" alt="brand" />
                     ههههههه
                 </a>
@@ -68,7 +68,7 @@
             <!-- End Brand Image -->
             <!-- Start Brand Image -->
             <div class="img px-2 w-1/2 md:w-2/12  mb-8">
-                <a href="#" class="text-center inline-block">
+                <a href="{{route('brand')}}" class="text-center inline-block">
                     <img src="{{url('images/brands/9.png')}}" width="100" alt="brand" />
                     ههههههه
                 </a>
