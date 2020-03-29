@@ -71,32 +71,40 @@
                     <div class="px-2 w-full">
                         <label class="my-2 inline-block font-bold title pl-2">السعر:</label>
                         <div class="flex">
-                            <select class="w-full ml-2 singleSelect" data-placeholder="من" name="salaryFrom" id="salaryFrom">
+                            <input class="w-full inline-block " style="margin-left: .5rem !important" placeholder="بدايةً من" name="salaryFrom" id="salaryFrom">
+                            <input class="w-full" placeholder="انتهاءً إلى" name="salaryTo" id="salaryTo">
+                        </div>
+                    </div>
+                </div>
+                <!-- End salary selection -->
+
+                <!-- Start salary selection -->
+                <div class="px-2 flex justify-between w-full mt-2 md:w-1/2 lg:w-2/5">
+                    <div class="px-2 w-full">
+                        <label class="my-2 inline-block font-bold title pl-2">موديل من سنة:</label>
+                        <div class="flex">
+                            <select class="w-full ml-2 singleSelect" data-placeholder="من" name="yearFrom" id="yearFrom">
                                 <option>بدايةً من</option>
-                                <option>شيء 1</option>
-                            </select>
-                            <select class="w-full singleSelect" data-placeholder="إلى" name="salaryTo" id="salaryTo">
-                                <option>انتهاءً إلى</option>
-                                <option>شيء 2</option>
+
+
+                                @foreach($modelyear as $year)
+                                <option value="{{$year->id}}">{{$year->year}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
                 </div>
                 <!-- End salary selection -->
-                
+
                 <!-- Start salary selection -->
                 <div class="px-2 flex justify-between w-full mt-2 md:w-1/2 lg:w-2/5">
                     <div class="px-2 w-full">
-                        <label class="my-2 inline-block font-bold title pl-2">سنة الصنع:</label>
+                        <label class="my-2 inline-block font-bold title pl-2">إلى سنة:</label>
+
                         <div class="flex">
-                            <select class="w-full ml-2 singleSelect" data-placeholder="من" name="yearFrom" id="yearFrom">
-                                <option>بدايةً من</option>
-                                @foreach($modelyear as $year)
-                                <option value="{{$year->id}}">{{$year->year}}</option>
-                                @endforeach
-                            </select>
                             <select class="w-full singleSelect" data-placeholder="إلى" name="yearTo" id="yearTo">
-                            <option>انتهاءً إلى</option>
+                                <option>انتهاءً إلى</option>
+
                                 @foreach($modelyear as $year)
                                 <option value="{{$year->id}}">{{$year->year}}</option>
                                 @endforeach
