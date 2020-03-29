@@ -12,7 +12,6 @@ class BrandTableSeeder extends Seeder
     public function run()
     {
          DB::table('brands')->insert([
-                ['name' => 'مرسيدس'],
                 ['name' => 'أستون مارتن'],
                 ['name' => 'ألفاروميو'],
                 ['name' => 'أوبل'],

@@ -17,20 +17,6 @@
     <div class="flex flex-wrap">
         @include('components.brands')
     </div> 
-    <!-- Start Carousel -->
-    <div class="carousel w-full sm:w-full lg:w-1/2">
-        <p class="header">الأكثر مشاهدة</p>
-        <div class="flex flex-wrap justify-center">
-            <div class="w-full md:w-4/6">
-                <div class="siema">
-                    @include('components.minicard')
-                    @include('components.minicard')
-                    @include('components.minicard')
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Carousel -->
 </div>
 </div>
 <!-- End Brnads -->
