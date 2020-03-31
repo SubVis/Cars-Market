@@ -34,7 +34,7 @@ Route::name('storeCars2')->post('storeCars2', 'Market\CarController@store2');
 Route::name('search')->post('search', 'Market\SearchController@index');
 
 
-
+Route::name('ajax_model')->post('ajax_model', 'Market\SearchController@model_ajax');
 
 Route::name('brand')->get('brand', function () {
     return view('market/brand');

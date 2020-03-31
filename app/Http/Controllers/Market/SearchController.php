@@ -19,8 +19,6 @@ class SearchController extends Controller
      */
     public function index(Request $request)
     {  
-
-    dd($request);
       $brands = Brand::get();
        $models = CarsModel::get();
        $cities = City::get();
@@ -35,6 +33,17 @@ class SearchController extends Controller
 
         ->get();     
        return view('market/search' ,compact(['cars', 'brands', 'models', 'cities', 'cars', 'drivers', 'modelyear']));
+    }
+
+
+
+    public function model_ajax(Request $request)
+    {
+
+        if($request->brand_id){
+            $model = CarsModel::where('brand_id', $request->brand_id)->get();
+            return $model;
+        }
     }
 
     /**

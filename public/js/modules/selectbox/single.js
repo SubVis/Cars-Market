@@ -124,7 +124,8 @@ function allOne(selecty, holder) {
                     optText = text;
                     
                     // Set the placeholder
-                    console.log(input);
+                    //console.log(input);
+                    input.setAttribute('val', val)
                     input.innerText= text;
                     parent.querySelector('div.replacement').scrollTop = 0;
                     parent.querySelector('div.replacement').classList.remove("replacement-opened");
