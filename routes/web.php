@@ -49,34 +49,39 @@ Route::name('logout')->post('logout', 'Auth\LoginController@logout');
 Route::name('sign-up')->get('sign-up', function () {
     return view('market/signup');
 });
+
 Route::name('register')->post('register', 'Auth\RegisterController@register');
-
-
 
 Route::name('search')->get('search', function () {
     return view('market/Search');
 });
+
+Route::name('showrooms')->get('showrooms', function () {
+    return view('market/showrooms');
+});
+
+Route::name('all-brands')->get('all-brands', function () {
+    return view('market/all-brands');
+});
+
 /*
- Route::name('sell2')->get('sell2', function () {
-    return view('market/sell2');
-});
+    Route::name('sell2')->get('sell2', function () {
+        return view('market/sell2');
+    });
+
+
+    Route::name('blog')->get('blog', function () {
+        return view('market/blog');
+    });
+
+    Route::name('search')->get('search', function () {
+        return view('market/search');
+    });
+
+    Route::group(['prefix' => 'admin'], function () {
+        Voyager::routes();
+    });
+    
+    Route::get('/home', 'HomeController@index')->name('home');
 */
-Route::name('how-use')->get('how-use', function () {
-    return view('market/how-use');
-});
 
-
-Route::name('blog')->get('blog', function () {
-    return view('market/blog');
-});
-
-Route::name('search')->get('search', function () {
-    return view('market/search');
-});
-
-// Route::group(['prefix' => 'admin'], function () {
-//     Voyager::routes();
-// });
-
-
-// Route::get('/home', 'HomeController@index')->name('home');

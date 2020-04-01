@@ -4,6 +4,13 @@
 
 @section('content')
 
+    <section class="my-8">
+        <div class="container mx-auto">
+            <h2 class="header">اسم البراند</h2>
+            @include('components.carsCardsGrid')
+        </div>
+    </section>
+
 @push('js')
 
 <script src="{{url('js/libs/siema.min.js')}}"></script>

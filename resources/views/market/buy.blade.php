@@ -16,7 +16,7 @@
 <div class="container mx-auto px-2 mt-8">
     <div class="flex flex-wrap">
         @include('components.brands')
-    </div> 
+    </div>
 </div>
 </div>
 <!-- End Brnads -->
@@ -61,7 +61,7 @@
             })
         };
     })
-        let brand_parent = document.querySelector('.replacement.w-full.singleSelect[data-select-name="brand"]').firstElementChild;
+    let brand_parent = document.querySelector('.replacement.w-full.singleSelect[data-select-name="brand"]').firstElementChild;
     var config = {
         attributes: true,
         childList: true,

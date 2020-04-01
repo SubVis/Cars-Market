@@ -19,9 +19,9 @@
             <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('home-active')" href="{{route('home')}}">الرئيسية</a>
             <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('buy-active')" href="{{route('buy')}}">اشتري</a>
             <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('sell-active')" href="{{route('sell')}}">بيع</a>
-            <!-- 
-            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('use-active')" href="#">كيفية الاستخدام </a>
-            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('blog-active')" href="{{route('blog')}}">المدونة</a> -->
+            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('use-active')" href="{{route('all-brands')}}">الماركات</a>
+            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('use-active')" href="{{route('showrooms')}}">المعارض</a>
+
         </div>
         @guest()
         <div class="mt-5 md:mt-0"><a class="btn yellow mr-5 mt-4 mb-2 md:my-0 @yield('login-active')" href="{{route('login')}}">سجل دخولك</a></div>
