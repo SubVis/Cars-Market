@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             CityTableSeeder::class,
             ColorTableSeeder::class,
             UsersTableSeeder::class,
+            VoyagerDatabaseSeeder::class,
         ]);
     }
 }

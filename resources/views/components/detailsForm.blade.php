@@ -1,6 +1,6 @@
 <div class="flex flex-wrap px-2" id="form1">
     <!-- start Form -->
-    <form class="w-full -mx-2" id="storeForm" action="{{route('storeCars2')}}" method="post">
+    <form class="w-full -mx-2" id="storeForm" action="{{route('storeCars')}}" method="post">
         {{csrf_field()}}
         <div class="flex flex-wrap w-full px-2 inputs">
             <!-- Start title input -->
@@ -34,9 +34,7 @@
                 <div data-wrapper="model">
                     <select class="w-full  singleSelect" name="model" id="model">
                         <option disabled>اختر الموديل </option>
-                        @foreach($models as $model)
-                        <option value="{{$model->id}}">{{$model->name}}</option>
-                        @endforeach
+                     
                     </select>
                 </div>
                 <p class="help-block help" data-validation="model"> </p>

@@ -36,9 +36,11 @@ Route::name('search')->post('search', 'Market\SearchController@index');
 
 Route::name('ajax_model')->post('ajax_model', 'Market\SearchController@model_ajax');
 
-Route::name('brand')->get('brand', function () {
-    return view('market/brand');
-});
+// brands
+Route::name('brand')->get('brand{id}', 'Market\BrandController@show');
+
+Route::name('all-brands')->get('all-brands','Market\BrandController@index');
+
 
 Route::name('login')->get('login', function () {
     return view('market/login');
@@ -60,10 +62,18 @@ Route::name('showrooms')->get('showrooms', function () {
     return view('market/showrooms');
 });
 
-Route::name('all-brands')->get('all-brands', function () {
-    return view('market/all-brands');
+
+
+Route::group(['prefix' => 'admin'], function () {
+        Voyager::routes();
 });
 
+Route::group(["middleware"=>"auth"], function (){
+
+Route::name('sell')->get('sell', 'Market\CarController@create');
+Route::name('storeCars')->post('storeCars', 'Market\CarController@store');
+
+});
 /*
     Route::name('sell2')->get('sell2', function () {
         return view('market/sell2');
@@ -78,10 +88,7 @@ Route::name('all-brands')->get('all-brands', function () {
         return view('market/search');
     });
 
-    Route::group(['prefix' => 'admin'], function () {
-        Voyager::routes();
-    });
-    
+
     Route::get('/home', 'HomeController@index')->name('home');
 */
 

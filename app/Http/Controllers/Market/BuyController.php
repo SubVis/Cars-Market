@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Market;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Cars;
-use App\Cars2;
+use App\Car;
 use App\Brand;
 use App\CarsModel;
 use App\City;
@@ -19,7 +18,7 @@ class BuyController extends Controller
      */
     public function index()
     {
-       $cars =  cars::paginate(4);
+       $cars =  car::paginate(4);
        $brands = Brand::get();
        $models = CarsModel::get();
        $cities = City::get();
@@ -60,10 +59,9 @@ class BuyController extends Controller
     public function show($id)
     {
        
-        $car = Cars::where('id', $id)->first();
-        $car2 = Cars2::where('car_id', $id)->first();
-        $relate_cars =  Cars::whereBetween('price', [$car->price - 1000, $car->price + 1000])->get();
-        return view('market/product', ['car'=>$car, 'car2'=>$car2, 'relate_cars'=>$relate_cars ]);
+        $car = Car::where('id', $id)->first();
+        $relate_cars =  Car::whereBetween('price', [$car->price - 1000, $car->price + 1000])->get();
+        return view('market/product', ['car'=>$car, 'relate_cars'=>$relate_cars ]);
     }
 
     /**

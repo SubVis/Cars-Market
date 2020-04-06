@@ -4,7 +4,10 @@
         @include('layouts.header')
         @include('layouts.navbar')
      <!-- all other page content -->
+    
+   
         @yield('content')
+  	
    </div>
     @include('layouts.footer')
  </div>

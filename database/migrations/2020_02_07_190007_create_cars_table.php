@@ -37,6 +37,12 @@ class CreateCarsTable extends Migration
             $table->integer('cc');
             $table->integer('kilometers');
             $table->text('description');
+            $table->string('image');
+             $table->string('comfort')->nullable();
+             $table->string('windows')->nullable();
+             $table->string('sounds')->nullable();
+             $table->string('safe')->nullable();
+             $table->string('other_future')->nullable();
             $table->string('slug')->unique()->nullable();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();

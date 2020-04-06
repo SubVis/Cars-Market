@@ -4,15 +4,16 @@ namespace App\Http\Controllers\Market;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Cars;
+use App\Car;
 use App\Cars2;
 use App\Brand;
 use App\CarsModel;
 use App\City;
 use App\Http\Requests\CarRequest;
-use App\Http\Requests\Car2Request;
+use App\Http\Requests\CarFrom1Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class CarController extends Controller
@@ -52,7 +53,7 @@ class CarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CarRequest $request)
+    public function store(CarFrom1Request $request)
     {     
         
    
@@ -80,51 +81,53 @@ class CarController extends Controller
 
     }
 
-    public function store2(Car2Request $request)
+    public function store2(CarRequest $request)
     {   
-        // return dd($request);
-           $car =   Cars::create([
-               'user_id' =>   1, 
-               'title' =>   $request->title, 
-                'brand_id' =>    $request->brand, 
-                'model_id' =>   $request->model, 
-                'modelyear_id' =>    $request->modelyear,
-                'city_id' =>   $request->city, 
-                 'cc' =>  $request->cc, 
-               
-                 'kilometers' =>    $request->kilometers, 
-                 'driver_id' =>    $request->driver, 
-                 'fuel_id' =>    $request->fuel, 
-                  
-                'color_id' =>     $request->color, 
-                'price' =>     $request->price, 
-               'description' =>   $request->details, ]);
 
-        foreach ($request->file() as $files) {
+         foreach ($request->file() as $files) {
              $i = 1;
 
             if($request->file('image'.$i)){
             $image_name = rand() .'.'.$files->getClientOriginalExtension();
-            $files->move(public_path('market/images/cars'), $image_name);
-            $image[] = 'market/images/cars/' . $image_name;
+            $files->move(public_path('storage/cars/' .date('FY')), $image_name);
+            $image[] = 'storage/cars/' . date('FY').'/'.$image_name;
             }
             $i++;
         }
-        $images_string = implode(',', $image);
-        $windows = implode(',',$request->windows);
-        $comfort = implode(',',$request->comfort);
-        $soundSys = implode(',',$request->soundSys);
-        $security= implode(',',$request->security);
-        $others= implode(',',$request->others);
-        $car2 =  Cars2::insert([
-            'car_id' => $car->id,
+       $images_string = implode(',', $image);
+       $request->windows ? $windows = implode(',',$request->windows) : $windows =null;
+       $request->comfort ? $comfort = implode(',',$request->comfort) : $comfort = null;
+       $request->soundSys ? $soundSys = implode(',',$request->soundSys):$soundSys =null ;
+       $request->security ? $security= implode(',',$request->security):$security =null;
+       $request->others ? $others= implode(',',$request->others):$others = null  ;
+
+       $car =   Car::create([
+           'user_id' =>   Auth::user()->id, 
+           'title' =>   $request->title, 
+            'brand_id' =>    $request->brand, 
+            'model_id' =>   $request->model, 
+            'modelyear_id' =>    $request->modelyear,
+            'city_id' =>   $request->city, 
+             'cc' =>  $request->cc, 
+           
+             'kilometers' =>    $request->kilometers, 
+             'driver_id' =>    $request->driver, 
+             'fuel_id' =>    $request->fuel, 
+              
+            'color_id' =>     $request->color, 
+            'price' =>     $request->price, 
+           'description' =>   $request->details,
             'image' => $images_string,
             'comfort' => $comfort,
             'windows' => $windows,
             'sounds' => $soundSys,
             'safe' => $security,
             'other_future' => $others,
-        ]);
+
+
+            ]);
+
+       
        
         return route('car/show', ['id' =>$car->id]);
      /*

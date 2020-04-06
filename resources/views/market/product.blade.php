@@ -10,13 +10,13 @@
    
     <?php
    
-    $images = explode(',', $car2->image);
-    $comforts = explode(',', $car2->comfort);
+    $images = explode(',', $car->image);
+    $comforts = explode(',', $car->comfort);
 
-    $windows = explode(',', $car2->windows);
-    $sounds = explode(',', $car2->sounds);
-    $safes = explode(',', $car2->safe);
-    $other_futures = explode(',', $car2->other_future);
+    $windows = explode(',', $car->windows);
+    $sounds = explode(',', $car->sounds);
+    $safes = explode(',', $car->safe);
+    $other_futures = explode(',', $car->other_future);
     
     ?>
     
@@ -222,7 +222,7 @@
 
                         <!-- Start Car Images -->
                         <div class="carousel w-full sm:w-full lg">
-                            <?php $images = explode(',', $car->car2->image); ?>
+                            <?php $images = explode(',', $car->image); ?>
                             <div class="siema">
                                 @foreach($images as $image)
                                 <div>

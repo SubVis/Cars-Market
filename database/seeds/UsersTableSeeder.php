@@ -12,7 +12,9 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
          DB::table('users')->insert([
-            ['name' => 'admin',
+            [
+            'role_id' => 1,
+            'name' => 'admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('12345'),
             'phone' => 934987402,

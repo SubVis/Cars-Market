@@ -1,48 +1,23 @@
 <?php
 
-namespace App\Http\Controllers\Market;
+namespace App\Http\Controllers\market;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Car;
 use App\Brand;
-use App\CarsModel;
-use App\City;
-use DB;
-class SearchController extends Controller
+
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {  
-      $brands = Brand::get();
-       $models = CarsModel::get();
-       $cities = City::get();
-       $drivers = DB::table('drivers')->get();
-       $modelyear = DB::table('ModelYears')->orderBy('year', 'desc')->get();
-
-  $cars = Car::where('brand_id', $request->brand)->
-               orWhere('city_id', $request->city)->
-               orWhere('driver_id', $request->driver)->
-               orWhereBetween('price', [$request->salaryFrom, $request->salaryTo])->
-               orWhereBetween('modelyear_id', [$request->yearFrom ,$request->yearTo])
-
-        ->get();     
-       return view('market/search' ,compact(['cars', 'brands', 'models', 'cities', 'cars', 'drivers', 'modelyear']));
-    }
-
-
-
-    public function model_ajax(Request $request)
+    public function index()
     {
-
-        if($request->brand_id){
-            $model = CarsModel::where('brand_id', $request->brand_id)->get();
-            return $model;
-        }
+        $brands = Brand::get();
+        return view('market.all-brands', ['brands' => $brands]);
     }
 
     /**
@@ -74,7 +49,9 @@ class SearchController extends Controller
      */
     public function show($id)
     {
-        //
+       $cars = Car::where('brand_id', $id)->get();
+
+       return view('market/brand' , ['cars' => $cars]);
     }
 
     /**

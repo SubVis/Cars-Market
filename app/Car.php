@@ -4,17 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cars extends Model
+class Car extends Model
 {
      protected $fillable = [
-       'id', 'user_id', 'title', 'brand_id','model_id', 'cc', 'city_id','driver_id', 'modelyear_id', 'fuel_id', 'color_id','kilometers', 'driver', 'fuel','color', 'price', 'description', 'slug',
+       'id', 'user_id', 'title', 'brand_id','model_id', 'cc', 'city_id','driver_id', 'modelyear_id', 'fuel_id', 'color_id','kilometers', 'driver', 'fuel','color', 'price', 'description', 'slug','image','comfort',   'windows',  'sounds',   'safe', 'other_future'
     ];
 
-     public function car2()
-    {
-    	return $this->hasOne('App\Cars2', 'car_id', 'id');
-    }
-
+   
     public function brand()
     {
     	return $this->hasOne('App\Brand', 'id', 'brand_id');
