@@ -123,7 +123,7 @@
                 </div>
                 <div class="number hidden px-2">
                     <p class="text-center text-white my-3 md:text-lg">متنساش تقول للبايع انك جاي من موقعنا </p>
-                    <p class="text-center text-white font-bold my-3 md:text-lg">01153297653</p>
+                    <p class="text-center text-white font-bold my-3 md:text-lg">{{$car->user->phone}}</p>
                 </div>
             </div>
             <!-- End sellerNumber -->

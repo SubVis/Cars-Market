@@ -74,7 +74,6 @@
                 rtl: true,
             })
 
-            setInterval(() => s.next(), 2000)
         };
     })
 </script>
