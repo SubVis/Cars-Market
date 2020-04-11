@@ -30,19 +30,3 @@
     background-color: #7420a3;
     color: #fff;
 }
-
-#page-container {
-    position: relative;
-    min-height: 100vh;
-  }
-  
-  #content-wrap {
-    padding-bottom: 663.6px;    /* Footer height */
-  }
-  
-  #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 663.6px;            /* Footer height */
-  }

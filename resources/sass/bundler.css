@@ -409,4 +409,15 @@ button.next:hover {
   background-color: #ddd;
   cursor: pointer;
 }
+.card.card-special div.special{
+  top: 8px;
+  left: 8px;
+  height: 70px;
+  width: 84px;
+  background-image: url(/images/special.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /*# sourceMappingURL=bundler.css.map */

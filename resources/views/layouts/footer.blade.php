@@ -1,4 +1,4 @@
-<footer class="main_bg py-8 z-50 overflow-x-hidden" id="footer">
+<footer class="main_bg py-8 z-50 overflow-x-hidden">
 	<div class="container mx-auto">
 		<div class="text-center text-white mb-5">
 			<h2 class="font-normal text-2xl">مستني ايه؟</h2>

@@ -1,17 +1,19 @@
 <div class="container mx-auto">
     <div class="flex flex-wrap px-2">
         @foreach($cars as $car)
-        <div class="px-2 w-full md:w-1/2 lg:w-1/3 wow bounceInDown" data-wow-duration="2s" data-wow-offset="20" data-wow-delay="$index s">
-            <div class="card my-2">
+        <div class="px-2 w-full md:w-1/2 lg:w-1/3 relative">
+            <!-- ====================== ADD CLASS HERE ====================== -->
+            <div class="card card-special my-2">
                 <!-- Start Car Images -->
-                    <?php $images = explode(',', $car->image); ?>
-                    <div class="siema">
-                        @foreach($images as $image)
-                        <div>
-                            <img style="height: 300px;width: 100%" src="{{url($image)}}" alt="image" />
-                        </div>
-                        @endforeach
+                <div class="special absolute z-50" style="overflow: hidden"></div>
+                <?php $images = explode(',', $car->image); ?>
+                <div class="siema">
+                    @foreach($images as $image)
+                    <div>
+                        <img style="height: 300px;width: 100%" src="{{url($image)}}" alt="image" />
                     </div>
+                    @endforeach
+                </div>
                 <!-- End Car Images -->
 
                 <!-- Start Car Details -->
