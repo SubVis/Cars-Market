@@ -40,6 +40,6 @@ class User extends \TCG\Voyager\Models\User
 
     public function cars()
     {
-        return $this->hasMany('App\Cars');
+        return $this->hasMany('App\Car');
     }
 }

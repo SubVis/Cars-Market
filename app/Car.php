@@ -41,6 +41,9 @@ class Car extends Model
     {
         return $this->hasOne('App\Modelyear', 'id', 'modelyear_id');
     }
-
+    public function user()
+    {
+        return $this->hasOne('App\user', 'id', 'user_id');
+    }
 
 }

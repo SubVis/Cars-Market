@@ -83,48 +83,44 @@ class CarController extends Controller
 
     public function store2(CarRequest $request)
     {   
-
          foreach ($request->file() as $files) {
              $i = 1;
 
             if($request->file('image'.$i)){
             $image_name = rand() .'.'.$files->getClientOriginalExtension();
             $files->move(public_path('storage/cars/' .date('FY')), $image_name);
-            $image[] = 'storage/cars/' . date('FY').'/'.$image_name;
+            $image[] = 'cars/' . date('FY').'/'.$image_name;
             }
             $i++;
         }
-       $images_string = implode(',', $image);
-       $request->windows ? $windows = implode(',',$request->windows) : $windows =null;
-       $request->comfort ? $comfort = implode(',',$request->comfort) : $comfort = null;
-       $request->soundSys ? $soundSys = implode(',',$request->soundSys):$soundSys =null ;
-       $request->security ? $security= implode(',',$request->security):$security =null;
-       $request->others ? $others= implode(',',$request->others):$others = null  ;
+        
+       $image ? $image = json_encode($image) : $image = null ;
+       $request->windows ? $windows = json_encode($request->windows) : $windows =null;
+       $request->comfort ? $comfort = json_encode($request->comfort) : $comfort = null;
+       $request->soundSys ? $soundSys = json_encode($request->soundSys):$soundSys =null ;
+       $request->security ? $security= json_encode($request->security):$security =null;
+       $request->others ? $others= json_encode($request->others):$others = null  ;
 
        $car =   Car::create([
-           'user_id' =>   Auth::user()->id, 
-           'title' =>   $request->title, 
+            'user_id' =>   Auth::user()->id, 
+            'title' =>   $request->title, 
             'brand_id' =>    $request->brand, 
             'model_id' =>   $request->model, 
             'modelyear_id' =>    $request->modelyear,
             'city_id' =>   $request->city, 
-             'cc' =>  $request->cc, 
-           
-             'kilometers' =>    $request->kilometers, 
-             'driver_id' =>    $request->driver, 
-             'fuel_id' =>    $request->fuel, 
-              
+            'cc' =>  $request->cc, 
+            'kilometers' =>    $request->kilometers, 
+            'driver_id' =>    $request->driver, 
+            'fuel_id' =>    $request->fuel, 
             'color_id' =>     $request->color, 
             'price' =>     $request->price, 
-           'description' =>   $request->details,
-            'image' => $images_string,
-            'comfort' => $comfort,
-            'windows' => $windows,
+            'description' =>   $request->details,
+            'image' => $image,
+            'comfort' =>  $comfort ,
+            'windows' =>  $windows ,
             'sounds' => $soundSys,
-            'safe' => $security,
-            'other_future' => $others,
-
-
+            'safe' => $security ,
+            'other_future' =>  $others ,
             ]);
 
        

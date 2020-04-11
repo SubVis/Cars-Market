@@ -52,7 +52,6 @@ class CarFrom1Request extends FormRequest
            'fuel.required' => "حقل الوقود مطلوب",
            'color.required' =>"حقل اللوان مطلوب",
            'price.required' =>"حقل السعر مطلوب",
-           'details.required' =>"حقل التفاصيل مطلوب",
         ];
     }
 

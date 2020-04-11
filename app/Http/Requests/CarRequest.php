@@ -57,7 +57,6 @@ class CarRequest extends FormRequest
            'fuel.required' => "حقل الوقود مطلوب",
            'color.required' =>"حقل اللوان مطلوب",
            'price.required' =>"حقل السعر مطلوب",
-           'details.required' =>"حقل التفاصيل مطلوب",
            'image1.required'=> 'please put iamge', 
           'image2.required'=> 'please put iamge'
         ];

@@ -31,7 +31,7 @@
 
             <!-- Start image input -->
             <div class="inputs my-2 px-2 relative overflow-hidden h-64 w-full md:w-1/2 lg:w-1/3">
-                <input class="w-full h-full" data-get="2" type="file" name="1" />
+                <input class="w-full h-full" data-get="2" type="file" name="image3" />
                 <div class="img relative w-full h-full"><img class="img" data-preview="2" />
                     <div class="tools">
                         <button class="delBtn delete px-2 py-1" type="button" data-del="2"><i class="far fa-times-circle"></i></button>
@@ -42,7 +42,7 @@
 
             <!-- Start image input -->
             <div class="inputs my-2 px-2 relative overflow-hidden h-64 w-full md:w-1/2 lg:w-1/3">
-                <input class="w-full h-full" data-get="3" type="file" name="1" />
+                <input class="w-full h-full" data-get="3" type="file" name="image4" />
                 <div class="img relative w-full h-full"><img class="img" data-preview="3" />
                     <div class="tools">
                         <button class="delBtn delete px-2 py-1" type="button" data-del="3"><i class="far fa-times-circle"></i></button>
@@ -53,7 +53,7 @@
 
             <!-- Start image input -->
             <div class="inputs my-2 px-2 relative overflow-hidden h-64 w-full md:w-1/2 lg:w-1/3">
-                <input class="w-full h-full" data-get="4" type="file" name="1" />
+                <input class="w-full h-full" data-get="4" type="file" name="image5" />
                 <div class="img relative w-full h-full"><img class="img" data-preview="4" />
                     <div class="tools">
                         <button class="delBtn delete px-2 py-1" type="button" data-del="4"><i class="far fa-times-circle"></i></button>
@@ -64,7 +64,7 @@
 
             <!-- Start image input -->
             <div class="inputs my-2 px-2 relative overflow-hidden h-64 w-full md:w-1/2 lg:w-1/3">
-                <input class="w-full h-full" data-get="5" type="file" name="1" />
+                <input class="w-full h-full" data-get="5" type="file" name="image6" />
                 <div class="img relative w-full h-full"><img class="img" data-preview="5" />
                     <div class="tools">
                         <button class="delBtn delete px-2 py-1" type="button" data-del="5"><i class="far fa-times-circle"></i></button>

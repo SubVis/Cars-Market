@@ -7,20 +7,19 @@
 @section('content')
 <div class="container mx-auto mb-5 px-2 ">
     <!-- Start product header -->
-   
+  
     <?php
    
-    $images = explode(',', $car->image);
-    $comforts = explode(',', $car->comfort);
+    $images = json_decode( $car->image);
+    $comforts = json_decode($car->comfort);
 
-    $windows = explode(',', $car->windows);
-    $sounds = explode(',', $car->sounds);
-    $safes = explode(',', $car->safe);
-    $other_futures = explode(',', $car->other_future);
+    $windows = json_decode( $car->windows);
+    $sounds = json_decode( $car->sounds);
+    $safes = json_decode( $car->safe);
+    $other_futures = json_decode( $car->other_future);
     
     ?>
     
- 
     <p class="header" style="margin-top: 2rem;margin-bottom: 2rem;">{{$car->title}}</p>
     <div class="container mx-auto">
         <div class="flex flex-wrap justify-center">
@@ -29,7 +28,7 @@
                 <div class="siema">
                     <!-- Put car image here -->
                     @foreach($images as $i => $image)
-                    <img class="w-full" data-index="{{$i++}}" src="{{url($image)}}" />
+                    <img class="w-full" data-index="{{$i++}}" src="{{url('storage/'.$image)}}" />
                     @endforeach
                 </div>
                 <div class="navigation flex flex-wrap justify-center"></div>
@@ -123,7 +122,7 @@
                 </div>
                 <div class="number hidden px-2">
                     <p class="text-center text-white my-3 md:text-lg">متنساش تقول للبايع انك جاي من موقعنا </p>
-                    <p class="text-center text-white font-bold my-3 md:text-lg">01153297653</p>
+                    <p class="text-center text-white font-bold my-3 md:text-lg">{{$car->user->phone}}</p>
                 </div>
             </div>
             <!-- End sellerNumber -->
@@ -222,11 +221,11 @@
 
                         <!-- Start Car Images -->
                         <div class="carousel w-full sm:w-full lg">
-                            <?php $images = explode(',', $car->image); ?>
+                            <?php  $images = json_decode( $car->image);?>
                             <div class="siema">
                                 @foreach($images as $image)
                                 <div>
-                                    <img style="height: 300px;width: 100%" src="{{url($image)}}" alt="image" />
+                                    <img style="height: 300px;width: 100%" src="{{url('storage/'.$image)}}" alt="image" />
                                 </div>
                                 @endforeach
                             </div>

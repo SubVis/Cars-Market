@@ -4,11 +4,12 @@
         <div class="px-2 w-full md:w-1/2 lg:w-1/3 wow bounceInDown" data-wow-duration="2s" data-wow-offset="20" data-wow-delay="$index s">
             <div class="card my-2">
                 <!-- Start Car Images -->
-                    <?php $images = explode(',', $car->image); ?>
+                    <?php $images = json_decode( $car->image); ?>
+   
                     <div class="siema">
                         @foreach($images as $image)
                         <div>
-                            <img style="height: 300px;width: 100%" src="{{url($image)}}" alt="image" />
+                            <img style="height: 300px;width: 100%" src="{{url('storage/'.$image)}}" alt="image" />
                         </div>
                         @endforeach
                     </div>
