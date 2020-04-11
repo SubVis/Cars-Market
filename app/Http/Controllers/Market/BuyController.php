@@ -19,7 +19,7 @@ class BuyController extends Controller
     public function index()
     {
        $cars =  car::paginate(4);
-       $brands = Brand::get();
+       $brands = Brand::paginate(12);
        $models = CarsModel::get();
        $cities = City::get();
        $drivers = DB::table('drivers')->get();

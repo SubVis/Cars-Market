@@ -46,6 +46,7 @@ class CreateCarsTable extends Migration
             $table->string('slug')->unique()->nullable();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
+            $table->tinyInteger('special')->default(0);
             $table->timestamps();
         });
     }

@@ -97,8 +97,6 @@ function allOne(selecty, holder) {
  * @param {Array} clickable 
  */
 function list(clickable, exactSelect) {
-    console.log(exactSelect);
-
     let value = "", /** Selection value */
         optText = "", /** Selection placeholder */
         optAll = exactSelect.options, /** All options */
@@ -159,7 +157,9 @@ allOne(select);
 
 let togglers = document.querySelectorAll('.replacement-input');
 togglers.forEach(function (div) {
-    div.onclick = function () {
+    
+    div.onclick = function (e) {
+        if(!e.target.classList.contains('.replacement-input'))
         if (div.parentElement.classList.contains("replacement-opened"))
             div.parentElement.classList.remove("replacement-opened");
         else
@@ -168,7 +168,8 @@ togglers.forEach(function (div) {
 });
 
 window.onclick = function (e) {
-    let m = e.target.classList.contains("replacement-input") || e.target.classList.contains("replacement-ul") || e.target.classList.contains("replacement-ul--li");
+    let m = e.target.classList.contains("replacement-input") || e.target.classList.contains("replacement-ul") || e.target.classList.contains("replacement-ul--li") ||e.target.tagName === "SPAN"  || e.target.classList.contains("checker");
+    
     if (!m) {
         [...document.querySelectorAll('.replacement')].forEach(function (s) {
             s.scrollTop = 0;
@@ -177,6 +178,7 @@ window.onclick = function (e) {
     }
 };
 
+/** MODEL STUFF */
 let brand_parent = document.querySelector('.replacement.w-full.singleSelect[data-select-name="brand"]').firstElementChild;
 var config = {
     attributes: true,
@@ -194,28 +196,34 @@ var observer = new MutationObserver(function () {
     axios.post('ajax_model', formData).then(res => {
         let model_parent = document.querySelector('.replacement.w-full.singleSelect[data-select-name="model"]').lastElementChild,
             ul = model_parent.firstElementChild;
+        
+        if (res.data.length == 0) {
+            document.querySelector('.replacement.w-full.singleSelect[data-select-name="model"] .replacement-input').innerText = "لا يوجد موديلات لهذه الماركة حالياً";
+            ul.innerHTML = '';
+        }
+        else {
+            document.querySelector('.replacement.w-full.singleSelect[data-select-name="model"] .replacement-input').innerText = "اختر الموديلك" ;
 
-        ul.innerHTML = '';
-        res.data.forEach(model => {
-            let option = document.createElement("option");
-            let li = document.createElement("li");
+            res.data.forEach(model => {
+                let option = document.createElement("option");
+                let li = document.createElement("li");
+                
+                li.setAttribute('data-val', model.id);
+                li.innerHTML = `<span class="span">${model.name}</span><div class="checker"></div>`;
+                li.classList.add("replacement-ul--li");
 
-            li.setAttribute('data-val', model.id);
-            li.innerHTML = `<span class="span">${model.name}</span><div class="checker"><i class="fa far-faacebook"></i></div>`;
-            li.classList.add("replacement-ul--li");
+                option.setAttribute('value', model.id);
+                option.innerText = model.name;
 
-            option.setAttribute('value', model.id);
-            option.innerText = model.name;
+                document.querySelector('select#model').appendChild(option);
+                ul.appendChild(li);
+            });
 
-            document.querySelector('select#model').appendChild(option);
-            ul.appendChild(li);
-        });
-
-        let all = [...ul.children];
+            let all = [...ul.children];
 
 
-        list(all, document.querySelector('select#model.w-full.singleSelect'))
-
+            list(all, document.querySelector('select#model.w-full.singleSelect'))
+        }
 
     }).catch(err => {
         console.log(err);

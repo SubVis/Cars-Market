@@ -1,7 +1,7 @@
 const mix = require('laravel-mix');
 
 mix
-    .combine(['resources/sass/app.css','resources/sass/bundler.css','resources/sass/awesome.css'], 'resources/dist/app.css')
+    .combine(['resources/sass/loader.css','resources/sass/app.css','resources/sass/bundler.css','resources/sass/awesome.css'], 'resources/dist/app.css')
     .postCss('resources/dist/app.css', 'public/css', [
         require('tailwindcss'),
         require('cssnano')({

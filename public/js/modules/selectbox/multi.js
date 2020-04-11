@@ -48,10 +48,6 @@ function allMulti(selecty, holder) {
             let checker = document.createElement('div');
             checker.classList.add('checker');
 
-            let icon = document.createElement('i');
-            icon.classList.add("fa", "far-faacebook");
-
-            checker.append(icon)
             our_span.append(TheText)
             our_item.append(our_span, checker)
             our_list.append(our_item);
@@ -111,27 +107,7 @@ function allMulti(selecty, holder) {
     }); // End of the function
 };
 
-window.onclick = function (e) {
-    let m = e.target.classList.contains("replacement-input") || e.target.classList.contains("replacement-ul") || e.target.classList.contains("replacement-ul--li") || e.target.classList.contains("span") || e.target.classList.contains("checker");
-    if(!m){
-        [...document.querySelectorAll('.replacement')].forEach( function (s) {
-            s.scrollTop = 0;
-            s.classList.remove("replacement-opened");
-        });
-    }
-};
 /* ========================= code ========================= */
 let selecte = [...document.querySelectorAll('.multiSelect')]; // All select tags in the dom
 
 allMulti(selecte);
-
-let togglerse = document.querySelectorAll('.replacement-input');
-togglerse.forEach(function (div) {
-    div.onclick = function () {
-        if (div.parentElement.classList.contains("replacement-opened"))
-            div.parentElement.classList.remove("replacement-opened");
-        else
-            div.parentElement.classList.add("replacement-opened");
-    }
-});
-

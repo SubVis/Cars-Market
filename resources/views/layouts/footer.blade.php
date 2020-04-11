@@ -1,4 +1,4 @@
-<footer class="main_bg py-8 z-50 overflow-x-hidden" id="footer">
+<footer class="main_bg py-8 z-50 overflow-x-hidden">
 	<div class="container mx-auto">
 		<div class="text-center text-white mb-5">
 			<h2 class="font-normal text-2xl">مستني ايه؟</h2>
@@ -38,15 +38,18 @@
 					<li>
 						<p class="text-xl font-semibold mt-5">أحدث الإعلانات</p>
 					</li>
+					<?php $cars = DB::table('cars')->paginate(3);?>
+					@foreach($cars as $car)
 					<li>
-						@include('components.footerProduct')
+						<a class="flex flex-wrap justify-center items-center md:justify-start md:items-start" href="/product">
+						    <div class="img h-16 w-16 bg-gray-800"></div>
+						    <div class="text mr-3 my-auto">
+						        <p class="w-full text-sm">{{$car->title}}</p>
+						        <p class="text-gray-400 text-xs"></p>
+						    </div>
+						</a>
 					</li>
-					<li>
-						@include('components.footerProduct')
-					</li>
-					<li>
-						@include('components.footerProduct')
-					</li>
+					@endforeach
 				</ul>
 				<!-- End Products -->
 
@@ -76,7 +79,6 @@
 <script src="{{url('js/main.js')}}"></script>
 <script src="{{url('js/libs/axios.js')}}"></script>
 <script src="{{url('js/axios.js')}}"></script>
-
 </body>
 
 </html>

@@ -49,9 +49,9 @@ class BrandController extends Controller
      */
     public function show($id)
     {
+       $brand = Brand::where('id', $id)->first(); 
        $cars = Car::where('brand_id', $id)->get();
-
-       return view('market/brand' , ['cars' => $cars]);
+       return view('market/brand' , ['cars' => $cars, 'brand' => $brand]);
     }
 
     /**

@@ -6,7 +6,7 @@
 
     <section class="my-8">
         <div class="container mx-auto">
-            <h2 class="header">اسم البراند</h2>
+            <h2 class="header">{{$brand->name}}</h2>
             @include('components.carsCardsGrid')
         </div>
     </section>

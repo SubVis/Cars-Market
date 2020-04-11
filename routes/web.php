@@ -64,9 +64,9 @@ Route::name('showrooms')->get('showrooms', function () {
 
 
 
-Route::group(['prefix' => 'admin'], function () {
-        Voyager::routes();
-});
+ Route::group(['prefix' => 'admin'], function () {
+         Voyager::routes();
+ });
 
 Route::group(["middleware"=>"auth"], function (){
 
