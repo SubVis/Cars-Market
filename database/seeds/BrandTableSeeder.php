@@ -11,12 +11,12 @@ class BrandTableSeeder extends Seeder
      */
     public function run()
     {
-         DB::table('brands')->insert([
+        DB::table('brands')->insert([
             ['name' => 'أستون مارتن', 'image' => 'أستون مارتن.png'],
             ['name' => 'ألفاروميو', 'image' => 'ألفاروميو.png'],
             ['name' => 'أوبل', 'image' => 'أوبل.png'],
             ['name' => 'أودي', 'image' => 'أودي.png'],
-            ['name' => 'ام جى', 'image' => 'ام جى.png'],
+            ['name' => 'ام جي', 'image' => 'ام جي.png'],
             ['name' => 'انفنتي', 'image' => 'انفنتي.png'],
             ['name' => 'ايسوزو', 'image' => 'ايسوزو.png'],
             ['name' => 'بروتون', 'image' => 'بروتون.png'],
@@ -73,12 +73,12 @@ class BrandTableSeeder extends Seeder
             ['name' => 'هامر', 'image' => 'هامر.png'],
             ['name' => 'هوندا', 'image' => 'هوندا.png'],
             ['name' => 'هيونداي', 'image' => 'هيونداي.png'],
-            
+
             // ['name' => 'شانا'],
             // ['name' => 'جاك'],
             // ['name' => 'اسبيرانزا'], 
             // ['name' => 'شاهين'],
-            
-            ]);
-        }
+
+        ]);
     }
+}

@@ -188,7 +188,6 @@ var config = {
 };
 var observer = new MutationObserver(function () {
     let value = brand_parent.getAttribute('val');
-    console.log('lol')
 
     var formData = new FormData();
     formData.append('brand_id', value);
@@ -202,7 +201,8 @@ var observer = new MutationObserver(function () {
             ul.innerHTML = '';
         }
         else {
-            document.querySelector('.replacement.w-full.singleSelect[data-select-name="model"] .replacement-input').innerText = "اختر الموديلك" ;
+            ul.innerHTML = '';
+            document.querySelector('.replacement.w-full.singleSelect[data-select-name="model"] .replacement-input').innerText = "اختر الموديل" ;
 
             res.data.forEach(model => {
                 let option = document.createElement("option");

@@ -1,12 +1,13 @@
 <div class="container mx-auto">
     <div class="flex flex-wrap px-2">
+        
         @foreach($cars as $car)
         <div class="px-2 w-full md:w-1/2 lg:w-1/3 relative">
             <!-- ====================== ADD CLASS HERE ====================== -->
             <div class="card card-special my-2">
                 <!-- Start Car Images -->
                 <div class=" @if($car->special) ? special  @endif absolute z-50" style="overflow: hidden"></div>
-                <?php $images = json_decode( $car->image); ?>
+                <?php $images = json_decode($car->image); ?>
                 <div class="siema">
                     @foreach($images as $image)
                     <div>

@@ -24,12 +24,14 @@
 					<li>
 						<a href="/buy">كل الإعلانات.</a>
 					</li>
+					<!-- 
 					<li>
 						<a href="#">كيفية استخدام الموقع.</a>
 					</li>
 					<li>
 						<a href="#">المدونة.</a>
 					</li>
+					 -->
 				</ul>
 				<!-- End Links -->
 
@@ -75,10 +77,10 @@
 	</div>
 </footer>
 
-@stack('js')
 <script src="{{url('js/main.js')}}"></script>
 <script src="{{url('js/libs/axios.js')}}"></script>
 <script src="{{url('js/axios.js')}}"></script>
+@stack('js')
 </body>
 
 </html>

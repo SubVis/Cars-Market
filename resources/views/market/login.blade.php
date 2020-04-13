@@ -10,13 +10,13 @@
 		<div class="input px-2 my-2 w-full">
 			<p class="my-2 font-bold title">البريد الإلكتروني:</p>
 			<input type="text" name='email' placeholder="example@example.com" auto-complete="off" required="required" />
-			<p class="help-block help" data-validation="email">هذا الحقل مطلوب.</p>
+			<p class="help-block help" data-validation="email">.</p>
 		</div>
 
 		<div class="input px-2 my-2 w-full">
 			<p class="my-2 font-bold title">كلمة السر:</p>
 			<input type="password" name='password' placeholder="أدخل كلمة السر" auto-complete="off" required="required" />
-			<p class="help-block help" data-validation="password">هذا الحقل مطلوب.</p>
+			<p class="help-block help" data-validation="password"></p>
 		</div>
 
 		<a class="text-gray-600 self-start my-2" href="{{route('sign-up')}}">ليس لديك حساب؟</a>

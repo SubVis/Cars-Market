@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
            // DriverTableSeeder::class,
            // FuelTableSeeder::class,
            BrandTableSeeder::class,
-            ModelTableSeeder::class,
            // ModelYearTableSeeder::class,
            // CityTableSeeder::class,
            // ColorTableSeeder::class,
