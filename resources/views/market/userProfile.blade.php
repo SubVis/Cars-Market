@@ -29,7 +29,8 @@
                 <!-- Start User town -->
                 <li class="inline-block flex-grow w-full md:w-1/3">
                     <span class="text-gray-600 text-md">المدينة:</span>
-                    <span class="mx-2 text-black">{{$user->city}}</span>
+        
+                    <span class="mx-2 text-black">{{$user->city->city}}</span>
                 </li>
                 <!-- End User town -->
             </ul>
@@ -39,11 +40,14 @@
         <!-- Start User Shares -->
         <div class="user-shares mt-8">
             <p class="header">المشاركات</p>
-            @include('components.carsCardsGrid')
-            @if(count($cars) == 0 )
-            <div class="flex justify-center items-center">
-                <span class="text-gray-600">لا يوجد</span>
-            </div>
+          
+            @if(count($cars))
+                
+             @include('components.carsCardsGrid')
+            @else
+                <div class="flex justify-center items-center">
+                    <span class="text-gray-600">لا يوجد</span>
+                </div>
             @endif
         </div>
         <!-- End User Shares -->

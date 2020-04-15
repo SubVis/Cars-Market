@@ -24,12 +24,14 @@
 					<li>
 						<a href="/buy">كل الإعلانات.</a>
 					</li>
+					<!-- 
 					<li>
 						<a href="#">كيفية استخدام الموقع.</a>
 					</li>
 					<li>
 						<a href="#">المدونة.</a>
 					</li>
+					 -->
 				</ul>
 				<!-- End Links -->
 
@@ -38,14 +40,18 @@
 					<li>
 						<p class="text-xl font-semibold mt-5">أحدث الإعلانات</p>
 					</li>
-					<?php $cars = DB::table('cars')->paginate(3);?>
+					<?php $cars = App\Car::paginate(3);?>
 					@foreach($cars as $car)
+					<?php $images = json_decode($car->image); ?>
 					<li>
-						<a class="flex flex-wrap justify-center items-center md:justify-start md:items-start" href="/product">
+						<a class="flex flex-wrap justify-center items-center md:justify-start md:items-start" href="{{ url('car/'.$car->id . '/' . str_replace(' ', '-', $car->brand->name) . '/' . str_replace(' ', '-' , $car->title ))}}">
 						    <div class="img h-16 w-16 bg-gray-800"></div>
 						    <div class="text mr-3 my-auto">
+								<img src="{{url('storage/'. $images[0])}}">
 						        <p class="w-full text-sm">{{$car->title}}</p>
 						        <p class="text-gray-400 text-xs"></p>
+
+								
 						    </div>
 						</a>
 					</li>
@@ -75,10 +81,10 @@
 	</div>
 </footer>
 
-@stack('js')
 <script src="{{url('js/main.js')}}"></script>
 <script src="{{url('js/libs/axios.js')}}"></script>
 <script src="{{url('js/axios.js')}}"></script>
+@stack('js')
 </body>
 
 </html>

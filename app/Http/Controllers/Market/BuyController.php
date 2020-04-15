@@ -18,14 +18,18 @@ class BuyController extends Controller
      */
     public function index()
     {
-       $cars =  car::paginate(4);
-       $brands = Brand::paginate(12);
+        $b = Brand::get();
+       
+       
+       $cars =  car::paginate(12);
+       $brands_select = Brand::get();
+       $brands = Car::where('brand_id', '!=', null)->paginate(12);
        $models = CarsModel::get();
        $cities = City::get();
        $drivers = DB::table('drivers')->get();
        $modelyear = DB::table('ModelYears')->orderBy('year', 'desc')->get();
      
-       return view('market/buy', compact(['brands', 'models', 'cities', 'cars', 'drivers', 'modelyear']));
+       return view('market/buy', compact(['brands', 'models', 'cities', 'cars', 'drivers', 'modelyear', 'brands_select']));
     }
 
 
@@ -60,9 +64,10 @@ class BuyController extends Controller
     {
        
         $car = Car::where('id', $id)->first();
-        $relate_cars =  Car::whereBetween('price', [$car->price - 1000, $car->price + 1000])->get();
+        // relate cars 
+        $cars =  Car::whereBetween('price', [$car->price - 1000, $car->price + 1000])->where('id', '!=' , $id)->get();
         
-        return view('market/product', ['car'=>$car, 'relate_cars'=>$relate_cars ]);
+        return view('market/product', ['car'=>$car, 'cars'=>$cars ]);
     }
 
     /**

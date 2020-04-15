@@ -184,7 +184,15 @@ class CarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $car = Car::where('id', $id)->first();
+        $brands = Brand::get();
+        $models = CarsModel::get();
+        $cities = City::get();
+        $colors = DB::table('colors')->get();
+        $fuels = DB::table('fuels')->get();
+        $drivers = DB::table('drivers')->get();
+        $modelyear = DB::table('ModelYears')->orderBy('year', 'desc')->get();
+       return view('market.editCar', compact(['brands', 'models', 'cities', 'colors', 'fuels', 'drivers', 'modelyear', 'car' ]));
     }
 
     /**
@@ -196,7 +204,23 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
+       $car =   Car::where('id', $id)->update([
+        'user_id' =>   Auth::user()->id, 
+        'title' =>   $request->title, 
+        'brand_id' =>    $request->brand, 
+        'model_id' =>   $request->model, 
+        'modelyear_id' =>    $request->modelyear,
+        'city_id' =>   $request->city, 
+        'cc' =>  $request->cc, 
+        'kilometers' =>    $request->kilometers, 
+        'driver_id' =>    $request->driver, 
+        'fuel_id' =>    $request->fuel, 
+        'color_id' =>     $request->color, 
+        'price' =>     $request->price, 
+        'description' =>   $request->details,
+        
+        ]);
     }
 
     /**

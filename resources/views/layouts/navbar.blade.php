@@ -12,14 +12,14 @@
         <div class="text-sm md:flex-grow">
             
         @auth()
-            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('user-active')" href="userProfile">
+            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('user-active')" href="{{route('userProfile', ['name' => Auth()->user()->name])}}">
                 <i class="fa fa-user mx-2 ">  {{auth()->user()->name}}</i> 
             </a>
         @endauth
             <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('home-active')" href="{{route('home')}}">الرئيسية</a>
             <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('buy-active')" href="{{route('buy')}}">اشتري</a>
             <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('sell-active')" href="{{route('sell')}}">بيع</a>
-            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('use-active')" href="{{route('all-brands')}}">الماركات</a>
+            <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('use-active')" href="{{route('brands')}}">الماركات</a>
             <a class="block mt-4 text-white mr-4 md:inline-block md:mt-0 hover:text-white @yield('use-active')" href="{{route('showrooms')}}">المعارض</a>
 
         </div>

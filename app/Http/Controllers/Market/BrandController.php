@@ -16,7 +16,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = Brand::get();
+        $brands = Car::where('brand_id', '!=', null )->get();
         return view('market.all-brands', ['brands' => $brands]);
     }
 
@@ -47,7 +47,7 @@ class BrandController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($brand, $name,$id)
+    public function show($id)
     {
        $brand = Brand::where('id', $id)->first(); 
        $cars = Car::where('brand_id', $id)->get();

@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'city' => ['required', 'string'],
             'phone' => ['required', 'numeric', 'min:14'],
-            'image' => ['required|image|mimes:jpeg,png,jpg,gif,svg|max:2048']
+            //'image' => ['required|image|mimes:jpeg,png,jpg,gif,svg|max:2048']
         ]);
     }
 
@@ -67,17 +67,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-         if($request->file('image')){
-            $image_name = rand() .'.'.$files->getClientOriginalExtension();
-            $files->move(storage_path('storage/users'), $image_name);
-            $image[] = 'users/' . $image_name;
-            }
+    
+        //  if($data->file('image')){
+        //     $image_name = rand() .'.'.$files->getClientOriginalExtension();
+        //     $files->move(storage_path('storage/users'), $image_name);
+        //     $image[] = 'users/' . $image_name;
+        //     }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'city' => $data['city'],
+            'city_id' => $data['city'],
             'phone' => $data['phone'],
-            'avatar' => $data['image'],
+           // 'avatar' => $data['image'],
             'password' => Hash::make($data['password']),
         ]);
     }

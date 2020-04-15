@@ -16,7 +16,7 @@ class User extends \TCG\Voyager\Models\User
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'city',
+        'name', 'email', 'password', 'phone', 'city_id',
     ];
 
     /**
@@ -41,5 +41,10 @@ class User extends \TCG\Voyager\Models\User
     public function cars()
     {
         return $this->hasMany('App\Car');
+    }
+
+    public function city()
+    {
+        return $this->hasOne('App\City',  'id', 'city_id');
     }
 }

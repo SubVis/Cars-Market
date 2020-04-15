@@ -7,7 +7,15 @@
     <section class="my-8">
         <div class="container mx-auto">
             <h2 class="header">{{$brand->name}}</h2>
-            @include('components.carsCardsGrid')
+            <div class="flex my-8 justify-center content-center">
+           
+        </div>
+     
+        @if(count($cars))
+             @include('components.carsCardsGrid')
+           @else
+           <p class="text-gray-600">لا يوجد سيارات لهذه الماركة حالياً</p>
+           @endif
         </div>
     </section>
 

@@ -212,63 +212,10 @@
     <!-- Start suggestion -->
     <div class="suggestion my-4 overflow-hidden">
         <p class="header">عربيات من نفس الفئة السعرية</p>
-        <div class="-mx-2 mt-3">
-            <div class="flex px-2 flex-wrap justify-start">
-                <!-- Start Card -->
-                @foreach($relate_cars as $car)
-                <div class="px-2 w-full md:w-1/2 lg:w-1/3">
-                    <div class="minicard my-2">
-
-                        <!-- Start Car Images -->
-                        <div class="carousel w-full sm:w-full lg">
-                            <?php  $images = json_decode( $car->image);?>
-                            <div class="siema">
-                                @foreach($images as $image)
-                                <div>
-                                    <img style="height: 300px;width: 100%" src="{{url('storage/'.$image)}}" alt="image" />
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                        <!-- End Car Images -->
-
-
-                        <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-                            <!-- Start Specifictions -->
-                            <ul class="w-1/2">
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">الماركة:</span>
-                                    <span class="text-left inline-block">{{$car->brand->name}}</span>
-                                </li>
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">ناقل الحركة:</span>
-                                    <span class="text-left inline-block">{{$car->driver->driver}}</span>
-                                </li>
-                            </ul>
-                            <ul class="w-1/2">
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">المدينة:</span>
-                                    <span class="text-left inline-block">{{$car->city->city}}</span>
-                                </li>
-                                <li class="my-2">
-                                    <span class="color font-bold inline-block text-right ml-2">السعر:</span>
-                                    <span class="text-left inline-block">{{$car->price}}</span>
-                                </li>
-                            </ul>
-                            <!-- End Specifictions -->
-
-                            <!-- Start Button -->
-                            <div class="w-full flex justify-center items-center py-2">
-                                <a class="btn indigo" href="{{ url('car/'.$car->id . '/' . str_replace(' ', '-', $car->brand->name) . '/' . str_replace(' ', '-' , $car->title ))}}">شاهد المزيد</a>
-                            </div>
-                            <!-- End Button -->
-                        </section>
-                    </div>
-                </div>
-                <!-- End Card -->
-                @endforeach
-            </div>
-        </div>
+        @if(count($cars) != null)
+         @include('components.carsCardsGrid')
+        @else <h3> لا يوجد عربيات من نفس الفئة</h3>
+        @endif
     </div>
     <!-- End suggestion -->
 </div>

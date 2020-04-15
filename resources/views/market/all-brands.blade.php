@@ -12,7 +12,8 @@
             <div class="-mx-2">
                 <div class="flex px-2 flex-wrap">
                     <!-- Start Brand Image -->
-                    @foreach($brands as $brand)
+                    @foreach($brands as $b)
+                    <?php $brand = $b->brand; ?>
                     <div class="img px-2 w-1/2 md:w-2/12  mb-8">
                         <a href="{{ route( 'brand', ['id' => $brand->id, 'name' => $brand->name])  }}" class="text-center inline-block">
                             <img src="{{url('storage/brands/'.$brand->image )}}" width="100" alt="brand" />

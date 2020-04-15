@@ -11,8 +11,8 @@
                     <div data-wrapper="brand">
                         <select class="w-full singleSelect" name="brand" id="brand">
                             <option>اختر الماركة</option>
-                             <option>اختر الموديل</option>
-                            @foreach($brands as $brand)
+                           
+                            @foreach($brands_select as $brand)
                             <option value="{{$brand->id}}">{{$brand->name}}</option>
                             @endforeach
                         </select>

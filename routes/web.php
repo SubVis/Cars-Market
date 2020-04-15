@@ -17,7 +17,7 @@ Route::name('home')->get('/', function () {
 Route::get('home', function () {
     return view('market/home');
 });
-Route::name('userProfile')->get('/userProfile', 'Market\UserController@index');
+
 Route::name('product')->get('/product', function () {
     return view('market/product');
 });
@@ -37,10 +37,10 @@ Route::name('search')->post('search', 'Market\SearchController@index');
 Route::name('ajax_model')->post('ajax_model', 'Market\SearchController@model_ajax');
 
 // brands
-Route::name('brands')->get('brands/{name}/{id}', 'Market\BrandController@show');
-Route::name('all-brands')->get('brands','Market\BrandController@index');
+Route::name('brand')->get('brand/{id}/{name}', 'Market\BrandController@show');
+Route::name('brands')->get('brands','Market\BrandController@index');
 
-
+//user 
 Route::name('login')->get('login', function () {
     return view('market/login');
 });
@@ -48,7 +48,7 @@ Route::name('login')->post('login', 'Auth\LoginController@login');
 Route::name('logout')->post('logout', 'Auth\LoginController@logout');
 
 Route::name('sign-up')->get('sign-up', function () {
-    return view('market/signup');
+    return view('market/signup', ['cities' => App\City::get() ]);
 });
 
 Route::name('register')->post('register', 'Auth\RegisterController@register');
@@ -71,7 +71,9 @@ Route::group(["middleware"=>"auth"], function (){
 
 Route::name('sell')->get('sell', 'Market\CarController@create');
 Route::name('storeCars')->post('storeCars', 'Market\CarController@store');
-
+Route::name('userProfile')->get('/userProfile/{name}', 'Market\UserController@index');
+Route::name('car/edit')->get('car/edit/{id}', 'Market\CarController@edit');
+Route::name('editCar')->post('car/edit{id}', 'Market\CarController@update');
 });
 /*
     Route::name('sell2')->get('sell2', function () {
