@@ -61,6 +61,7 @@ class BuyController extends Controller
        
         $car = Car::where('id', $id)->first();
         $relate_cars =  Car::whereBetween('price', [$car->price - 1000, $car->price + 1000])->get();
+        
         return view('market/product', ['car'=>$car, 'relate_cars'=>$relate_cars ]);
     }
 

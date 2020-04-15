@@ -64,7 +64,8 @@
                             <span class="text-green-500 text-xl font-bold ml-2">السعر:</span>
                             <span class="text-lg">{{$car->price}}</span>
                         </div>
-                        <a class="btn indigo" href="{{route('car/show', ['id' =>$car->id])}}">شاهد المزيد</a>
+            
+                        <a class="btn indigo" href="{{ url('car/'.$car->id . '/' . str_replace(' ', '-', $car->brand->name) . '/' . str_replace(' ', '-' , $car->title ))}}">شاهد المزيد</a>
                     </div>
                 </section>
                 <!-- End Car Details -->

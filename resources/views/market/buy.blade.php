@@ -20,7 +20,7 @@
                     <!-- Start Brand Image -->
                     @foreach($brands as $brand)
                     <div class="img px-2 w-1/2 md:w-2/12  mb-8">
-                        <a href="{{ route( 'brand', ['id' => $brand->id])  }}" class="text-center inline-block">
+                        <a href="{{ route( 'brands', ['id' => $brand->id, 'name' => $brand->name] )  }}" class="text-center inline-block">
                             <img src="{{url('storage/brands/'.$brand->image )}}" width="100" alt="brand" />
                             {{$brand->name}}
                         </a>

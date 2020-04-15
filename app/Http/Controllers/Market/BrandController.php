@@ -47,11 +47,11 @@ class BrandController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($brand, $name,$id)
     {
        $brand = Brand::where('id', $id)->first(); 
        $cars = Car::where('brand_id', $id)->get();
-       return view('market/brand' , ['cars' => $cars, 'brand' => $brand]);
+       return view('market.brand' , ['cars' => $cars, 'brand' => $brand]);
     }
 
     /**

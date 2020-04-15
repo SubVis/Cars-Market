@@ -259,7 +259,7 @@
 
                             <!-- Start Button -->
                             <div class="w-full flex justify-center items-center py-2">
-                                <a class="btn indigo" href="{{route('car/show', ['id' =>$car->id])}}">شاهد المزيد</a>
+                                <a class="btn indigo" href="{{ url('car/'.$car->id . '/' . str_replace(' ', '-', $car->brand->name) . '/' . str_replace(' ', '-' , $car->title ))}}">شاهد المزيد</a>
                             </div>
                             <!-- End Button -->
                         </section>

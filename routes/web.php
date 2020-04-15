@@ -23,23 +23,22 @@ Route::name('product')->get('/product', function () {
 });
 
 
-Route::name('buy')->get('buy', 'Market\BuyController@index');
-Route::name('car/show')->get('car/show/{id}', 'Market\BuyController@show');
+
 
 // cars 
 Route::name('sell')->get('sell', 'Market\CarController@create');
 Route::name('storeCars')->post('storeCars', 'Market\CarController@store');
-//Route::name('sell2')->get('sell2', function(){return view('market/sell2');});
+Route::name('buy')->get('buy', 'Market\BuyController@index');
+Route::name('car/show')->get('car/{id}/{brand}/{name}', 'Market\BuyController@show');
 Route::name('storeCars2')->post('storeCars2', 'Market\CarController@store2');
 Route::name('search')->post('search', 'Market\SearchController@index');
 
-
+//model
 Route::name('ajax_model')->post('ajax_model', 'Market\SearchController@model_ajax');
 
 // brands
-Route::name('brand')->get('brand{id}', 'Market\BrandController@show');
-
-Route::name('all-brands')->get('all-brands','Market\BrandController@index');
+Route::name('brands')->get('brands/{name}/{id}', 'Market\BrandController@show');
+Route::name('all-brands')->get('brands','Market\BrandController@index');
 
 
 Route::name('login')->get('login', function () {
