@@ -1,6 +1,9 @@
 @extends('index')
 @section('title', 'عاملة كام؟')
+@push('css')
+<link rel="stylesheet" href="{{url('css/selection.css')}}" />
 
+@endpush
 @section('content')
 <div class="flex justify-center items-center my-8">
 	<form class="z-20 center bg-white border border-gray-300 flex items-center flex-col p-6 w-full sm:w-3/4 md:w-2/4" action="{{route('register')}}" method="post">
@@ -81,5 +84,9 @@
 	</form>
 </div>
 
-<script src="{{url('js/modules/selectbox/single.js')}}"></script>
+
 @endsection
+@push('js')
+<script src="{{url('js/modules/selectbox/single.js')}}"></script>
+
+@endpush

@@ -9,8 +9,25 @@ function allMulti(selecty, holder) {
             optText = [],
             optAll = exactSelect.options, // All options
 
-            ds = holder || optAll[0].text || optText.join('--'), // The placeholder
+            ds = holder ||  optAll[0].text || optText.join('--'), // The placeholder
             parent = exactSelect.parentElement || document.querySelector('[data-wrapper=' + exactSelect.getAttribute("name") + "]");
+
+            if(exactSelect.selectedIndex > -1){
+                ds ='';
+            }
+            // Look for a default selected option
+            for (var i = 0, iLen = optAll.length; i < iLen; i++) {
+                let selectedOption = optAll[i].defaultSelected,
+                currentOptionText = optAll[i].innerText;
+
+                if (selectedOption) {
+                    ds += `${currentOptionText} - `; /** Add selected options to the placeholder */
+                    optText.push(currentOptionText); /** Add selected options to the optText so it can be deleted when delete options */
+                    optAll[i].selected = 'selected'; /** select the original select from option */
+
+                    optAll[i].classList.add('checked'); /** Add checked class list */
+                }
+            }
 
         // our replacement 
         let our_div = document.createElement("div");
@@ -33,10 +50,10 @@ function allMulti(selecty, holder) {
         // Add options to the replacement
         for (let index = 0; index < optAll.length; index++) {
             const opt = optAll[index];
-
+            
             // The itmes list
             let our_item = document.createElement('li');
-            our_item.classList.add('replacement-ul--li');
+            our_item.classList.add('replacement-ul--li', opt.classList[0]);
             our_item.setAttribute('data-val', opt.value);
 
             // The span
@@ -46,7 +63,7 @@ function allMulti(selecty, holder) {
 
             // The check button
             let checker = document.createElement('div');
-            checker.classList.add('checker');
+            checker.classList.add('checker', opt.classList[0]);
 
             our_span.append(TheText)
             our_item.append(our_span, checker)
@@ -94,13 +111,14 @@ function allMulti(selecty, holder) {
                     el.lastElementChild.classList.remove("checked");
                     li.classList.remove("checked");
                     value.pop(val);
-                    optText.pop(text);
-    
+                    
+                    optText.splice(optText.findIndex((t) => t==text), 1)
+                    
                     // Set the placeholder
                     if (optText.length > 0)
                         input.innerText = optText.join(" - ");
                     else
-                        input.innerText = ds ;
+                        input.innerText = "اختر" ;
                 };                
             }
         });

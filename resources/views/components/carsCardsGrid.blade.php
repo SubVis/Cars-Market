@@ -1,15 +1,13 @@
 <div class="container mx-auto">
     <div class="flex flex-wrap px-2">
-        
+
         @foreach($cars as $car)
         <div class="px-2 w-full md:w-1/2 lg:w-1/3 relative">
             <!-- ====================== ADD CLASS HERE ====================== -->
             <div class="card card-special my-2">
                 <!-- Start Car Images -->
                 <div class=" @if($car->special) ? special  @endif absolute z-50" style="overflow: hidden"></div>
-                @if($car->user->id == Auth::user()->id )
-                <a class="btn indigo" href="{{ url('car/edit/'.$car->id)}}">تعديل العربية </a>
-                @endisset
+
                 <?php $images = json_decode($car->image); ?>
                 <div class="siema">
                     @foreach($images as $image)
@@ -23,7 +21,19 @@
 
                 <!-- Start Car Details -->
                 <section class="card-details border border-balck px-2 pt-2 flex flex-wrap">
-                    <h2 class="color font-bold inline-block text-right my-4 mb-2 w-full text-xl header">{{$car->title}} </h2>
+                    <div class="flex flex-wrap items-center">
+
+                        <h2 class="color font-bold inline-block text-right my-4 mb-2 @if(!$car->user->id == Auth::user()->id ) w-full  @endif text-xl header">
+                            {{$car->title}}
+                        </h2>
+                        @auth
+                        @if($car->user->id == Auth::user()->id )
+                        <div class="text-center">
+                            <a class="btn indigo" href="{{ url('car/edit/'.$car->id)}}">اعلانك تعدّل عليه؟</a>
+                        </div>
+                        @endisset
+                        @endauth
+                    </div>
 
                     <ul class="w-full sm:w-1/2">
                         <li class="my-2">
@@ -68,7 +78,7 @@
                             <span class="text-green-500 text-xl font-bold ml-2">السعر:</span>
                             <span class="text-lg">{{$car->price}}</span>
                         </div>
-            
+
                         <a class="btn indigo" href="{{ url('car/'.$car->id . '/' . str_replace(' ', '-', $car->brand->name) . '/' . str_replace(' ', '-' , $car->title ))}}">شاهد المزيد</a>
                     </div>
                 </section>

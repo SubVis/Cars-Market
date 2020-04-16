@@ -7,20 +7,31 @@
 @section('content')
 <div class="container mx-auto mb-5 px-2 ">
     <!-- Start product header -->
-  
+
     <?php
-   
-    $images = json_decode( $car->image);
+
+    $images = json_decode($car->image);
     $comforts = json_decode($car->comfort);
 
-    $windows = json_decode( $car->windows);
-    $sounds = json_decode( $car->sounds);
-    $safes = json_decode( $car->safe);
-    $other_futures = json_decode( $car->other_future);
-    
+    $windows = json_decode($car->windows);
+    $sounds = json_decode($car->sounds);
+    $safes = json_decode($car->safe);
+    $other_futures = json_decode($car->other_future);
+
     ?>
-    
-    <p class="header" style="margin-top: 2rem;margin-bottom: 2rem;">{{$car->title}}</p>
+
+    <div class="flex flex-wrap items-center my-8">
+        <p class="header">
+            {{$car->title}}
+        </p>
+
+        @auth
+        @if($car->user->id == Auth::user()->id )
+        <a class="btn indigo" href="{{ url('car/edit/'.$car->id)}}">اعلانك تعدّل عليه؟</a>
+        @endisset
+        @endauth
+    </div>
+
     <div class="container mx-auto">
         <div class="flex flex-wrap justify-center">
             <!-- Start Carousel -->
@@ -42,8 +53,9 @@
     <!-- End product header -->
 
     <h2 class="header text-center mx-auto">التفاصيل</h2>
-    
-    <div class="product--details my-12">
+
+
+    <div class="product--details md:my-12">
         <div class="flex flex-wrap justify-center sm:justify-start">
             <!-- Start right column -->
             <div class="w-1/2 sm:w-1/3 lg:w-1/3">
@@ -133,12 +145,6 @@
                     <span class="text-green-500 text-2xl font-bold inline-block text-right">السعر:</span>
                     <span class="text-left inline-block text-2xl">{{$car->price}}</span>
                 </div>
-                <div class="product--btns ">
-                    <span>أَضف إلى المفضلة</span>
-                    <button class="fav mx-4">
-                        <i class="fas fa-heart fa-2x"></i>
-                    </button>
-                </div>
             </div>
             <!-- End price -->
         </div>
@@ -149,11 +155,11 @@
             <div class="w-1/2 sm:w-1/3">
                 <h3 class="header">وسائل الراحة</h3>
                 <ul class="justify-between">
-                @foreach($comforts as $comfort)
+                    @foreach($comforts as $comfort)
                     <li class="lnline-block">{{$comfort}}</li>
-                @endforeach
+                    @endforeach
 
-                   
+
                 </ul>
             </div>
             <!-- End single feat -->
@@ -162,9 +168,9 @@
             <div class="w-1/2 sm:w-1/3">
                 <h3 class="header">نوافذ</h3>
                 <ul class="justify-between">
-                @foreach($windows as $window)
+                    @foreach($windows as $window)
                     <li class="lnline-block"> {{$window}}</li>
-                 @endforeach
+                    @endforeach
                 </ul>
             </div>
             <!-- End single feat -->
@@ -173,10 +179,10 @@
             <div class="w-1/2  sm:w-1/3">
                 <h3 class="header">نظام الصوت</h3>
                 <ul class="justify-between">
-                @foreach($sounds as $sound)
-                 <li class="lnline-block"> {{$sound}}</li>
-                @endforeach
-        
+                    @foreach($sounds as $sound)
+                    <li class="lnline-block"> {{$sound}}</li>
+                    @endforeach
+
                 </ul>
             </div>
             <!-- End single feat -->
@@ -185,10 +191,10 @@
             <div class="w-1/2 sm:w-1/3">
                 <h3 class="header">وسائل الأمان</h3>
                 <ul class="justify-between">
-                @foreach($safes as $safe)
+                    @foreach($safes as $safe)
                     <li class="lnline-block">{{$safe}}</li>
-                @endforeach
-                 
+                    @endforeach
+
                 </ul>
             </div>
             <!-- End single feat -->
@@ -197,10 +203,10 @@
             <div class="w-1/2 sm:w-1/3">
                 <h3 class="header">مميزات أخرى</h3>
                 <ul class="justify-between">
-                @foreach($other_futures as $other_future)
+                    @foreach($other_futures as $other_future)
                     <li class="lnline-block"> {{$other_future}}</li>
-                 @endforeach
-                   
+                    @endforeach
+
                 </ul>
             </div>
             <!-- End single feat -->
@@ -213,8 +219,8 @@
     <div class="suggestion my-4 overflow-hidden">
         <p class="header">عربيات من نفس الفئة السعرية</p>
         @if(count($cars) != null)
-         @include('components.carsCardsGrid')
-        @else <h3> لا يوجد عربيات من نفس الفئة</h3>
+        @include('components.carsCardsGrid')
+        @else <p class="text-gray-500 text-center py-5"> لا يوجد عربيات من نفس الفئة</p>
         @endif
     </div>
     <!-- End suggestion -->
@@ -222,7 +228,6 @@
 
 @push('js')
 <script src="{{url('js/libs/siema.min.js')}}"></script>
-<script src="{{url('js/modules/selectbox/single.js')}}"></script>
 <script>
     window.addEventListener('load', function() {
         const siemas = document.querySelectorAll('.siema');

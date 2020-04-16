@@ -12,13 +12,16 @@ function allOne(selecty, holder) {
             optAll = exactSelect.options, /** All options */
             ds = holder || optAll[0].text || optText, /** Selection placeholder */
             parent = exactSelect.parentElement || document.querySelector('[data-wrapper=' + exactSelect.getAttribute("name") + "]"); /** Selection parent */
-
+        
         // Look for a default selected option
         for (var i = 0, iLen = optAll.length; i < iLen; i++) {
-
-            if (optAll[i].defaultSelected) {
-                exactSelect.selectedIndex = i;
-                return;
+            let selectedOption = optAll[i].defaultSelected,
+                currentOptionText = optAll[i].innerText;
+            if (selectedOption) {
+                ds = currentOptionText;
+                optAll[exactSelect.selectedIndex].selected = 'selected';
+                
+                console.log(optAll[exactSelect.selectedIndex])
             }
         }
 
@@ -83,7 +86,6 @@ function allOne(selecty, holder) {
 
 
         // If no option is the default, select first or none as appropriate
-        exactSelect.selectedIndex = -1; // or -1 for no option selected 
 
         // handle the selection
         let clickable = parent.querySelectorAll('.replacement-ul--li');
@@ -152,7 +154,6 @@ function list(clickable, exactSelect) {
 
 /* ========================= code ========================= */
 let select = [...document.querySelectorAll('.singleSelect')]; // All select tags in the dom
-
 allOne(select);
 
 let togglers = document.querySelectorAll('.replacement-input');
@@ -192,7 +193,7 @@ var observer = new MutationObserver(function () {
     var formData = new FormData();
     formData.append('brand_id', value);
 
-    axios.post('ajax_model', formData).then(res => {
+    axios.post('/ajax_model', formData).then(res => {
         let model_parent = document.querySelector('.replacement.w-full.singleSelect[data-select-name="model"]').lastElementChild,
             ul = model_parent.firstElementChild;
         

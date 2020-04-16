@@ -34,19 +34,19 @@
                 <div data-wrapper="model">
                     <select class="w-full  singleSelect" name="model" id="model">
                         <option disabled>اختر الموديل </option>
-                     
+
                     </select>
                 </div>
                 <p class="help-block help" data-validation="model"> </p>
             </div>
             <!-- End model input -->
-            
+
             <!-- Start modelyear input -->
             <div class="w-full md:w-1/2 lg:w-1/3  my-2 px-2">
                 <label class="my-2 inline-block font-bold title pl-2" for="model">عام الموديل:</label>
                 <div data-wrapper="model">
                     <select class="w-full  singleSelect" name="modelyear" id="modelyear">
-                        <option disabled>اختر عام الموديل  </option>
+                        <option disabled>اختر عام الموديل </option>
                         @foreach($modelyear as $year)
                         <option value="{{$year->id}}">{{$year->year}}</option>
                         @endforeach
@@ -157,3 +157,4 @@
         </div>
     </form>
     <!-- End Form -->
+</div>

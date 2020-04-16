@@ -76,7 +76,7 @@
         for (const siema of siemas) {
             let s = new Siema({
                 selector: siema,
-                easing: 'ease-out',
+                easing: 'ease-in-out',
 
                 perPage: 1,
                 startIndex: -1,
